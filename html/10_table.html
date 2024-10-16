@@ -5,29 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Table tag</title>
   <style>
-    table, th, td {
+    table, th {
       border: 1px solid grey;
-      border-collapse: collapse; /*중간의 공백 삭제*/ 
+      border-collapse: collapse;  /*중간의 공백 삭제*/ 
     }
-
+    td {
+      border: 2px dotted hotpink; 
+      background-color: pink;
+    }
     /*
     블록요소, 인라인요소 구분방법 > table= block요소
     width- 끝이 정해져있어 px,% 적용가능 
-    height- 스크롤링 기능이 있어 끝을 알 수 없음, %기능 적용안됨, px로 입력
+    height- 스크롤링 기능이 있어 끝을 알 수 없음, %안됨, px로 입력
     */
     table {
       width: 50%;
       /* height: 300px; */
     }
     th, td {
-      height: 70px;
+      height: 30px;
     }
 
   </style>
 </head>
 <body>
   <table> 
-    <thead> <!--table의 스타일이 상속됨/ tr은 컨텐츠가 없어 상속되지 않음-->
+    <thead> 
       <tr>
         <th scope="col">구분</th>
         <th scope="col">제목1</th>
@@ -69,5 +72,5 @@
 
 <!-- 
 1. border은 table, td, th에만 적용됨
-2. 
+2. table의 스타일이 상속됨/ tr은 컨텐츠가 없어 상속되지 않음
 -->
