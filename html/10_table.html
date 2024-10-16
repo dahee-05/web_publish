@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table tag</title>
+  <style>
+    table, th, td {
+      border: 1px solid grey;
+      border-collapse: collapse; /*중간의 공백 삭제*/ 
+    }
+
+    /*
+    블록요소, 인라인요소 구분방법 > table= block요소
+    width- 끝이 정해져있어 px,% 적용가능 
+    height- 스크롤링 기능이 있어 끝을 알 수 없음, %기능 적용안됨, px로 입력
+    */
+    table {
+      width: 50%;
+      /* height: 300px; */
+    }
+    th, td {
+      height: 70px;
+    }
+
+  </style>
+</head>
+<body>
+  <table> 
+    <thead> <!--table의 스타일이 상속됨/ tr은 컨텐츠가 없어 상속되지 않음-->
+      <tr>
+        <th scope="col">구분</th>
+        <th scope="col">제목1</th>
+        <th scope="col">제목2</th>
+        <th scope="col">제목3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td colspan="3">data11</td>
+        <!-- <td colspan="2">data12</td> -->
+        <!-- <td>data13</td> -->
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td rowspan="2">data21</td>
+        <td>data22</td>
+        <td>data23</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <!-- <td>data31</td> -->
+        <td colspan="2">data32</td>
+        <!-- <td>data33</td> -->
+      </tr>
+    </tbody>
+    <tfoot> <!--가독성을 높이기 위한 태그 -->
+      <tr>
+        <th scope="row">합계</th>
+        <td>total1</td>
+        <td>total2</td>
+        <td>total3</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
+
+<!-- 
+1. border은 table, td, th에만 적용됨
+2. 
+-->
