@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attribute Selector</title>
+  <style>
+    [href="https://www.daum.net/"] {
+      background-color: orange;
+    }
+    [href] {
+      text-decoration: none;
+    }
+    [target] {
+      color : red; 
+    }
+    [class^="inner"] {
+      color: blueviolet;
+    }
+    ul, ul>li {
+      border: 1px solid green;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0px;
+    }
+    [for="id"] {
+      color: green;
+      background-color: yellow;
+    }
+
+    input[type] {
+      width: 70%;
+      border: 1px solid lightgray;
+      padding: 5px;
+      border-radius: 7px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Attribute Selector</h1>
+  <p>
+    <a href="https://www.naver.com/" target="_blank">네이버</a>
+    <a href="https://www.google.co.kr/?hl=ko" class="inner_attr1">구글</a>
+    <a href="https://www.daum.net/" class="inner_attr2">다음</a>
+  </p>
+  <form action="#">
+    <ul>
+      <li>
+        <label for="id">아이디</label>
+        <input type="text" name="id">
+      </li>
+      <li>
+        <label for="pwd">패스워드</label>
+        <input type="password" name="pwd">
+      </li>
+      <li>
+        <button type="submit">로그인</button>
+        <button type="reset">취소</button>
+      </li>
+    </ul>
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text-align</title>
+  <style>
+    p {border: 1px solid tomato;}
+    .left { text-align: left;}
+    .right {text-align: right;}
+    .center {text-align: center;}
+    .justify {text-align: justify;}
+    .block {display: block;}
+    .inline {display: inline;} 
+    /*inline속성은 text-align 속성 적용 안됨*/
+    div > p {
+      width: 50px;
+      height: 50px;
+    }
+    div {
+      text-align: center;
+      border: 2px solid red;
+    }
+    .red { background-color: red;}
+    .blue { background-color: blue;}
+    .green { background-color: green;}
+    img { width: 10%;}
+    h1 { 
+      /* letter-spacing: 20px; */ /*글자사이의 간격 */
+      word-spacing: 20px; /*띄어쓰기 간격*/
+    }
+    .linheight { /* 줄 간격 */
+      line-height: 40px; 
+    }
+    h2 {border: 1px solid blue;}
+    .indent1 {text-indent: 30px;}
+    .indent2 {text-indent: -30px;}
+    .uppercase { text-transform: uppercase;}
+    .lowercase { text-transform: lowercase;}
+    .capitalize { text-transform: capitalize;}
+  </style>
+</head>
+<body>
+  <h1>Text align</h1>
+  <h2 class="indent1 lowercase">Text indent1</h2>
+  <h2 class="indent2 ">Text indent2</h2>
+  <p class="left inline uppercase">text-align : left</p>
+  <p class="right capitalize">text-align : right</p>
+  <p class="center">text-align : center</p>
+  <p class="justify linheight">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, harum quasi. Non laborum ut expedita amet, numquam consequatur quos ipsum et? Ipsum hic modi at eveniet cumque sunt nesciunt laborum.
+  </p>
+  <div>
+    <p class="red inline">left</p>
+    <p class="blue inline">right</p>
+    <p class="green inline">center</p><br><br>
+    <img src="/html/images/cgvLogo.png" alt="cgv logo">
+    <img src="/html/images/cgvLogo.png" alt="cgv logo">
+    <img src="/html/images/cgvLogo.png" alt="cgv logo">
+  </div>
+
+</body>
+</html>
+<!-- 
+블록레벨 text-align 적용됨
+인라인은 문자속성
+* 블록레벨로 지정되어있어서 인라인 요소를 주어 블록레벨 효과를 없애 가운데에 left, right, center가 오게 했나?
+
+-->

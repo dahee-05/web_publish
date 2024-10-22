@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Status Selector</title>
+  <style>
+    ul {
+      list-style-type: none;
+      padding: 0px;
+    }
+    li {
+      padding: 10px;
+    }
+    input[type="radio"]:checked + label{
+      background-color: powderblue;
+    }
+    input[type="checkbox"]:checked + label{
+      background-color: pink;
+    }
+    .not-selector > li:not(:last-child) {
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+<body>
+  <h1>Status Selectors</h1>
+  <ul>
+    <li> <!-- name을 동일하게 주면 하나만 선택이됨 -->
+      <input type="radio" name="city">
+      <label for="">서울</label>
+      <input type="radio" name="city">
+      <label for="">부산</label>
+      <input type="radio" name="city">
+      <label for="">인천</label>
+    </li>
+    <li> <!--checkbox같은 name으로 넘겨야만 서버에서 배열로 받을 수 있음 -->
+      <input type="checkbox" name="subjesct">
+      <label for="">HTML</label>
+      <input type="checkbox" name="subjesct">
+      <label for="">CSS</label>
+      <input type="checkbox" name="subjesct">
+      <label for="">JavaScript</label>
+    </li>
+    <li>
+      <button >사용가능</button>
+      <button class="disabled" disabled>사용불가능</button>
+    </li>
+    <li>
+      <ul class="not-selector">
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+      </ul>
+    </li>
+  </ul>
+
+</body>
+</html>
