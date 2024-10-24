@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overflow</title>
+  <style>
+    div {
+      width: 400px;
+      border: 1px solid silver;
+    }
+    div p {
+      width: 600px;
+      border: 1px solid green;
+    }
+    .auto { overflow: auto;}
+    .hidden { overflow: hidden;}
+    .scroll { overflow: scroll;}
+    .scroll-x { overflow-x: scroll;}
+    .scroll-y { overflow-y: scroll;}
+    .bg-image {
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwlHAmkELKNGhGn0f23LUeU2seUN1qzKKNLg&s");
+      background-repeat: repeat;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <h1>Overflow</h1>
+<div class="auto bg-image">
+  <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci debitis rerum laboriosam fugiat corporis, voluptatum tempore sint eos at consequatur reiciendis aliquid eveniet ullam commodi doloremque odit quam, sapiente blanditiis?
+  </p>
+</div>
+<div class="hidden bg-image">
+  <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci debitis rerum laboriosam fugiat corporis, voluptatum tempore sint eos at consequatur reiciendis aliquid eveniet ullam commodi doloremque odit quam, sapiente blanditiis?
+  </p>
+</div>
+<div class="scroll">
+  <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci debitis rerum laboriosam fugiat corporis, voluptatum tempore sint eos at consequatur reiciendis aliquid eveniet ullam commodi doloremque odit quam, sapiente blanditiis?
+  </p>
+</div>
+<div class="scroll-x">
+  <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci debitis rerum laboriosam fugiat corporis, voluptatum tempore sint eos at consequatur reiciendis aliquid eveniet ullam commodi doloremque odit quam, sapiente blanditiis?
+  </p>
+</div>
+<div>
+  <p class="scroll-y bg-image">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci debitis rerum laboriosam fugiat corporis, voluptatum tempore sint eos at consequatur reiciendis aliquid eveniet ullam commodi doloremque odit quam, sapiente blanditiis?
+  </p>
+</div>
+
+
+  
+</body>
+</html>

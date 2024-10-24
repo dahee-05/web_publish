@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Float</title>
+  <style>
+    .box-group {
+      border: 1px solid silver;
+      overflow: hidden;
+      /* clear : both --요소 아래 배치 */
+      /* clear :  */
+    }
+    .box-group > div {
+      width: 100px;
+      height: 100px;
+      background-color: aquamarine;
+      text-align: center;
+      float: left; /*블록의 옆에 붙음/ 사이 간격 조정이 편리함*/
+      margin: 10px;
+      border-radius: 10px;
+    }
+    /* h1 {
+      float: left; /*위에서 주었을땐 옆에 정렬되었는데 여기는 왜?
+    } */
+
+    div.box-group > p { clear: both;}
+
+    ul {
+      padding: 0;
+      list-style-type: none;
+    }
+    ul li {
+      width: 100px;
+      border: 1px solid white;
+      background-color: silver;
+      float: left;
+      padding: 5px 0px;
+      text-align: center;
+    }
+    ul li a {
+      text-decoration: none;
+      color: white;
+    }
+    ul li a:hover {
+      color: palevioletred;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+    ul li:first-child a {
+      color: aqua;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    ul + hr {
+      clear: both;
+    }
+    img {
+      display: block;
+      float: left;
+      margin-right: 15px;
+    }
+    img + p {
+      width: 800px;
+      /* border: 1px solid red; */
+      text-indent: 10px;
+      /* text-align: justify; */
+    }
+  </style>
+</head>
+<body>
+  <h1>Float : 블록 레벨 한줄로 정렬</h1>
+  <div class="box-group">
+    <div>box1</div>
+    <div>box2</div>
+    <div>box3</div>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi suscipit nisi excepturi beatae eveniet reprehenderit dicta placeat explicabo accusantium magnam, quibusdam odit rerum aliquid eligendi consectetur aliquam deleniti rem. Ratione?
+    </p>
+  </div>
+  <hr>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Login</a></li>
+    <li><a href="#">Signup</a></li>
+    <li><a href="#">Mypage</a></li>
+    <li><a href="#">Support</a></li>
+  </ul>
+  <hr>
+  <img src="/html/images/cgvLogo.png" alt="cgv logo">
+  <p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi suscipit nisi excepturi beatae eveniet reprehenderit dicta placeat explicabo accusantium magnam, quibusdam odit rerum aliquid eligendi consectetur aliquam deleniti rem. Ratione?
+  </p>
+</body>
+</html>
