@@ -1,0 +1,161 @@
+/*
+*  title : header style
+*  author : dahee
+*  final date : 2024/10/24
+*/ 
+
+@import url(/cgv/css/commons.css);
+
+header {
+  border: 1px solid red;
+  width: 1000px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.header-top {
+  padding: 20px 0px;
+}
+
+.header-top, .header-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-top-logo {
+  /* border: 1px solid blue; */
+  position: relative;
+  width: 320px; /*자식이 들어가기 위해서 width 꼭 설정*/
+}
+.header-top-logo > a > img {
+  width: 120px;
+}
+
+.header-top-logo > span {
+  position: absolute;
+  top: 30px;
+  left: 110px;
+  letter-spacing: 4.5px;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.header-top ul, .header-bottom ul{
+  /* border: 1px solid green; */
+  display: flex;
+  list-style-type: none;
+}
+
+.header-top ul li {
+  /* padding: 25px 10px; */
+}
+
+.header-top ul li a {
+  /* background-color: aqua; */
+  padding: 30px 10px;  /* a태그영역에 링크를 걸어주기 위해 */
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.header-bottom dl {
+  display: none;
+}
+
+.header-bottom {
+  /* border: 1px solid silver; */
+  height: 40px;
+}
+
+.header-bottom li {
+  padding: 10px 25px;
+}
+
+.header-bottom li a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+
+/*
+*  title : footer style
+*  author : dahee
+*  final date : 2024/10/24
+*/ 
+
+footer {
+  width: 100%;
+  height: 200px;
+  background-color: var(--color-footer-bg);
+}
+
+.footer-content{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-intro + ul {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /*height가운데 정렬*/
+  list-style-type: none;
+  border-bottom: 1px solid var(--color-silver);
+}
+
+.footer-intro + ul a{
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.footer-intro + ul a:hover {
+  text-decoration: underline;
+}
+/*ul과 li는 인접형제인데 + 하면 안먹음 */
+.footer-intro + ul li:nth-child(8) a{
+  color: var(--color-black);
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.footer-intro ~ p { /*intro에 있는 p태그*/
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 0;
+}
+
+.p {
+  margin-top: 10px;
+} 
+
+.p2 { margin-bottom: 20px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

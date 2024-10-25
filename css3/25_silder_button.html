@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider Button</title>
+  <style>
+    .sliderwrapper {
+      width: 600px;
+      height: 400px;
+      margin: 0 auto; /*auto :가운데 정렬, width 필요*/
+      background-color: antiquewhite;
+      position: relative;
+    }
+    .btn {
+      padding: 0 20px;
+      line-height: 30px;  /* 텍스트 줄 간격(라인 높이) */
+      color: #fff;
+      background-color: #000;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      margin-top: -15px; /*왜? 올라감? 마진은 포함된 애 아닌가? line-height가 30이라 -15*/
+    }
+    .next { right: -30px;}
+    .prev { left: -30px;}
+    .slider_img {
+      width: 600px;
+      height: 400px;
+    }
+    h1 { text-align: center;}
+  </style>
+</head>
+<body>
+  <h1>Sliderwrapper</h1>
+  <div class="sliderwrapper">
+    <img src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000088/88526/88526230727_727.jpg" alt="Image" class="slider_img ">
+    <button class="btn next">next</button>
+    <button class="btn prev">prev</button>
+  </div>
+</body>
+</html>

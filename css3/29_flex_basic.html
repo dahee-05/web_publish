@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex-basic</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    .parent {
+      /* padding: 0; */
+      /* padding-top: 30px; */
+      height: 100px;
+      border: 1px solid red;
+      display: flex; 
+      flex-direction: row; /* row-reverse :행 반전*/
+      flex-wrap: wrap;
+      justify-content: space-between; 
+      align-items: center;
+      /*
+      float이용시 float+사이즈 지정+clear 지정, 안의 내용들 %로 지정(반응형)
+      flex-wrap: wrap = 자식 요소들이 부모 요소의 가로 공간을 넘길 경우 자동으로 다음 줄로 이동
+      */
+    }
+    .parent div {
+      background-color: bisque;
+      border: 1px solid salmon;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Flex-basic</h1>
+  <div class="parent">
+    <div>Flex item1</div>
+    <div>Flex item</div>
+    <div>Flex item</div>
+    <div>Flex item</div>
+    <div>Flex item</div>
+  </div>
+
+
+
+  
+</body>
+</html>
