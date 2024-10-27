@@ -7,20 +7,28 @@
 @import url(/cgv/css/commons.css);
 
 header {
-  border: 1px solid red;
-  width: 1000px;
+  /* border: 1px solid red; */
+  width: 100%;
   height: 150px;
   margin: 0 auto;
+  border-bottom: 2px solid tomato;
+  overflow: hidden;
 }
 
-.header-top {
-  padding: 20px 0px;
-}
-
-.header-top, .header-bottom {
+.header-top, .header-bottom-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header-top, .header-bottom-content{
+  width: 1000px;
+  margin: 0px auto;
+}
+
+.header-top{
+  padding-bottom: 20px;
+  padding-top: 28px;
 }
 
 .header-top-logo {
@@ -49,23 +57,30 @@ header {
 
 .header-top ul li {
   /* padding: 25px 10px; */
+  margin-left: 40px;
 }
 
 .header-top ul li a {
   /* background-color: aqua; */
-  padding: 30px 10px;  /* a태그영역에 링크를 걸어주기 위해 */
+  /* padding: 30px 10px;  a태그영역에 링크를 걸어주기 위해 */
   text-decoration: none;
   color: var(--color-primary);
 }
 
-.header-bottom dl {
+.header-bottom-content dl {
   display: none;
 }
 
 .header-bottom {
-  /* border: 1px solid silver; */
+  width: 100%;
   height: 40px;
+  padding-top: 5px 0;
+  border-top: 1px solid silver;  /*d왜 100%?*/
 }
+
+/* .header-bottom-content {
+  border: 1px solid blue;  
+} */
 
 .header-bottom li {
   padding: 10px 25px;
@@ -95,7 +110,7 @@ footer {
   margin: 0 auto;
 }
 
-.footer-intro + ul {
+.footer-intro > ul {
   width: 100%;
   height: 60px;
   display: flex;
@@ -105,7 +120,7 @@ footer {
   border-bottom: 1px solid var(--color-silver);
 }
 
-.footer-intro + ul a{
+.footer-intro > ul a{
   font-size: 12px;
   font-weight: bold;
   color: var(--color-primary);
@@ -134,6 +149,257 @@ footer {
 } 
 
 .p2 { margin-bottom: 20px;}
+
+
+/*
+*  title : header-menu style
+*  author : dahee
+*  final date : 2024/10/25
+*/ 
+
+/* .header-top ul { border: 1px solid tomato;} */
+
+.header-menu-icon{
+  /* border: 1px solid blue; */
+  display: block;
+  width: 46px;
+  min-height: 50px;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.header-menu-icon img{
+  width: 36px;
+  font-size: 36px;
+  /* border: 1px solid green; */
+} /*왜 이미지는 position: absolute; 안해줌? */
+
+.header-menu-icon span{
+  width: 46px;
+  height: 19px;
+  font-size: 11px;
+  /* border: 1px solid red; */
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+  font-weight: 600;
+}
+
+.header-top-card {
+  /* border: 1px solid red; */
+  position: relative;
+  left: 100px;
+  top: 5px;
+}
+
+.header-bottom-search {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
+}
+
+.header-bottom-search input {
+  width: 80%;
+  border: none;
+  padding: 5px;
+}
+/*
+.header-bottom-search input:focus {
+  /* border: 1px solid var(--color-primary); 
+  border: inherit;
+} */
+
+
+/*
+*  title : content style
+*  author : dahee
+*  final date : 2024/10/25
+*/ 
+
+.content .content-top, content-moviechart {
+  width: 100%;
+}
+
+.content-top {
+  background-color: #000;
+  position: relative;
+  top: -4px;
+}
+
+/* content 가운데 정렬*/
+.content-top iframe, .content-moviechart > div, 
+.content-event-spacial {
+  /* border: 1px solid red; */
+  display: block;  /*iframe = inline이라 block으로 변경*/
+  width: 1000px;
+  margin: 0 auto
+}
+
+.content-moviechart {
+  background-color: var(--color-moviechart);
+  padding: 20px 0;
+}
+
+/* .content-moviechart-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+} */
+
+ /* 무비차트/상영예정작 텍스트 */
+.content-moviechart .content-title-style > div:first-child {
+  position: relative;
+  width: 240px;
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .content-moviechart-title > div > span {
+  font-size: 1.4rem;
+  font-weight: 600;
+} */
+
+/* .content-moviechart-title > div > span:first-child {
+  color: #000;
+} */
+
+/* .content-moviechart-title > div > span:last-child {
+  color: var(--color-primary);
+  position: absolute;
+  right: 0;
+} */
+
+ /* 무비차트/상영예정작 중간라인 */
+.content-moviechart .content-title-style > div > span:first-child 
++ span {
+  width: 1px;
+  height: 12px;
+  display: inline-block;
+  background-color: var(--color-silver);
+  position: absolute;
+  top: 10px;
+  left: 45%;
+}
+
+
+/* .content-moviechart .content-title-style > div > span:last-child {
+  border: 1px solid red;
+  margin-left: 10px;
+} */
+
+
+/* .content-moviechart-title div:last-child button {
+  border: lpx solid var(--color-primary);
+  border-radius: 15px;
+  padding: 7px 15px;
+} */
+
+
+/**** 무비차트/상영예정작 리스트  */
+.content-moviechart-list ul{
+  /* border: 1px solid red; */
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+} 
+
+.content-moviechart-list ul li {
+  /* border: 1px solid blue; */
+  padding: 15px 15px 0 ;
+} 
+
+.content-moviechart-list ul li:first-child {
+  /* border: 1px solid blue; */
+  padding-left: 0px;
+} 
+
+.content-moviechart-list ul li:last-child {
+  /* border: 1px solid blue; */
+  padding-right: 0px;
+} 
+
+.content-moviechart-list ul li img{
+  border-radius: 15px;
+  width: 170px;
+}
+
+.content-moviechart-list ul li h3 {
+  text-align: center;
+  padding: 10px 0;
+  color: var(--color-primary);
+}
+
+.content-moviechart-list ul li h5 {
+  text-align: center;
+  padding-top: 3px;
+  color: var(--color-primary);
+}
+
+
+
+
+
+
+
+/*****  이벤트 섹션  *****/
+.content-event-spacial section:first-child {
+  /* border: 1px solid red; */
+  padding-top: 45px;
+}
+
+.content-event-spacial section:first-child div, 
+.content-event-spacial section:first-child ul {
+  /* border: 1px solid blue; */
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-event-spacial ul li {
+  padding: 10px 0;
+}
+.content-event-spacial ul li img{ 
+  width: 300px;
+  border-radius: 15px;
+}
+
+.content-event-spacial ul li:first-child {
+  padding-left: 0;
+}
+
+.content-event-spacial ul li:last-child {
+  padding-right: 0;
+}
+
+.content-event-spacial ul li p {
+  font-size: 12px;
+  padding-top: 3px;
+}
+
+
+/*****  특별관 섹션  *****/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -4,44 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CGV</title>
+  <link rel="stylesheet" href="/cgv/css/cgv.css">
 </head>
 <body>
   <!-- header start-->
-  <iframe src="/cgv/header.html" frameborder="0" width="100%" height="350px"></iframe>
+  <iframe src="/cgv/header.html" frameborder="0" width="100%" height="150px"></iframe>
   <!-- header end -->
 
   <!-- content : 항상 100%로 유지 *** -->
   <div class="content" > 
   <!-- 크로스브라우징을 위해 div 사용 -->
     <!-- 1. 영화 예고편 -->
-    <div style="background-color: black; width: 100%;">
-      <iframe width="560" 
-              height="315" 
+    <div class="content-top">
+      <iframe width="900px" 
+              height="400px" 
               src="https://www.youtube.com/embed/soCtsN0JYUg?si=CTpFDnmu-KwDFP5i" 
               title="YouTube video player" 
               frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
       </iframe>
     </div>
     <!-- 2. 무비차트 -->
-    <div style="background-color: lightgray; width: 100%;">
+    <div class="content-moviechart">
       <div> <!--content 가운데 정렬-->
-        <article>
+        <article class="content-title-style">
           <div>
-            <span>무비차트</span>
-            <span>상영예정작</span>
+            <span class="content-title-style-font font-color-main">무비차트</span>
+            <span>&nbsp</span>
+            <span class="content-title-style-font font-color-gray">상영예정작</span>
           </div>
           <div>
-            <button>전체보기</button>
+            <button class="total-view-button">전체보기 &gt;</button>
           </div>
         </article> 
-        <article>
+        <article class="content-moviechart-list">
           <ul>
+            <li>
+              <div>
+                <img src="/cgv/images/movie-char2.jpg" alt="Movie-char1" width="200px">
+              </div>
+              <div><h3>베놈:라스트 댄스</h3></div>
+              <div><h5>예매율 100%</h5></div>
+            </li>
+            <li>
+              <div>
+                <img src="/cgv/images/movie-char6.jpg" alt="Movie-char1" width="200px">
+              </div>
+              <div><h3>아마존 활명수</h3></div>
+              <div><h5>예매율 100%</h5></div>
+            </li>
+            <li>
+              <div>
+                <img src="/cgv/images/movie-char3.jpg" alt="Movie-char1" width="200px">
+              </div>
+              <div><h3>베테랑2</h3></div>
+              <div><h5>예매율 100%</h5></div>
+            </li>
+            <li>
+              <div>
+                <img src="/cgv/images/movie-char7.jpg" alt="Movie-char1" width="200px">
+              </div>
+              <div><h3>글래디에이터 Ⅱ</h3></div>
+              <div><h5>예매율 100%</h5></div>
+            </li>
             <li>
               <div>
                 <img src="/cgv/images/movie-char1.jpg" alt="Movie-char1" width="200px">
               </div>
-              <div>제목</div>
-              <div>예매율 100%</div>
+              <div><h3>보통의 가족</h3></div>
+              <div><h5>예매율 100%</h5></div>
             </li>
             <!-- 무비차트 리스트 반복-->
           </ul>
@@ -50,28 +80,44 @@
     </div>
 
     <!-- 3. 이벤트, 특별관 등... -->
-    <div>
+    <div class="content-event-spacial">
       <!-- 이벤트 -->
       <section>
-        <div>
-          <h3>EVENT</h3>
-          <button>전체보기</button>
+        <div class="content-title-style">
+          <h3
+          
+        .l<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>EVENT</h3>
+          <button class="total-view-button">전체보기 &gt;</button>
         </div>
         <ul>
           <li>
             <div>
+              <img src="/cgv/images/event2.jpg" alt="Event Image" width="200px">
+            </div>
+            <p><h5>[CGV]10월 컬쳐 워크</h5></p>
+            <p>2024.09.25~2024.10.31</p>
+          </li>
+          <li>
+            <div>
+              <img src="/cgv/images/event3.jpg" alt="Event Image" width="200px">
+            </div>
+            <p><h5>[베놈-라스트댄스]씨네브리핑</h5></p>
+            <p>2024.09.25~2024.10.31</p>
+          </li>
+          <li>
+            <div>
               <img src="/cgv/images/event1.jpg" alt="Event Image" width="200px">
             </div>
-            <p>[콜렉터블 무비머니]Vol.1 맥스 달튼</p>
+            <p><h5>[콜렉터블 무비머니]Vol.1 맥스 달튼</h5></p>
             <p>2024.09.25~2024.10.31</p>
           </li>
         </ul>
       </section>
       <!-- 특별관 -->
       <section>
-        <div>
+        <div class="content-title-style">
           <h3>특별관</h3>
-          <button>전체보기</button>
+          <button class="total-view-button">전체보기 &gt;</button>
         </div>
         <div>
           <div>
@@ -107,7 +153,7 @@
           <ul>
             <li>
               <a href="">
-                <img src="/cgv/images/package.jpg.crdownload" alt="Package" width="80px">
+                <img src="/cgv/images/package.jpg" alt="Package" width="80px">
                 <div>
                   <p>우리 패키지</p>
                   <p>62,000원</p>

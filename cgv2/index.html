@@ -8,14 +8,14 @@
 </head>
 <body>
   <!-- header start -->
-  <iframe src="/cgv2/header.html" frameborder="0" width="100%" height="350px"></iframe>
+  <iframe src="/cgv2/header.html" frameborder="0" width="100%" height="150px"></iframe>
   <!-- header end -->
 
   <!-- content-->
-  <div>
-    <div class="" style="background-color: black; width: 100%;">
-      <iframe width="560" 
-              height="315" 
+  <div class="content">
+    <div class="preview">
+      <iframe width="900" 
+              height="400" 
               src="https://www.youtube.com/embed/soCtsN0JYUg?si=GEoeagH39mx9VX46" title="YouTube video player" 
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -24,25 +24,54 @@
       </iframe>
     </div>
 
-    <div style="background-color: bisque; width: 100%;">
-      <div> <!-- ## 가운데 정렬 -->
-        <article>
-          <div>
+    <div class="movie-chart">
+      <div class="movie-chart1"> <!-- ## 가운데 정렬 -->
+        <article class="moviechart-top">
+          <div class="moviechart-title">
             <span>무비차트</span>
+            <span>&nbsp;</span>
             <span>상영예정작</span>
           </div>
           <div>
-            <button>전체보기</button>
+            <button class="view-all">전체보기&nbsp;&nbsp;&gt;</button>
           </div>
         </article>
-        <article>
+        <article class="moviechart-bottom">
           <ul>
-            <li> <!--img, p,p 각각 div로 감싸줬던데 모르겠음 ****** -->
+            <li> 
               <div>
-                <img src="/cgv2/images/movie-char1.jpg" alt="movie-char1" width="100px">
+                <img src="/cgv2/images/movie-char2.jpg" alt="movie-chart1" width="100px" class="moviechart-img">
               </div>
-              <p>제목</p> 
-              <p>예매율 15.2%</p>
+              <p><h3>베놈: 라스트댄스</h3></p> 
+              <p><h5>예매율 18.8%</h5></p>
+            </li>
+            <li> 
+              <div>
+                <img src="/cgv2/images/movie-char6.jpg" alt="movie-chart6" width="100px" class="moviechart-img">
+              </div>
+              <p><h3>아마존 활명수</h3></p> 
+              <p><h5>예매율 14.7%</h5></p>
+            </li>
+            <li> 
+              <div>
+                <img src="/cgv2/images/movie-char7.jpg" alt="movie-chart1" width="100px" class="moviechart-img">
+              </div>
+              <p><h3>글래디에이터</h3></p> 
+              <p><h5>예매율 12.0%</h5></p>
+            </li>
+            <li> 
+              <div>
+                <img src="/cgv2/images/movie-char1.jpg" alt="movie-chart1" width="100px" class="moviechart-img">
+              </div>
+              <p><h3>보통의 가족</h3></p> 
+              <p><h5>예매율 5.1%</h5></p>
+            </li>
+            <li> 
+              <div>
+                <img src="/cgv2/images/movie-char4.jpg" alt="movie-chart1" width="100px" class="moviechart-img">
+              </div>
+              <p><h3>날씨의 아이</h3></p> 
+              <p><h5>예매율 5.7%</h5></p>
             </li>
           </ul>
         </article>
@@ -50,32 +79,46 @@
     </div>
 
     <!-- 하얀곳 -->  
-    <div>
+    <div class="content-event-spacial">
       <!-- 이벤트 -->
-      <section>
-        <div>
-          <h3>EVENT</h3>
-          <button>전체보기</button>
+      <section class="content-event">
+        <div class="event-top">
+          <h1>EVENT</h1>
+          <button class="view-all">전체보기 &gt;</button>
         </div>
         <ul>
           <li>
             <div>
+              <img src="/cgv2/images/event2.jpg" alt="event-image1" width="200px">
+            </div>
+            <p class="event-title">[CGV] 10월 컬처워크</p>
+            <p class="event-date">2024.10.24~2024.10.31</p>
+          </li>
+          <li>
+            <div>
+              <img src="/cgv2/images/event3.jpg" alt="event-image1" width="200px">
+            </div>
+            <p class="event-title">[베놈-라스트댄스]씨네브리핑</p>
+            <p class="event-date">2024.10.22~2024.10.27</p>
+          </li>
+          <li>
+            <div>
               <img src="/cgv2/images/event1.jpg" alt="event-image1" width="200px">
             </div>
-            <p>[콜렉터 무비머니Vol.1 맥스 달튼]</p>
-            <p>2024.09.25~2024.10.31</p>
+            <p class="event-title">[콜렉터 무비머니Vol.1 맥스 달튼]</p>
+            <p class="event-date">2024.09.25~2024.10.31</p>
           </li>
         </ul>
       </section>
 
       <!-- 특별관 -->
       <section>
-        <div>
-          <h3>특별관</h3>
+        <div class="content-spacial-top">
+          <h1>특별관</h1>
           <button>전체보기</button>
         </div>
-        <div> <!-- 누락-->
-          <div> 
+        <div class="content-spacial"> <!-- 누락-->
+          <div class="content-spacial-img"> 
             <img src="/cgv2/images/special1.png" alt="Specail-img" width="400px">
           </div>
           <ul>

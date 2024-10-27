@@ -5,10 +5,41 @@
   --color-border: tomato;
   --color-silver: silver;
   --color-footer-bg: rgb(248, 248, 248);
+  --color-moviechart: rgb(245, 245, 245); /*251*/
+  --color-buttonbg: rgb(222, 222, 222);
+  --color-gray-222: rgb(102, 102, 102);
+  --color-font-primary: rgb(34, 34, 34);
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: '나눔고딕';
 }
+
+/* 버튼 오른쪽 배치해보기 */
+/* index-preview button style */
+.total-view-button {
+  border: 1px solid var(--color-buttonbg);
+  border-radius: 15px;
+  padding: 5px 13px;
+}
+
+/* content 정렬 */
+/* moviechart, event, spacial -> title style */
+.content-title-style{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  list-style-type: none;
+  border: 1px solid red;
+} 
+
+.content-title-style-font{
+  font-size: 1.4rem;
+  font-weight: 600;
+} 
+
+.font-color-main { color: var(--color-font-primary);}
+.font-color-gray { color: var(--color-gray-222);}

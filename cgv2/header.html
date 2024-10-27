@@ -4,95 +4,121 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/cgv2/css/">
+  <link rel="stylesheet" href="/cgv2/css/cgv.css">
 </head>
 <body>
   <!-- header start -->
-   <header style="background-color: beige;">
-    <div> <!-- 묶음 태그 빼먹음 **** -->
-      <div>
-        <a href="/cgv2/index.html" target="_parent">
+   <header>
+    <div class="header-top"> <!-- 묶음 태그 빼먹음 **** -->
+      <div class="logo">
+        <a href="/cgv2/index.html" target="_parent" class="main-logo">
           <img src="/cgv2/images/cgvLogo.png" alt="로고이미지" width="100px">
         </a>
-        <span>DEEP DIVE SPACE</span>
+        <span class="sub-logo">DEEP DIVE SPACE</span>
       </div>
-      <div> <!-- ******* div로 싸는거 헷갈림 -->
-        <img src="/cgv2/images/header_card_img.png" alt="Header-Card">
+      <div class="card-img"> <!-- ******* div로 싸는거 헷갈림 -->
+        <img src="/cgv2/images/header_card_img.png" alt="Header-Card" >
       </div>
-      <nav> <!-- 메뉴 태그 깜빡 ****-->
+      <nav class="header-top-right"> <!-- 메뉴 태그 깜빡 ****-->
         <ul> <!-- div 태그로 싸야하지 않나????-->
-          <li><a href="/cgv2/login/login.html" target="_parent">로그인</a></li>
-          <li><a href="/cgv2/join/join.html" target="_parent">회원가입</a></li>
-          <li><a href="/cgv2/mycgv/mycgv.html" target="_parent">MY CGV</a></li>
-          <li><a href="/cgv2/support/support.html" target="_parent">고객센터</a></li>
+          <li>
+            <a href="/cgv2/login/login.html" target="_parent" class="header-menu-icon">
+              <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginPassword.png" alt="로그인">
+              <span>&nbsp;로그인</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cgv2/join/join.html" target="_parent">
+              <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginJoin.png" alt="회원가입">
+              <span>회원가입</span>
+            </a>
+          </li>
+          <li>
+            <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginMember.png" alt="MY CGV">
+              <span>MY CGV</span>
+            </a>
+          </li>
+          <li>
+            <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginCustomer.png" alt="고객센터">
+              <span>고객센터</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
 
-    <div>
-      <div>
+    <div class="header-bottom">
+      <div class="header-bottom-content">
         <ul> <!-- 서브메뉴에서 ul을 포함하는지 -->
-          <li><a href="#">영화</a></li>
-          <dl>영화</dl>
-          <dt>무비차트</dt>
-          <dt>아트하우스</dt>
-          <dt>ICECON</dt>
-        </ul>
-        <ul>
-          <li><a href="#">극장</a></li>
-          <dl>극장</dl>
-          <dt>CGV 극장</dt>
-          <dt>특별관</dt>
-        </ul>
-        <ul>    
-          <li><a href="#">예매</a></li>
-          <dl>예매</dl>
-          <dt>빠른예매</dt>
-          <dt>상영스케줄</dt>
-          <dt>English Ticket</dt>
-          <dt>English Schedule</dt>
-        </ul>
-        <ul>
-          <li><a href="#">스토어</a></li>
-          <dl>스토어</dl>
-          <dt>패키지</dt>
-          <dt>영화관람권</dt>
-          <dt>기프트카드</dt>
-          <dt>콤보</dt>
-          <dt>팝콘</dt>
-          <dt>음료</dt>
-          <dt>스낵</dt>
-          <dt>플레이존</dt>
-          <dt>씨네샵</dt>
-        </ul>
-        <ul>
-          <li><a href="#">이벤트</a></li>
-          <dl>이벤트</dl>
-          <dt>Special</dt>
-          <dt>영화/예매</dt>
-          <dt>맴버십/CLUB</dt>
-          <dt>CGV 극장별</dt>
-          <dt>제휴할인</dt>
-          <dt>당첨자 발표</dt>
-          <dt>종료된 이벤트</dt>
-        </ul>
-        <ul>
-          <li><a href="#">혜택</a></li>
-          <dl>혜택</dl>
-          <dt>CGV 할인정보</dt>
-          <dt>CLUB 서비스</dt>
-          <dt>VIP 라운지</dt>
+          <li><a href="#">영화</a>
+            <dl>
+              <dt>영화</dt>
+              <dt>무비차트</dt>
+              <dt>아트하우스</dt>
+              <dt>ICECON</dt>
+            </dl>  
+          </li>
+          <li><a href="#">극장</a>
+            <dl>
+              <dt>극장</dt>
+              <dt>CGV 극장</dt>
+              <dt>특별관</dt>
+            </dl>
+          </li>
+          <li><a href="#">예매</a>
+            <dl>
+              <dt>예매</dt>
+              <dt>빠른예매</dt>
+              <dt>상영스케줄</dt>
+              <dt>English Ticket</dt>
+              <dt>English Schedule</dt>
+            </dl>  
+          </li>  
+          <li><a href="#">스토어</a>
+            <dl>
+              <dt>스토어</dt>
+              <dt>패키지</dt>
+              <dt>영화관람권</dt>
+              <dt>기프트카드</dt>
+              <dt>콤보</dt>
+              <dt>팝콘</dt>
+              <dt>음료</dt>
+              <dt>스낵</dt>
+              <dt>플레이존</dt>
+              <dt>씨네샵</dt>
+            </dl>  
+          </li>  
+          <li><a href="#">이벤트</a>
+            <dl>
+              <dt>이벤트</dt>
+              <dt>Special</dt>
+              <dt>영화/예매</dt>
+              <dt>맴버십/CLUB</dt>
+              <dt>CGV 극장별</dt>
+              <dt>제휴할인</dt>
+              <dt>당첨자 발표</dt>
+              <dt>종료된 이벤트</dt>
+            </dl>  
+          </li>  
+          <li><a href="#">혜택</a>
+            <dl>
+              <dt>혜택</dt>
+              <dt>CGV 할인정보</dt>
+              <dt>CLUB 서비스</dt>
+              <dt>VIP 라운지</dt>
+            </dl>
+          </li>    
         </ul>  
-      </div>
-      <div>
-        <input type="text">
-        <button>돋보기</button>
+        <div class="search-box">
+          <input type="text" class="search-content" value="리틀엠마">
+          <button>돋보기</button>
+        </div>
       </div>
      </div>
 
 
 
-  <header>
+    </header>
   <!-- header end -->
 </body>
 </html>
