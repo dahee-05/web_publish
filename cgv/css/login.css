@@ -1,0 +1,77 @@
+/*
+*  title : login form style
+*  author : dahee
+*  final date : 2024/10/28
+*/ 
+
+@import url(/cgv/css/commons.css);
+
+.login-form form {
+  /* border: 2px solid green; */
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-login-font);
+}
+
+.login-form ul {
+  border: 2px solid green;
+  list-style-type: none;
+  width: 430px;
+  padding: 0 10px;
+}
+
+.login-form li p {
+  font-size: 15px;
+}
+
+.login-form ul li{
+  padding: 5px;
+}
+
+.login-form input[type='text'], 
+.login-form input[type='password'],
+.login-btn, .join-btn {
+  width: 280px;
+  height: 45px;
+  padding: 10px;
+}
+
+.login-form input[type='text'],
+.login-form input[type='password'] {
+  padding-left: 30px;
+}
+
+.login-btn  {
+  outline-color:  var(--color-button);
+  outline-style: solid;
+  outline-width: 2px;
+  margin-bottom: 10px;
+}
+
+.join-btn {
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--color-white);
+  background-color: var(--color-green);
+  border: none;
+} 
+
+.login-form ul > li:nth-child(5) {
+  border: 2px solid green; 
+  /* width: 280px; */
+  font-size: 11pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-form li:nth-child(5) div:last-child > :nth-child(2) {
+  padding-right: 10px;
+}
+
+.login-form li:nth-child(5) div:last-child > a {
+  color: var(--color-login-font);
+  font-weight: 700;
+}

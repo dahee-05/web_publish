@@ -5,10 +5,14 @@
   --color-border: tomato;
   --color-silver: silver;
   --color-footer-bg: rgb(248, 248, 248);
+  --color-lightgray: rgb(224, 224, 224);
   --color-moviechart: rgb(245, 245, 245); /*251*/
   --color-buttonbg: rgb(222, 222, 222);
   --color-gray-222: rgb(102, 102, 102);
   --color-font-primary: rgb(34, 34, 34);
+  --color-green: rgb(110, 210, 109);
+  --color-button: rgb(251, 67, 87);
+  --color-login-font: rgb(137, 137, 135);
 }
 
 * {
