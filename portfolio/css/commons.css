@@ -1,0 +1,23 @@
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-main: rgb(0, 198, 248);
+  --color-background: rgb(28,30,37);
+  --color-navy: rgb(10, 15, 27);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: '나눔고딕';
+}
+
+.content { 
+  width: 100%;
+}
+
+.font-w-color{
+  color: var(--color-white);
+}
+

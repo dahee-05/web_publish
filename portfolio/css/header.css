@@ -1,0 +1,45 @@
+@import url(/portfolio/css/commons.css);
+
+.header-back {
+  height: 90px;
+  background-color: var(--color-black);
+}
+
+.header-content {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-img img{
+  width: 45px;
+  position: relative;
+}
+
+.top-img span {
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--color-white);
+  position: absolute;
+  top: 30px;
+  left: 70px;
+}
+
+.header-content ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-content ul li{
+  /* border: 1px solid red; */
+  padding-left: 40px;
+  list-style-type: none;
+}
+
+.header-content ul li a {
+  /* border: 1px solid red; */
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-white);
+  text-decoration: none;
+}
