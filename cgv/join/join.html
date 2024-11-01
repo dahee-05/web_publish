@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/cgv/css/cgv.css">
+  <!-- <link rel="stylesheet" href="/cgv/css/cgv.css"> -->
+  <link rel="stylesheet" href="/cgv/css/join.css">
 </head>
 <body>
   <!-- header start-->
@@ -14,45 +15,45 @@
   <!-- content -->
   <div class="content"> 
     <div class="join-form center-layout">
-      <h1 class="center-title">Join Form</h1>
+      <h1 class="center-title">회원가입</h1>
       <form action="#" method="post">
         <ul>
           <li>
-            <label for=""><b>아이디</b></label>
-            <span class="" hidden>사용할 수 없는 아이디입니다.</span>
+            <label for="" class="join-title-font">아이디</label>
+            <span class="" >사용할 수 없는 아이디입니다.</span>
             <div>
               <input type="text" name="id" placeholder="아이디 입력 (6~20자)">
-              <button>중복확인</button>
+              <button class="id-confirm-btn">중복확인</button>
             </div>
           </li>
           <li>
-            <label for=""><b>비밀번호</b></label>
+            <label for="" class="join-title-font">비밀번호</label>
             <span class="" >20자 이내의 비밀번호를 입력해주세요.</span>
             <div>
               <input type="password" name="pwd" placeholder="비밀번호 입력(문자,숫자,특수문자 포함8~20자)">
             </div>
           </li>
           <li>
-            <label for=""><b>비밀번호 확인</b></label>
-            <span class="" hidden>비밀번호가 일치하지 않습니다.</span>
+            <label for="" class="join-title-font">비밀번호 확인</label>
+            <span class="" >비밀번호가 일치하지 않습니다.</span>
             <div>
               <input type="password" name="cpwd" placeholder="비밀번호 재입력">
             </div>
           </li>
           <li>
-            <label for=""><b>이름</b></label>
+            <label for="" class="join-title-font">이름</label>
             <div>
               <input type="text" name="name" placeholder="이름을 입력하세요">
             </div>
           </li>
           <li>
-            <label for=""><b>전화번호</b></label>
+            <label for="" class="join-title-font">전화번호</label>
             <div>
               <input type="tel" name="phone" placeholder="휴대폰 번호 입력('-'포함)">
             </div>
           </li>
           <li>
-            <label for=""><b>이메일 주소</b></label>
+            <label for="" class="join-title-font">이메일 주소</label>
             <div>
               <input type="text" name="emailname" placeholder="이메일 주소">
               <span>@</span>
@@ -65,8 +66,8 @@
             </div>
           </li>
           <li>
-            <button>가입하기</button>
-            <button>가입취소</button>
+            <button class="join-btn">가입하기</button>
+            <button class="join-cancle-btn">가입취소</button>
           </li>
         </ul>
       </form>

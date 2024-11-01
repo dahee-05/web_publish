@@ -143,103 +143,145 @@
       </section>
 
       <!-- 패키지, 영화관람권, 기프트 카드 -->
-      <section>
+      <section class="package-content-list">
         <!-- 패키지 -->
         <div class="package-content">
           <div class="package-title">
-            <span><b>패키지</b></span>
-            <button>더보기</button>
+            <span>패키지</span>
+            <button class="more-view-btn">더보기</button>
           </div>
           <ul>
-            <li>
-              <a href="#"> <!-- img를 왜 여기선 div태그로 감싸지 않을까? **** -->
-                <img src="/cgv2/images/package.jpg" alt="ticket" width="100px">
-                <div>
-                  <p>우리 패키지</p>
-                  <p>62,000원</p>
-                </div>
-              </a>
+            <li> 
+              <img src="/cgv2/images/package.jpg" alt="ticket" width="100px">
+              <div>
+                <p>우리 패키지</p>
+                <p>62,000원</p>
+              </div>
+            </li>
+            <li> 
+              <img src="/cgv2/images/package.jpg" alt="ticket" width="100px">
+              <div>
+                <p>우리 패키지</p>
+                <p>62,000원</p>
+              </div>
+            </li>
+            <li> 
+              <img src="/cgv2/images/package.jpg" alt="ticket" width="100px">
+              <div>
+                <p>우리 패키지</p>
+                <p>62,000원</p>
+              </div>
             </li>
           </ul>
         </div>
         <!-- 영화관람권 -->
         <div class="package-content">
           <div class="package-title">
-            <span><b>영화관람권</b></span>
-            <button>더보기</button>
+            <span>영화관람권</span>
+            <button class="more-view-btn">더보기</button>
           </div>
           <ul>
             <li>
-              <a href="">
-                <img src="/cgv2/images/ticket.jpg" alt="ticket" width="100px">
-                <div>
-                  <p>CGV 영화관람권</p>
-                  <p>13,000원</p>
-                </div>
-              </a>
+              <img src="/cgv2/images/ticket.jpg" alt="ticket" width="100px">
+              <div>
+                <p>CGV 영화관람권</p>
+                <p>13,000원</p>
+              </div>
+            </li>
+            <li>
+              <img src="/cgv2/images/ticket.jpg" alt="ticket" width="100px">
+              <div>
+                <p>CGV 영화관람권</p>
+                <p>13,000원</p>
+              </div>
+            </li>
+            <li>
+              <img src="/cgv2/images/ticket.jpg" alt="ticket" width="100px">
+              <div>
+                <p>CGV 영화관람권</p>
+                <p>13,000원</p>
+              </div>
             </li>
           </ul>
         </div>
         <!-- 기프트 카드 -->
         <div class="package-content">
           <div class="package-title">
-            <span><b>기프트 카드</b></span>
-            <button>더보기</button>
+            <span>기프트 카드</span>
+            <button class="more-view-btn">더보기</button>
           </div>
           <ul>
             <li>
-              <a href="">
-                <img src="/cgv2/images/giftcard.jpg" alt="ticket" width="100px">
+              <img src="/cgv2/images/giftcard.jpg" alt="ticket" width="100px">
+              <div>
                 <p>PACONNIE A형</p>
                 <p>금액충전형</p>
-              </a>
+              </div>  
+            </li>
+            <li>
+              <img src="/cgv2/images/giftcard.jpg" alt="ticket" width="100px">
+              <div>
+                <p>PACONNIE A형</p>
+                <p>금액충전형</p>
+              </div>  
+            </li>
+            <li>
+              <img src="/cgv2/images/giftcard.jpg" alt="ticket" width="100px">
+              <div>
+                <p>PACONNIE A형</p>
+                <p>금액충전형</p>
+              </div>  
             </li>
           </ul>
         </div>
       </section>
 
       <!-- 공지사항, 앱 다운로드, 이미지 -->
-      <section>
-        <div> <!-- 공지사항, 고객센터, FAQ, 1:1문의 등  -->
-          <div> <!-- 공지사항 -->
-            <b>공지사항</b>
-            <span>
-              <a href="">[시스템 점검]iOS 18업데이트 관련 예매 서비스</a>
-            </span>
-            <button>더보기</button>
-          </div>
-          <div>
-            <p><b>고객센터</b></p>
-            <div>
-              <b>1544-1122</b>
-              <p>고객센터 운영시간 (평일 09:00~18:00)</p>
-              <p>업무시간 외 자동응답 안내 가능합니다.</p>
+      <section class="notice-content-list">
+        
+        <div class="notice-content-border">
+          <div class="notice-all-content"> <!-- 공지사항, 고객센터, FAQ, 1:1문의 등  -->
+            <div class="notice-content"> <!-- 공지사항 -->
+              <span class="notice-subtilte">공지사항</span>
+              <span>
+                <a href="">[시스템 점검]iOS 18업데이트 관련 예매 서비스</a>
+              </span>
+              <button class="notice-btn">더보기</button>
+            </div>
+
+            <div class="support">
+              <p class="support-subtitle">고객센터</p>
+              <div>
+                <b>1544-1122</b>
+                <p>고객센터 운영시간 (평일 09:00~18:00)</p>
+                <p>업무시간 외 자동응답 안내 가능합니다.</p>
+              </div>
+            </div>
+
+            <div class="notice-button">
+              <button>FAQ</button>
+              <button>1:1문의</button>
+              <button>대관/단체 문의</button>
             </div>
           </div>
-          <div>
-            <button>FAQ</button>
-            <button>1:1문의</button>
-            <button>대관/단체 문의</button>
+          <!-- 앱 다운로드 -->
+          <div class="app-download">
+            <h3>앱 다운로드</h3>
+            <p>CGV앱에서 더 편리하게 이용하세요</p>
+            <img src="/cgv2/images/img_qrcode.gif" alt="QR">
+            <p>QR코드를 스캔하고<br>앱설치 페이지로 바로 이동하세요</p>
           </div>
         </div>
-        <!-- 앱 다운로드 -->
-        <div>
-          <h3>앱 다운로드</h3>
-          <p>CGV앱에서 더 편리하게 이용하세요</p>
-          <img src="/cgv2/images/img_qrcode.gif" alt="QR">
-          <p>QR코드를 스캔하고<br>앱설치 페이지로 바로 이동하세요</p>
-        </div>
-        
-        <!-- 이미지 -->
-        <div>
+
+        <div class="ad-img">
           <img src="/cgv2/images/sale_image.png" alt="sale_image" width="150px">
-        </div>
+        </div><!-- end of 공지사항-->
+      </section>
       </div>
-    </section>
-  </div>  
+  </div>  <!-- end of content-->
 
   <!-- footer start -->
-  <iframe src="/cgv2/footer.html" frameborder="0" width="100%" height="250px"></iframe>
+  <iframe src="/cgv2/footer.html" frameborder="0" width="100%" height="500px"></iframe>
   <!-- footer end -->
 </body>
 </html>

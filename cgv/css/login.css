@@ -24,33 +24,57 @@
 
 .login-form li p {
   font-size: 15px;
-}
-
-.login-form ul li{
-  padding: 5px;
-}
-
-.login-form input[type='text'], 
-.login-form input[type='password'],
-.login-btn, .join-btn {
-  width: 280px;
-  height: 45px;
-  padding: 10px;
-}
-
-.login-form input[type='text'],
-.login-form input[type='password'] {
-  padding-left: 30px;
-}
-
-.login-btn  {
-  outline-color:  var(--color-button);
-  outline-style: solid;
-  outline-width: 2px;
   margin-bottom: 10px;
 }
 
+.login-form ul li{
+  /* border: 2px solid green; */
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.login-input {
+  border: 3px solid var(--color-silver);
+  width: 280px;
+  height: 45px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.login-input i{
+  padding: 0 15px 0 10px;
+  border-right: 2px solid var(--color-silver);
+}
+
+.login-form input[type='text'], 
+.login-form input[type='password']{
+  width: 230px;
+  padding: 5px;
+  margin-left: 8px;
+  border: none;
+  /* border-left: 2px solid var(--color-silver); */
+  outline: none;
+}
+
+
+.login-form input[type='text'],
+.login-form input[type='password'] {
+  padding-left: 15px;
+}
+
+.login-btn  {
+  width: 280px;
+  height: 45px;
+  outline-color:  var(--color-button);
+  outline-style: solid;
+  outline-width: 2px;
+}
+
 .join-btn {
+  width: 280px;
+  height: 45px;
   font-weight: 400;
   letter-spacing: 2px;
   color: var(--color-white);
@@ -59,19 +83,17 @@
 } 
 
 .login-form ul > li:nth-child(5) {
-  border: 2px solid green; 
-  /* width: 280px; */
   font-size: 11pt;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin: 5px 0;
 }
 
-.login-form li:nth-child(5) div:last-child > :nth-child(2) {
-  padding-right: 10px;
+.login-form li:nth-child(5) div:last-child > :first-child {
+  padding-left: 10px;
 }
 
 .login-form li:nth-child(5) div:last-child > a {
   color: var(--color-login-font);
   font-weight: 700;
 }
+
+

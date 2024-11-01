@@ -92,6 +92,15 @@ header {
   color: var(--color-primary);
 }
 
+.search-icon {
+  /* border: 1px solid red; */
+  font-size: 1.4em;
+  color: var(--color-primary);
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  cursor: pointer;
+}
 
 /*
 *  title : footer style
@@ -149,17 +158,17 @@ footer {
 
 .footer-intro ~ p { /*intro에 있는 p태그*/
   color: var(--color-primary);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   padding: 3px 0;
 }
 
-.p {
-  margin-top: 10px;
-} 
-
-.p2 { margin-bottom: 20px;}
-
+.p {margin-top: 20px;}
+.p2 {margin-bottom: 20px;}
+.p2 > a {
+  text-decoration: none;
+  cursor: pointer;
+}
 
 /*
 *  title : header-menu style
@@ -209,6 +218,7 @@ footer {
   padding: 0 5px;
   border-right: 1px solid silver;
   border-left: 1px solid silver;
+  position: relative;
 }
 
 .header-bottom-search input {
@@ -573,23 +583,10 @@ footer {
 }
 
 
-/*****  TOP 버튼  *****/
-.top-button {
-  font-size: 40px;
-  position: fixed;
-  bottom: 200px;
-  right: 550px;
-  text-decoration: none;
-  width: 50px;
-  padding-left: 8px;
-  border-radius: 30px;
-  border: 1px solid var(--color-primary);
-}
 
-.fa-solid {
-  color: var(--color-primary);
-}
- 
+
+
+
 
 
 

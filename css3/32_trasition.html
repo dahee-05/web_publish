@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transition Style</title>
+  <style>
+    div img{
+      width: 200px;
+      /* transition-property: width; 어떤 속성에 전환 효과를 적용 */
+      /* transition-duration: 0.8s; 전환되는 데 걸리는 시간 */
+      /* transition-delay: 0.5s; 전환이 시작되기까지의 지연 시간 */
+      /* transition-timing-function: ease-in; 전환 효과의 속도 변화 */
+      /* transition-timing-function: cubic-bezier(.74, .29, .39, 1.2);  */
+      transition: width 0.3s 0s ease-in;
+    }
+    div img:hover{
+      width: 500px;
+    }
+    .frame {
+      width: 300px;
+      height: 500px;
+      border: 1px solid gray;
+      /* transition: height 2s 0.5s ease-in-out; */
+    }
+    .frame p {
+      margin: 0;
+      padding: 0;
+      height: 50px;
+      background-color: aquamarine;
+      text-align: center;
+      /* transition: height 5s 0s ease-in-out; */
+    }
+    .frame div {
+      height: 0;
+      background-color: tomato;
+      transition: height 5s 0s ease-in-out;
+    }
+    .frame:hover{
+      height: 500px;
+    }
+    .frame p:hover{
+      /* height: 500px; */
+    }
+    .frame p:hover + div{
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Transition</h1>
+  <div>
+    <img src="/cgv/images/cgvLogo.png" alt="logo">
+  </div>
+  <hr>
+  <article class="frame">
+    <p>Frame Title</p>
+    <div></div>
+  </article>
+</body>
+</html>

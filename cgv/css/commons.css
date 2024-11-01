@@ -25,14 +25,14 @@
 
 /* content 가운데 정렬 */
 .center-layout {
-  border: 1px solid tomato;
+  /* border: 1px solid tomato; */
   width: 1000px;
   margin: 0 auto;
   margin-bottom: 50px
 }
 
 .center-title {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   padding: 40px 15px 10px;
   margin-bottom: 20px;
 }
@@ -72,3 +72,21 @@
   background-color: var(--color-button);
   font-weight: 700;
 }
+
+
+/*****  TOP 버튼  *****/
+.btn-goto-top {
+  width: 70px;
+  height: 70px;
+  padding: 30px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-silver);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}
+
