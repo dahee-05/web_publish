@@ -22,6 +22,14 @@
   font-family: '나눔고딕';
 }
 
+/* content 가운데 정렬 */
+.center-layout {
+  /* border: 1px solid tomato; */
+  width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 50px
+}
+
 .font-color-main{ 
   columns: var(--color-font-primary);
 }
