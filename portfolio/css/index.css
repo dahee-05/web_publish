@@ -292,14 +292,20 @@
 }
 
 .reversal {
-  /* border: 1px solid red; */
   transform: scaleX(-1);
 }
 
-.reversal .testimonial p, 
-.reversal .testimonial span {
+.reversal img{
+  margin-right: 20px;
+}
+
+.testimonial-reversal {
   /* border: 1px solid red; */
   transform: scaleX(-1);
   display: inline-block;
 }
 
+.reversal .testimonial span:nth-child(2) {
+  /* border: 1px solid red;  */
+  order: 1;
+}  
