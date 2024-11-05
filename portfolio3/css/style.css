@@ -1,0 +1,177 @@
+:root {
+  /* App Color */
+  --color-primary: var(--color-black);
+  --color-accent: var(--color-blue);
+  --color-text: var(--color-white);
+
+  /* Color list */
+  --color-white: #ffffff;
+  --color-black: #050a13;
+  --color-blue: #03e8f9;
+  --color-orange: #fd6413;
+  --color-gray: #1b1e26;
+
+  /* size */
+  --max-size-width: 1200px;
+}
+
+/* 
+  Commons 
+*/
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+body {
+  margin: 0;
+  /* padding: 0; */
+}
+h1, h2, h3, p, ul, nav {
+  margin: 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.section {
+  padding: 5rem;
+  text-align: center;
+}
+.max-container {
+  /* border: 3px solid red; */
+  width: var(--max-size-width);
+  margin: auto;
+}
+.title {
+  font-size: 2.5rem;
+  /* color: var(--color-text); */
+}
+.description {
+  font-size: 1.5rem;
+  /* color: var(--color-text); */
+}
+
+button {
+  background-color: none;
+  border: 0;
+  outline: 0;
+}
+
+/**************************** 
+**********  Header ********** 
+****************************/
+.header {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--color-black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.header__logo {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__logo__img {
+  width: 36px;
+  height: 36px;
+}
+
+.header__logo__title {
+  font-size: 1.8rem;
+  color: var(--color-text);
+}
+
+.header__menu {
+  display: flex;
+  gap: 4px;
+}
+
+.header__menu__item {
+  padding: 8px 16px;
+  color: var(--color-text);
+}
+
+/**************************** 
+**********  Home ********** 
+****************************/
+#home {
+  width: 100%;
+  background-color: var(--color-black);
+  color: var(--color-text);
+}
+
+.profile__img {
+  border: 3px solid var(--color-accent);
+  border-radius: 100%;
+}
+
+.home__title {
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.home__title--strong { 
+  color: var(--color-accent);
+}
+
+.home__description {
+  font-size: 1rem;
+  padding-bottom: 1.8rem;
+}
+
+.home__contact {
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+  background-color: var(--color-accent);
+  border-radius: 5px;
+}
+
+
+
+
+
+/**************************** 
+**********  About ********** 
+****************************/
+
+
+/**************************** 
+**********  Skills ********** 
+****************************/
+#skills {
+  background-color: var(--color-gray);
+  color: var(--color-text);
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  box-shadow: 4px 8px 8px rgba(0,0,0,0.38);
+}
+
+
+/**************************** 
+*********  My Work **********
+****************************/
+
+
+
+/**************************** 
+*******  Testimonial ********
+****************************/
+
+
+/**************************** 
+**********  footer ********** 
+****************************/

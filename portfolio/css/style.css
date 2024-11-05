@@ -126,7 +126,7 @@ button:focus {
 }
 
 .header__toggle {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   display: none;
   color: var(--color-text);
   font-size: 1.5rem;
@@ -490,3 +490,149 @@ button:focus {
   color: var(--color-accent);
   
 }  
+
+/**************************** 
+** media screen - 768 x 1024**
+* 이 이상이면 위에서 설정한 값으로 설정됨
+****************************/
+@media screen and (max-width:768px) {
+  .section {
+    padding: 3rem 2rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
+  .header {
+    flex-direction: column;
+    align-items: start;
+  }
+  .header__toggle {
+    display: block;
+  }
+  .header__menu {
+    display: none;
+  }
+  #home {
+    padding: 5rem 3rem;
+  }
+  .home__title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .majors {
+    flex-direction: column;
+    align-items: center;
+  }
+  .major {
+    width: 30rem;
+  }
+  .job {
+    justify-content: center;
+  }
+  .skills {
+    grid-template-columns: 1fr;
+  }
+  .categories {
+    flex-direction: column;  /*display:flex는 디폴트값 row */
+  }
+  .category {
+    width: 100%;
+  }
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  .testimonial {
+    flex-direction: column;
+  }
+  .testimonial:nth-child(even) .testimonial__img{
+    order: 0;
+  }
+  .arrow--up {
+    bottom: 1.5rem;
+    right: 2rem;
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+/**************************** 
+** media screen - 412 x 767 **
+****************************/
+@media screen and (max-width: 412px) {
+  .section {
+    padding: 1.5rem 1rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
+  .header {
+    flex-direction: column;
+    align-items: start;
+  }
+  .header__toggle {
+    display: block;
+  }
+  .header__menu {
+    display: none;
+  }
+  .header__logo__title {
+    font-size: 1rem;
+  }
+  #home {
+    padding: 1.5rem;
+  }
+  .home__title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+  .home__avatar {
+    width: 200px;
+    height: 200px;
+  }
+  .home__description {
+    font-size: 1.1rem;
+  }
+  .majors {
+    flex-direction: column;
+    align-items: center;
+  }
+  .major {
+    width: 20rem;
+  }
+  .job {
+    justify-content: center;
+  }
+  .skills {
+    grid-template-columns: 1fr;
+  }
+  .categories {
+    flex-direction: column;  /*display:flex는 디폴트값 row */
+  }
+  .category {
+    width: 100%;
+  }
+  .projects {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+  }
+  .testimonial {
+    flex-direction: column;
+  }
+  .testimonial:nth-child(even) .testimonial__img{
+    order: 0;
+  }
+  .arrow--up {
+    bottom: 1.5rem;
+    right: 2rem;
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+  }
+}
