@@ -2,14 +2,14 @@
 /*************************
 **** footer content ****
 **************************/
-@import url(/portfolio/css/commons.css);
+@import url(/portfolio2/css/commons.css);
 
 
 footer {
   width: 100%;
-  height: 270px;
+  height: 313px;
   background-color: var(--color-black);
-  margin-top: 60px; 
+  /* margin-top: 60px;  */
 }
 
 .footer-content-back {
@@ -21,7 +21,7 @@ footer {
 
 .footer-content {
   color: var(--color-white);
-  padding: 80px 10px 0px;
+  /* padding: 80px 10px 0px; */
   text-align: center;
 }
 
@@ -45,6 +45,6 @@ footer {
 .footer-content p:last-child{ 
   font-size: 15px;
   font-weight: 300;
-  padding-bottom: 0px;
+  padding-bottom: 50px;
   letter-spacing: 1px;
 } 

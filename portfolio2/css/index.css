@@ -1,6 +1,10 @@
-@import url(/portfolio/css/commons.css);
-@import url(/portfolio/css/header.css);
-@import url(/portfolio/css/footer.css);
+@import url(/portfolio2/css/commons.css);
+@import url(/portfolio2/css/header.css);
+@import url(/portfolio2/css/footer.css);
+
+iframe{
+  display: block;
+}
 /*************************
 ****** main content ******
 **************************/
