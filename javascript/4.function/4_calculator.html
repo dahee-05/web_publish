@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3_calculator.jx</title>
+  <script src="2_calculator.js"></script>
+  <script>
+    // 계산시 처리를 위한 데이터 전처리
+    // a  <-- document.getElementById("number1").value; 
+    // b  <-- document.getElementById("number2").value; 
+    // op 
+    // culculator(z, b, op);
+    // document 는 브라우저에서 실행> 입력받아서 값을 가져올때 
+    // 데이터가 입력되는 폼에 유효성 체크(Validation check) 반드시 진행!! **********
+
+    // 2세대 방식(jQery)
+    function dataInput(op){
+      let a = document.querySelector("#number1"); // value가 없으면 input타입의 객체 주소값을 가리킴
+      let b = document.querySelector("#number2"); // class는 '.'으로 가르킴
+      if(a.value === ''){
+        alert('첫번째 숫자를 입력해주세요.');
+        a.focus();
+      }else if(b.value === ''){
+        alert('두번째 숫자를 입력해주세요.');
+        b.focus();
+      }else{
+        calculator(parseInt(a.value), parseInt(b.value), op); //input에서 받은 데이터는 string형이기 때문
+      }
+    };
+    
+  </script>
+</head>
+<body>
+  <h1>계산기</h1>
+  <from action="#">
+    <ul>
+      <li>
+        <label for="">number1</label>
+        <input type="text" id="number1" > <!--ㅇ-->
+      </li>
+      
+      <label for="">number2</label>
+      <input type="text" id="number2" >
+    </li>
+    <li>
+      <button type="button" onclick="dataInput('+')"> + </button>
+      <button type="button" onclick="dataInput('-')"> - </button>
+      <button type="button" onclick="dataInput('*')"> * </button>
+      <button type="button" onclick="dataInput('/')"> / </button>
+      <button type="button" onclick="dataInput('%')"> % </button>
+    </li>
+    </ul>
+    <div>
+      <span>실행결과 : </span>
+      <span></span>
+    </div>
+  </from>
+
+</body>
+</html>
+<!-- 
+DOM (Document Object Model)객체 
+: HTML 구조가 달라짐으로서 실행할때마다 달라짐
+: 돔 객체에서 하나씩 찾기 어려움으로 ID를 통해 자바스크립트 실행
+: BODY에서 읽어오는 값 =DOCUMENT 
+: document.getElementById("").value > 브라우저에서 가져오기 때문에 document 입력해야함
+-->
