@@ -26,6 +26,8 @@ function initForm(){
   document.querySelector('#content').innerHTML = output;
 
   // 버튼 이벤트 처리
+  let buttonList = document.querySelectorAll('.button');
+  console.log(buttonList);
   
 
 } // -- initForm() END --
