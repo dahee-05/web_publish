@@ -1,0 +1,26 @@
+/******************************
+*  title : My CGV form style
+*  author : dahee
+*  final date : 2024/10/29
+******************************/ 
+
+@import url(/cgv/css/commons.css);
+
+.mycgv div {
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: center;
+}
+
+.mycgv div span {
+  border: 2px solid tomato;
+  display: inline-block;
+  width: 200px;
+  padding: 30px;  
+  margin: 30px 20px;
+  text-align: center; /*block가능*/
+}
+
+.mycgv div span:hover {
+  background-color: antiquewhite;
+}

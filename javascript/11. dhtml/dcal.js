@@ -1,4 +1,5 @@
 // DHTML 형식으로 계산기 프로그램
+import sum, { sub, mul, div} from './commons.js';
 
 initForm();
 
@@ -18,7 +19,7 @@ function initForm(){
         <button type="button" class="button" data-operation="div">/</button>
       </li>
       <li>
-        <h3>Result : </h3>
+        <h3 id="result">Result : </h3>
       </li>
     </ul>
   `;
@@ -29,5 +30,25 @@ function initForm(){
   let buttonList = document.querySelectorAll('.button');
   console.log(buttonList);
   
-
+  buttonList.forEach((button) => {
+    
+    button.addEventListener('click', () =>{
+      let number1 = parseInt(document.querySelector('#number1').value); 
+      let number2 = parseInt(document.querySelector('#number2').value); 
+      let operation = button.dataset.operation;
+      let result = 0; 
+      
+      switch(operation){
+        case 'sum' : result = sum(number1, number2); break;
+        case 'sub' : result = sub(number1, number2); break;
+        case 'mul' : result = mul(number1, number2); break;
+        case 'div' : result = div(number1, number2);; break;
+      }
+      document.querySelector('#result').textContent = `Result : ${result}원` ;
+      
+    })
+  });
 } // -- initForm() END --
+
+
+
