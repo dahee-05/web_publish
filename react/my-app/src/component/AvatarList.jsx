@@ -1,4 +1,4 @@
-import Avatar from "./Avarta";
+import Avatar from "./Avarta.jsx";
 
 export default function AvatarList({list}){
  
