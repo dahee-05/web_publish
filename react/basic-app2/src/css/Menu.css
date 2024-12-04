@@ -1,0 +1,12 @@
+.btn-container{
+  display: flex;
+  justify-content: center;
+  padding: 5px 10px;
+  list-style-type: none;
+}
+
+.btn-item{
+  padding: 8px 10px;
+  text-decoration: none;
+  border: 1px solid silver;
+}

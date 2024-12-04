@@ -1,4 +1,4 @@
-import Menu from "./menu.jsx";
+import Menu from "./Menu.jsx";
 import MenuList from "./MenuList.jsx";
 
 export default function AppMenu(){
@@ -11,7 +11,7 @@ export default function AppMenu(){
     {"name":"Contact", "href":"#Contact", "bg":"tomato"},
     {"name":"Support", "href":"#Support", "bg":"tomato"}
   ];
-
+  
   return(
     <>
       <div>

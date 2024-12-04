@@ -1,4 +1,4 @@
-import Menu from "./menu.jsx";
+import Menu from "./Menu.jsx";
 
 export default function MenuList({list}){
 
