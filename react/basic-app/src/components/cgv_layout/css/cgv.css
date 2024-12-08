@@ -1,0 +1,595 @@
+/*
+*  title : header style
+*  author : dahee
+*  final date : 2024/10/24
+*/ 
+
+@import './commons.css';
+
+header {
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 150px;
+  margin: 0 auto;
+  border-bottom: 2px solid tomato;
+  overflow: hidden;
+}
+
+.header-top, .header-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-top, .header-bottom-content{
+  width: 1000px;
+  margin: 0px auto;
+}
+
+.header-top{
+  padding-bottom: 20px;
+  padding-top: 28px;
+}
+
+.header-top-logo {
+  /* border: 1px solid blue; */
+  position: relative;
+  width: 320px; /*자식이 들어가기 위해서 width 꼭 설정*/
+}
+.header-top-logo > a > img {
+  width: 120px;
+}
+
+.header-top-logo > span {
+  position: absolute;
+  top: 30px;
+  left: 110px;
+  letter-spacing: 4.5px;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.header-top ul, .header-bottom ul{
+  /* border: 1px solid green; */
+  display: flex;
+  list-style-type: none;
+}
+
+.header-top ul li {
+  /* padding: 25px 10px; */
+  margin-left: 40px;
+}
+
+.header-top ul li a {
+  /* background-color: aqua; */
+  /* padding: 30px 10px;  a태그영역에 링크를 걸어주기 위해 */
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.header-bottom-content dl {
+  display: none;
+}
+
+.header-bottom {
+  width: 100%;
+  height: 40px;
+  padding-top: 5px 0;
+  border-top: 1px solid silver;  /*d왜 100%?*/
+}
+
+/* .header-bottom-content {
+  border: 1px solid blue;  
+} */
+
+.header-bottom li {
+  padding: 10px 25px;
+}
+
+.header-bottom li a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.search-icon {
+  /* border: 1px solid red; */
+  font-size: 1.4em;
+  color: var(--color-primary);
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  cursor: pointer;
+}
+
+/*
+*  title : footer style
+*  author : dahee
+*  final date : 2024/10/24
+*/ 
+
+footer {
+  width: 100%;
+  height: 420px;
+  background-color: var(--color-footer-bg);
+  margin-top: 60px; /*왜??*/
+}
+
+.footer-content{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-content-top{
+  background-color: orange;
+  height: 180px;
+}
+
+.footer-content-top img {
+  margin-top: -60px;
+}
+
+.footer-intro > ul {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  list-style-type: none;
+  border-bottom: 1px solid var(--color-silver);
+}
+
+.footer-intro > ul a{
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.footer-intro + ul a:hover {
+  text-decoration: underline;
+}
+/*ul과 li는 인접형제인데 + 하면 안먹음 */
+.footer-intro + ul li:nth-child(8) a{
+  color: var(--color-black);
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.footer-intro ~ p { /*intro에 있는 p태그*/
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 3px 0;
+}
+
+.p {margin-top: 20px;}
+.p2 {margin-bottom: 20px;}
+.p2 > a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*
+*  title : header-menu style
+*  author : dahee
+*  final date : 2024/10/25
+*/ 
+
+/* .header-top ul { border: 1px solid tomato;} */
+
+.header-menu-icon{
+  /* border: 1px solid blue; */
+  display: block;
+  width: 46px;
+  min-height: 50px;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.header-menu-icon img{
+  width: 36px;
+  font-size: 36px;
+  /* border: 1px solid green; */
+} /*왜 이미지는 position: absolute; 안해줌? */
+
+.header-menu-icon span{
+  width: 46px;
+  height: 19px;
+  font-size: 11px;
+  /* border: 1px solid red; */
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+  font-weight: 600;
+}
+
+.header-top-card {
+  /* border: 1px solid red; */
+  position: relative;
+  left: 100px;
+  top: 5px;
+}
+
+.header-bottom-search {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
+  position: relative;
+}
+
+.header-bottom-search input {
+  width: 80%;
+  border: none;
+  padding: 5px;
+}
+/*
+.header-bottom-search input:focus {
+  /* border: 1px solid var(--color-primary); 
+  border: inherit;
+} */
+
+
+/*
+*  title : content style
+*  author : dahee
+*  final date : 2024/10/25
+*/ 
+
+.content .content-top, content-moviechart {
+  width: 100%;
+}
+
+.content-top {
+  background-color: #000;
+  position: relative;
+  top: -4px;
+}
+
+/* content 가운데 정렬*/
+.content-top iframe, .content-moviechart > div, 
+.content-event-spacial {
+  /* border: 1px solid red; */
+  display: block;  /*iframe = inline이라 block으로 변경*/
+  width: 1000px;
+  margin: 0 auto
+}
+
+.content-moviechart {
+  background-color: var(--color-moviechart);
+  padding: 20px 0;
+}
+
+/* .content-moviechart-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+} */
+
+ /* 무비차트/상영예정작 텍스트 */
+.content-moviechart .content-title-style > div:first-child {
+  position: relative;
+  width: 240px;
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .content-moviechart-title > div > span {
+  font-size: 1.4rem;
+  font-weight: 600;
+} */
+
+/* .content-moviechart-title > div > span:first-child {
+  color: #000;
+} */
+
+/* .content-moviechart-title > div > span:last-child {
+  color: var(--color-primary);
+  position: absolute;
+  right: 0;
+} */
+
+ /* 무비차트/상영예정작 중간라인 */
+.content-moviechart .content-title-style > div > span:first-child 
++ span {
+  width: 1px;
+  height: 12px;
+  display: inline-block;
+  background-color: var(--color-silver);
+  position: absolute;
+  top: 10px;
+  left: 45%;
+}
+
+
+/* .content-moviechart .content-title-style > div > span:last-child {
+  border: 1px solid red;
+  margin-left: 10px;
+} */
+
+
+/* .content-moviechart-title div:last-child button {
+  border: lpx solid var(--color-primary);
+  border-radius: 15px;
+  padding: 7px 15px;
+} */
+
+
+/**** 무비차트/상영예정작 리스트  */
+.content-moviechart-list ul{
+  /* border: 1px solid red; */
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+} 
+
+.content-moviechart-list ul li {
+  /* border: 1px solid blue; */
+  padding: 15px 15px 0 ;
+} 
+
+.content-moviechart-list ul li:first-child {
+  /* border: 1px solid blue; */
+  padding-left: 0px;
+} 
+
+.content-moviechart-list ul li:last-child {
+  /* border: 1px solid blue; */
+  padding-right: 0px;
+} 
+
+.content-moviechart-list ul li img{
+  border-radius: 15px;
+  width: 170px;
+  height: 250px;
+}
+
+.content-moviechart-list ul li h3 {
+  text-align: center;
+  padding: 10px 0;
+  color: var(--color-primary);
+}
+
+.content-moviechart-list ul li h5 {
+  text-align: center;
+  padding-top: 3px;
+  color: var(--color-primary);
+}
+
+
+
+
+/*****  이벤트 섹션  *****/
+.content-event-list{
+  /* border: 1px solid blue; */
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.content-event-list li {
+  /* border: 2px solid blue; */
+  padding: 20px ;
+}
+
+.content-event-list li p {
+  /* border: 2px solid blue; */
+  padding: 5px;
+}
+
+.event-content-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 10px;
+}
+
+.event-content-title-date {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-gray-222);
+}
+
+.content-event-list li img{ 
+  width: 300px;
+  border-radius: 15px;
+}
+
+.content-event-list li:first-child {
+  padding-left: 0;
+}
+
+.content-event-spacial ul li:last-child {
+  padding-right: 0;
+}
+
+
+
+/*****  특별관 섹션  *****/
+.spacial-content-list {
+  /* border: 1px solid blue; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.spacial-content-list div img, 
+.spacial-content-list ul {
+  width: 480px;
+}
+
+.spacial-content-list li {
+  border-top: 1px solid var(--color-lightgray);
+  list-style-type: none;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spacial-content-list li:last-child {
+  border-bottom: 1px solid var(--color-lightgray);
+} 
+
+.special-content{
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.special-tag{
+  display: inline-block;
+  padding: 5px;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: var(--color-footer-bg);
+  color: var(--color-gray-222);
+}
+
+.spacial-content-list ul li:hover {
+  border: none;
+  border: 3px solid var(--color-silver);
+  border-radius: 10px;
+}
+
+.spacial-content-list ul li:hover + li{
+  border-top: 1px solid white;
+}
+
+
+/*****  패키지 섹션  *****/
+.package-content-list {
+  /* border: 1px solid blue; */
+  margin: 60px 0 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.package-title-font {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.package-view-button {
+  border: 1px solid var(--color-buttonbg);
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2px 7px;
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.package-content-border {
+  border: 1px solid var(--color-lightgray);
+  border-radius: 8px;
+  padding: 20px;
+  width: 320px;
+}
+
+.package-content-border > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.package-content-border li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  list-style-type: none;
+}
+
+
+
+/*****  공지사항 섹션  *****/
+.notice-content-list, 
+.notice-content-border,
+.customer-service {
+  display: flex;
+  justify-content: space-between;
+}
+
+.notice-content-border {
+  width: 750px;
+  height: 250px;
+  margin: 10px 0px 70px;
+  border-radius: 10px;
+  border: 1px solid var(--color-lightgray);
+}
+
+.notice-content {
+  padding: 25px;
+}
+
+.notice {
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--color-lightgray);
+}
+
+.notice-subtilte, .customer-subtilte {
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.notice span a {
+  color: var(--color-black);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  padding-left: 30px;
+}
+
+.notice span a:hover {
+  color: var(--color-black);
+  text-decoration: underline;
+}
+
+.customer-service {
+  padding: 25px 65px 0 0;
+}
+
+.app-download {
+  border-left: 1px solid var(--color-lightgray);
+  padding: 20px;
+  text-align: center;
+}
+.app-download p:nth-child(2){
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 0 20px;
+}
+
+.app-download p:last-child{
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--color-primary);
+  letter-spacing: -0.010em;
+  padding: 20px 0 15px;
+}
+
+.app-download img {
+  width: 70px;
+}
+
+.notice-content-img img{
+  width: 220px;
+  height: 250px;
+  border-radius: 10px;
+  /* position: absolute; */
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -7,7 +7,8 @@ createMovieChartList(1);
 ******************************** */
 function createMovieChartList(page){
   const date = new Date();
-  const searchDt = date.getFullYear().toString().concat(date.getMonth()+1,date.getDate()-1);
+  const searchDt = date.getFullYear().toString()
+                       .concat((date.getMonth()+1).toString().padStart(2,'0'),((date.getDate()-1).toString().padStart(2,'0')));
   
   kobisBoxOffice('Daily', searchDt)
     .then((result) => {

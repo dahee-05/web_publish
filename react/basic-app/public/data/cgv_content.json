@@ -1,0 +1,79 @@
+{  
+ "specialList": [
+                  {"text1":"SUITE CINEMA", "text2":"#호텔 컨셉의 프리미엄관"},
+                  {"text1":"CINE & LIVINGROOM", "text2":"#신개념 소셜 상영관"},
+                  {"text1":"4DX", "text2":"#모션시트 #오감체험"},
+                  {"text1":"CINE de CHEF", "text2":"#쉐프가 있는 영화관"}
+                ],
+    "plist" :   [
+            {
+              "title":"패키지",
+              "list": [
+                        {
+                          "src":"/images/package.jpg", 
+                          "alt":"Package", 
+                          "text":"우리 패키지", 
+                          "price":"62,000원"
+                        },
+                        {
+                          "src":"/images/package.jpg", 
+                          "alt":"Package", 
+                          "text":"우리 패키지", 
+                          "price":"62,000원"
+                        }
+                      ]
+            },
+            {
+              "title":"영화관람권",
+              "list": [
+                        {
+                          "src":"/images/ticket.jpg", 
+                          "alt":"ticket", 
+                          "text":"CGV 영화관람권", 
+                          "price":"13,000원"
+                        },
+                        {
+                          "src":"/images/ticket.jpg", 
+                          "alt":"ticket", 
+                          "text":"CGV 영화관람권", 
+                          "price":"13,000원"
+                        }
+                      ]
+            },
+            {
+              "title":"기프트카드",
+              "list": [
+                        {
+                          "src":"/images/giftcard.jpg", 
+                          "alt":"giftcard", 
+                          "text":"PACONNIE A형", 
+                          "price":"금액충전형"
+                        },
+                        {
+                          "src":"/images/giftcard.jpg", 
+                          "alt":"giftcard", 
+                          "text":"PACONNIE A형", 
+                          "price":"금액충전형"
+                        }
+                      ]
+            }
+                ],
+      "list" :  [
+            {
+              "src":"/images/event2.jpg", 
+              "title":"[CGV]10월 컬쳐 워크", 
+              "date":"2024.09.25~2024.10.31"
+            },
+            {
+              "src":"/images/event3.jpg",
+              "title":"[베놈-라스트댄스]씨네브리핑", 
+              "date":"2024.09.25~2024.10.31"
+            },
+            {
+              "src":"https://img.cgv.co.kr/WebApp/contents/eventV4/42888/17332152020130.jpg",
+              "title":"[모아나2]4DX 스페셜 포스터",
+              "date":"2024.09.25~2024.10.31"
+            }
+          ]          
+
+}
