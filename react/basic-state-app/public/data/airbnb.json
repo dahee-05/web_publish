@@ -1,0 +1,43 @@
+[
+  {
+    "address" : "한국 가평군",
+    "text" : "강변 전망",
+    "date" : "1월 5일~10일",
+    "price" : "₩171,648/박",
+    "isHeart":"gray",
+    "src":"https://a0.muscache.com/im/pictures/miso/Hosting-1206692947983125979/original/d9af2fc6-c3ed-423b-9eb1-a3b5b38100d1.jpeg?im_w=720&im_format=avif"
+  },
+  {
+    "address" : "Sudong-myeon, Namyangju-si,한국의 별장 전체",
+    "text" : "산 및 정원 전망",
+    "date" : "12월 15일~20일",
+    "price" : "₩349,200원",
+    "isHeart":"gray",
+    "src":"https://a0.muscache.com/im/pictures/33357308-3507-49e5-aaaf-0b5b9fe234fc.jpg?im_w=720&im_format=avif"
+  },
+  {
+    "address" : "가평군, 한국의 집 전체",
+    "text" : "47km 거리",
+    "date" : "12월 26일~31일",
+    "price" : "₩146,071원",
+    "isGood":true,
+    "isHeart":"coral",
+    "src":"https://a0.muscache.com/im/pictures/hosting/Hosting-1165659085489107368/original/709043dd-af21-4059-b3c5-795a184debaf.jpeg?im_w=720&im_format=avif"
+  },
+  {
+    "address" : "Okcheon-myeon, Yangpyeong-gun, 한국의 별장 전체",
+    "text" : "산 및 정원 전망",
+    "date" : "12월 9일~14일",
+    "price" : "₩200,847원",
+    "isHeart":"gray",
+    "src":"https://a0.muscache.com/im/pictures/1c51427b-dd1a-4cbf-89ea-78bd7ee1b2e4.jpg?im_w=720&im_format=avif"
+  },
+  {
+    "address" : "광진구, 한국의 집 전체",
+    "text" : "도시 전망",
+    "date" : "6월 22일~27일",
+    "price" : "₩106,129원",
+    "isHeart":"gray",
+    "src":"https://a0.muscache.com/im/pictures/miso/Hosting-49676256/original/346eb304-91c7-4d9b-b78a-1ee1f445507e.jpeg?im_w=720&im_format=avif"
+  }
+]
