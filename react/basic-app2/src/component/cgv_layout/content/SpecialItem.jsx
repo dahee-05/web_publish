@@ -1,9 +1,9 @@
 
-export default function Special({content, title}){
+export default function Special({text1, text2}){
   return(
     <>
-       <span class="special-content">{content}</span>
-       <span class="special-tag">{title}</span>
+       <span class="special-content">{text1}</span>
+       <span class="special-tag">{text2}</span>
     </>
   )
 };

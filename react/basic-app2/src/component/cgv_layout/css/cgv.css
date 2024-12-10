@@ -194,7 +194,7 @@ footer {
 } /*왜 이미지는 position: absolute; 안해줌? */
 
 .header-menu-icon span{
-  width: 46px;
+  width: 55px;
   height: 19px;
   font-size: 11px;
   /* border: 1px solid red; */
@@ -583,7 +583,13 @@ footer {
   /* position: absolute; */
 }
 
-
+.notice-button button {
+  gap: 10px;
+  margin: 20px 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+}
 
 
 

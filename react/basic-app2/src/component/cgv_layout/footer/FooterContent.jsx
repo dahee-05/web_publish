@@ -1,29 +1,20 @@
+import { useEffect, useState } from "react";
 
 export default function FooterContent(){
-  const companyInfo ={
-    "address" : "(04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)",  
-    "ceo" : "홍길동",  
-    "list" : [
-              {"text":"회사소개"},
-              {"text":"지속가능경영"},
-              {"text":"IR"},
-              {"text":"채용정보"},
-              {"text":"광고/제휴/출점문의"},
-              {"text":"이용약관"},
-              {"text":"편성기준"},
-              {"text":"개인정보처리방침"},
-              {"text":"법적고지"},
-              {"text":"이메일주소무단수집거부"},
-              {"text":"윤리경영"},
-              {"text":"사이버감사실"}
-         ]   
-    };
+  const [companyInfo, setCompanyInfo ] = useState([]);
+  
+  useEffect(()=> {
+    fetch('/data/cgv_compinfo.json')
+      .then((result)=> result.json())
+      .then((jsonData)=> setCompanyInfo(jsonData))
+      .catch((error)=> console.log(error))
+},[])
 
   return(
     <div class="footer-content">
       <div class="footer-intro">
         <ul>
-          {companyInfo.list.map( item =>
+          {companyInfo.list && companyInfo.list.map( item =>
             <li><a href="#">{item.text}</a></li>
           )}
         </ul>

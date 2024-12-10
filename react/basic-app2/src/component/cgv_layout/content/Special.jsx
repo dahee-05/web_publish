@@ -1,12 +1,15 @@
 import SpecialItem from "./SpecialItem.jsx";
+import { useEffect, useState } from "react";
 
 export default function Special(){
-  const list =[
-    {"content":"SUITE CINEMA", "text":"#호텔 컨셉의 프리미엄관"},
-    {"content":"CINE & LIVINGROOM", "text":"#신개념 소셜 상영관"},
-    {"content":"4DX", "text":"#모션시트 #오감체험"},
-    {"content":"CINE de CHEF", "text":"#쉐프가 있는 영화관"}
-  ];
+  const [specialList, setSpecialList] = useState([]);
+
+  useEffect(() => {
+     fetch('/data/cgv_content.json')
+      .then((result) => result.json()) 
+      .then((jsonData) => setSpecialList(jsonData.specialList) ) 
+      .catch((error)=>console.log(error)) 
+  }, []);
 
    return(
     <section>
@@ -19,9 +22,9 @@ export default function Special(){
         <img src="/images/special1.png" alt="Special Image" width="400px" />
       </div>
       <ul>
-        {list && list.map(item => 
+        {specialList && specialList.map(item => 
           <li>
-            <SpecialItem content={item.content} text={item.text} />
+            <SpecialItem text1={item.text1} text2={item.text2} />
           </li>
         )}
       </ul>
