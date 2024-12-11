@@ -1,0 +1,13 @@
+.container {
+  margin-bottom: 10px;
+}
+
+.content {
+  display: flex;
+}
+
+.book-img{
+  width: 180px;
+  height: 250px;
+}
+

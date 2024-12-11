@@ -1,0 +1,18 @@
+.container{
+  display: flex;
+  gap: 20px;
+  margin: 10px;
+}
+.content {
+  border: 1px solid silver;
+}
+
+.text-content{
+  letter-spacing: 0;
+}
+
+.content-img{
+  width: 280px;
+  height: 200px;
+  border-radius: 20px;
+}
