@@ -1,0 +1,156 @@
+/**********************************  
+********* Heade Menu List *********
+**********************************/
+header {
+  padding: 20px 0;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+}
+
+header ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: right;
+  margin-right: 20px;
+}
+
+header img {
+  width: 30%;
+  height: 30%;
+  margin-left: 20px;
+}
+
+.menuBtn{
+  background-color: transparent;
+  border: none;
+  border-right: 1px solid lightgrey;
+}
+
+
+/**********************************  
+********* BODY  *********
+**********************************/
+.body {
+  border: 1px solid silver;
+  width: 1000px;
+  margin: auto;
+}
+
+.product-list-container{
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 35px;
+  list-style-type: none;
+  margin: 20px 0;
+}
+
+.list-content{
+  /* border: 1px solid silver; */
+  width: 220px;
+  height: 400px;
+}
+
+.product-container{
+  width: 250px;
+}
+
+.product-container .poduct-img{
+  position: relative;
+}
+.product-container img{
+  width: 220px;
+  height: 200px;
+}
+
+.product-container .rank{
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  background-color: #fff;
+  color: rgb(218, 102, 101);
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 12px;
+  border: 1px solid rgb(218, 102, 101);
+  border-radius: 100%;
+}
+
+.product-container .cart{
+ position: absolute;
+ bottom: 4px;
+ right: 30px;
+ padding: 10px;
+ font-size: 25px; 
+ color: rgb(59, 59, 59);
+ border: none;
+ background-color: rgb(255, 255, 255);
+}
+
+.product-container .cart:hover{
+  color:  rgb(233, 68, 65);
+}
+
+.product-container .title{
+  text-align: center;
+  font-weight: bold;
+  color: gray;
+  margin: 10px 0 0;
+}
+
+.product-container .description {
+  font-size: 11pt;
+  padding: 2px;
+  margin: 0;
+}
+
+.description-text{
+  display: -webkit-box;   /* Flexbox 기반 레이아웃 사용 */
+  -webkit-line-clamp: 2;  /* 두 줄로 제한 */
+  -webkit-box-orient: vertical; /* 텍스트 방향 수직 설정 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-container .price {
+  text-align: center;
+}
+
+.product-container .sprice {
+  font-size: 10pt;
+  font-weight: bold;
+  color: gray;
+  text-decoration: line-through;
+  margin-right: 5px;
+}
+
+.product-container .fprice {
+  font-size: 14pt;
+  font-weight: bold;
+  color: rgb(197, 80, 73);
+}
+
+.product-container .tags {
+  text-align: center;
+  margin-top: 8px;
+}
+.product-container .tags span{
+  border-radius: 40px;
+  font-size: 9pt;
+  padding: 3px 10px;
+  margin: 5px 0;
+  color: #fff
+}
+
+.product-container .t1{
+  background-color: rgb(218, 102, 101);
+}
+
+.product-container .t2{
+  background-color: rgb(167, 204, 76);
+}
+
+.product-container .t3{
+  background-color: rgb(219, 124, 180);
+}
+

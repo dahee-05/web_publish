@@ -4,13 +4,14 @@ import './index.css';
 // import App from './App';
 // import AppCounter from './components/counter/AppCounter.jsx';
 // import AppBestSeller from './components/yes24/AppBestSeller.jsx';
-import AppAirbnb from './components/airbnb/AppAirbnb.jsx';
+// import AppAirbnb from './components/airbnb/AppAirbnb.jsx';
+import AppOlive from './components/olive/AppOlive.jsx';
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppAirbnb />
+    <AppOlive />
   </React.StrictMode>
 );
 

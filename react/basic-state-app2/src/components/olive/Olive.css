@@ -1,0 +1,145 @@
+/*******************************
+******** HEADER MENU  ********
+*******************************/
+header{
+  border-bottom: 1px solid silver;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  margin: auto ;
+  padding: 35px;
+  width: 1000px;
+}
+
+.menu-container img {
+  width: 300px;
+}
+
+.menu-list{
+  list-style-type: none;
+  display: flex;
+}
+
+.menu-list-btn {
+  background-color: transparent;
+  border: none;
+  border-right: 1px solid silver;
+  margin-top: 20px;
+  font-size: 11pt;
+}
+
+
+/*******************************
+******** Product List  ********
+*******************************/
+.body{
+  /* border: 1px solid silver; */
+  width: 1000px;
+  margin: auto;
+}
+
+.product-list-container {
+  /* border: 1px solid red; */
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+  gap: 30px;
+}
+
+.list-content {
+  /* border: 1px solid blue; */
+  text-align: center;
+}
+.product-container .product-img-content {
+  position: relative;
+}
+.product-img {
+  width: 220px;
+  height: 200px;
+}
+
+.product-container .rank {
+  position: absolute;
+  top: -5px;
+  left: -20px;
+  background-color: #fff;
+  border: 2.9px solid rgb(218, 102, 101);
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(218, 102, 101);
+  border-radius: 100%;
+}
+
+.product-container .cart-icon{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 28px;
+  color: rgb(59, 59, 59);
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+}
+
+.product-container .cart-icon:hover{
+  color:  rgb(233, 68, 65);
+}
+
+.product-container .product-title{
+  font-size: 14pt;
+  font-weight: bold;
+  color: gray;
+  margin: 10px;
+}
+
+.product-container .description-text{
+  margin: 0 0 20px;
+  display: -webkit-box;   /* Flexbox 기반 레이아웃 사용 */
+  -webkit-line-clamp: 2; /* 두 줄로 제한*/
+  -webkit-box-orient: vertical; /*텍스트 방향 수직 설정*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-container .price{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.product-container .fprice{
+  font-size: 12pt;
+  font-weight: bold;
+  color: gray;
+  text-decoration: line-through;
+
+}
+
+.product-container .sprice{
+  font-size: 16pt;
+  font-weight: bold;
+  color: rgb(197, 80, 73);
+}
+
+.product-container .tags span{
+  border-radius: 30px;
+  padding: 2px 10px;
+  font-size: 10pt;
+  color: #fff;
+}
+
+.product-container .t1{
+  background-color: rgb(218, 102, 101);
+}
+
+.product-container .t2{
+  background-color: rgb(167, 204, 76);
+}
+
+.product-container .t3{
+  background-color: rgb(219, 124, 180);
+}

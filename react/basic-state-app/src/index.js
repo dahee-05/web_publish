@@ -3,15 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 // import reportWebVitals from './reportWebVitals';
-import AppAirbnb from './component/airbnb/AppAirbnb.jsx';
+// import AppAirbnb from './component/airbnb/AppAirbnb.jsx';
 // import AppAvatar from './component/avatar/AppAvatar.jsx';
 // import AppCounter from './component/counter/AppCounter.jsx';
 // import AppBestSeller from './component/yes24/AppBestSeller.jsx';
+import AppOlive from './component/olive/AppOlive.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppAirbnb />
+    <AppOlive />
   </React.StrictMode>
 );
 

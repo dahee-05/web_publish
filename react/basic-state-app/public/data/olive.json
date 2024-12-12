@@ -1,0 +1,98 @@
+[
+  {
+      "id":"p_0001",
+      "rank":"01",
+      "src":"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0021/A00000021395913ko.jpg?l=ko",
+      "title":"메디힐",
+      "text":"[1위패드/100+100+14매] 메디힐 마데카소사이드 흔적패드 어워즈 한정기획",
+      "sprice":"39,900원",
+      "fprice":"28,900원",
+      "isSale": true,
+      "isCoupon": false,
+      "isToday": true
+    },
+    {
+      "id":"p_0002",
+      "rank":"02",
+      "src":"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0021/A00000021392508ko.jpg?l=ko",
+      "title":"에스트라",
+      "text":"[올영1등크림] 에스트라 아토베리어365 크림 80ml 어워즈 한정기획 (+30ml+세라-히알 속수분 앰플 3ml)",
+      "sprice":"33,000원",
+      "fprice":"26,000원",
+      "isSale": true,
+      "isCoupon": true,
+      "isToday": true
+    },
+    {
+      "id":"p_0003",
+      "rank":"03",
+      "src":"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0017/A00000017142380ko.jpg?l=ko",
+      "title":"어노브",
+      "text":"[2024 어워즈/3년 연속 1위] 어노브 딥 데미지 헤어 트리트먼트 EX 더블/듀오 기획4종 택1 (텐더블룸/웜페탈)",
+      "sprice":"42,000원",
+      "fprice":"29,800원",
+      "isSale": true,
+      "isCoupon": true,
+      "isToday": true
+    },
+    {
+      "id":"p_0004",
+      "rank":"04",
+      "src":"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0013/A00000013906380ko.jpg?l=ko",
+      "title":"정샘물",
+      "text":"[2024 어워즈/올영쿠션 1위] 정샘물 에센셜 스킨누더 쿠션 어워즈 한정 기획 (글리터팟+립토퍼+물크림 미니)",
+      "sprice":"45,000원",
+      "fprice":"36,000원",
+      "isSale": true,
+      "isCoupon": true,
+      "isToday": true
+    },
+    {
+      "id":"p_0005",
+      "rank":"05",
+      "src":"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0019/A00000019042123ko.jpg?l=ko",
+      "title":"성분에디터",
+      "text":"[30ml+30ml] 성분에디터 머루포도 비타C 잡티앰플 30ml 1+1 더블 기획",
+      "sprice":"25,900원",
+      "fprice":"17,200원",
+      "isSale": true,
+      "isCoupon": true,
+      "isToday": true
+    },
+    {
+      "id":"p_0006",
+      "rank":"06",
+      "src":"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0021/A00000021402112ko.jpg?l=ko",
+      "title":"토리든",
+      "text":"[4년 연속 수상]토리든 다이브인 세럼 50ml 트리플 어워즈 한정기획(+다이브인 크림 20ml+다이브인 패드 10매)",
+      "sprice":"50,000원",
+      "fprice":"35,000원",
+      "isSale": true,
+      "isCoupon": true,
+      "isToday": true
+    },
+    {
+      "id":"p_0007",
+      "rank":"07",
+      "src":"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0015/A00000015899140ko.jpg?l=ko",
+      "title":"크리니크",
+      "text":"[2024 어워즈] 크리니크 치크 팝 어워즈 한정 기획/단품",
+      "sprice":"36,000원",
+      "fprice":"27,360원",
+      "isSale": true,
+      "isCoupon": true,
+      "isToday": true
+    },
+    {
+      "id":"p_0008",
+      "rank":"08",
+      "src":"https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/400/10/0000/0021/A00000021349504ko.jpg?l=ko",
+      "title":"마녀공장",
+      "text":"[2024어워즈/4년연속 1위] 마녀공장 퓨어 클렌징 오일 300mlX2 어워즈 한정기획 (+킬패드 3매)",
+      "sprice":"49,000원",
+      "fprice":"31,400원",
+      "isSale": true,
+      "isCoupon": true,
+      "isToday": true
+    }
+]
