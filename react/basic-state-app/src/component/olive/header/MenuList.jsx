@@ -16,14 +16,17 @@ export default function MenuList({count}) {
   ];
 
   return (
-    <ul className='menu-container'>
-      {menuList.map( item =>
-        <li>
-          <Menu name={item.name} count={count}/>
-          {/* {(item.name === '장바구니') ? <span>{cartCount}</span> : ''} */}
-        </li>
-      )}
-    </ul>
+    <div className='menu-container'>
+      <img src='https://static.oliveyoung.co.kr/pc-static-root/image/comm/h1_logo.png' />
+      <ul className='menu-content'>
+        {menuList.map( item =>
+          <li>
+            <Menu name={item.name} count={count}/>
+            {/* {(item.name === '장바구니') ? <span>{cartCount}</span> : ''} */}
+          </li>
+        )}
+      </ul>
+    </div>
   );
 }
 

@@ -43,7 +43,8 @@ header{
 .product-list-container {
   /* border: 1px solid red; */
   padding: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   list-style-type: none;
   gap: 30px;
 }

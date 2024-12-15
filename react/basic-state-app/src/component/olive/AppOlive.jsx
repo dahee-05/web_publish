@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './Olive.css';
 import Header from './Header.jsx';
 import Body from './Body.jsx';
-import Footer from './Footer.jsx';
 import MenuList from './header/MenuList.jsx';
 import ProductList from './body/ProductList.jsx';
 
@@ -24,15 +23,11 @@ export default function AppOlive() {
   return (
     <>
       <Header>
-        <img src='https://static.oliveyoung.co.kr/pc-static-root/image/comm/h1_logo.png' />
         <MenuList count={cartList.length} />
       </Header>
       <Body>
         <ProductList cart={handleCartApp}/>
       </Body>
-      {/* <Footer>
-      
-      </Footer>  */}
     </>
   );
 }

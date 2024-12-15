@@ -56,7 +56,7 @@
       "sprice":"25,900원",
       "fprice":"17,200원",
       "isSale": true,
-      "isCoupon": true,
+      "isCoupon": false,
       "isToday": true
     },
     {
@@ -68,7 +68,7 @@
       "sprice":"50,000원",
       "fprice":"35,000원",
       "isSale": true,
-      "isCoupon": true,
+      "isCoupon": false,
       "isToday": true
     },
     {
@@ -80,7 +80,7 @@
       "sprice":"36,000원",
       "fprice":"27,360원",
       "isSale": true,
-      "isCoupon": true,
+      "isCoupon": false,
       "isToday": true
     },
     {
@@ -91,8 +91,8 @@
       "text":"[2024어워즈/4년연속 1위] 마녀공장 퓨어 클렌징 오일 300mlX2 어워즈 한정기획 (+킬패드 3매)",
       "sprice":"49,000원",
       "fprice":"31,400원",
-      "isSale": true,
+      "isSale": false,
       "isCoupon": true,
-      "isToday": true
+      "isToday": false
     }
 ]

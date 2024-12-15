@@ -6,9 +6,7 @@ export default function Product(props) {
   const [ count, setCount ] = useState([]);
   
   const handleClick = () => {
-    // alert('click');
     props.totalCart(props.id);
-    
   };
 
   return (

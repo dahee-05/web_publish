@@ -1,0 +1,27 @@
+
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.container-content{
+  /* border: 1px solid blue; */
+  width: 200px;
+  height: 350px;
+  list-style-type: none;
+}
+
+.content p{
+  margin: 0;
+}
+
+.content img { 
+  width: 200px;
+  height: 300px;
+}
+
+.select-box { 
+  margin-left: 10px;
+}

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Product from './Product';
 
-export default function ProductList() {
-  const [productId, setProducjId]  = useState([]);
+export default function ProductList({productId}) {
   const [productList, setProducjList]  = useState([]);
 
   useEffect(()=> {
@@ -13,15 +12,14 @@ export default function ProductList() {
   },[]);
 
   const totalCart = (id) =>{
-    alert(id);
-    setProducjList([...id])
+    productId(id);
   };
 
   return (
     <ul className='product-list-container'>
       {productList.map(item => 
         <li className='list-content'>
-          <Product{...item} totalCart={totalCart}/>
+          <Product {...item} totalCart={totalCart}/>
         </li>
       )}
     </ul>

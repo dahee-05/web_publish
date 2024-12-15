@@ -1,7 +1,7 @@
 import React from 'react';
 import Menu from './Menu';
 
-export default function MenuList() {
+export default function MenuList({cartTotal}) {
   const menuList = [
     {"title":"회원가입"},
     {"title":"로그인"},
@@ -17,7 +17,7 @@ export default function MenuList() {
       <img src="https://static.oliveyoung.co.kr/pc-static-root/image/comm/h1_logo.png" alt="" />
       <div className='menu-list'>
         {menuList.map( itme =>
-          <Menu title={itme.title}/>
+          <Menu title={itme.title} total={cartTotal}/>
         )}
       </div>
     </div>

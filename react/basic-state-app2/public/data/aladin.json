@@ -1,0 +1,84 @@
+{
+  "category": [
+                {"name":"에세이"},
+                {"name":"소설"},
+                {"name":"자기개발"},
+                {"name":"사회과학"},
+                {"name":"외국어"},
+                {"name":"고전"}
+              ],
+  "books": [
+            { 
+              "img":"https://image.aladin.co.kr/product/35306/27/cover200/k422035074_1.jpg",
+              "title":"[국내도서] 타임 셸터",
+              "type":"domestic",
+              "category":"에세이"
+            },
+            { 
+              "img":"https://image.aladin.co.kr/product/35256/5/cover200/k412934146_1.jpg",
+              "title":"[국외도서] 스파이 코스트",
+              "type":"overseas",
+              "category":"고전"
+            },
+            { 
+              "img":"https://image.aladin.co.kr/product/35220/25/cover200/8986836637_1.jpg",
+              "title":"[국내도서] 아름다운 것들의 추한 역사",
+              "type":"domestic",
+              "category":"고전"
+            },
+            { 
+              "img":"https://image.aladin.co.kr/product/35237/81/cover200/k712934846_1.jpg",
+              "title":"[국외도서] 단순해지는 연습",
+              "type":"overseas",
+              "category":"외국어"
+            },
+            { 
+              "img":"https://image.aladin.co.kr/product/34917/12/cover200/k332933253_2.jpg",
+              "title":"[국내도서] 어두울 때에야 보이는 것들이 있습니다",
+              "type":"domestic",
+              "category":"외국어"
+            },
+            { 
+              "img":"https://image.aladin.co.kr/product/35144/21/cover200/k432934814_2.jpg",
+              "title":"[국외도서] 김미경의 딥마인드",
+              "type":"overseas",
+              "category":"사회과학"
+            },
+            { 
+              "img":"https://image.aladin.co.kr/product/35219/9/cover200/k872934628_1.jpg",
+              "title":"[국내도서] 스피노자의 진찰실",
+              "type":"domestic",
+              "category":"사회과학"
+            },
+            { 
+              "img":"https://image.aladin.co.kr/product/34974/93/cover200/8970123105_2.jpg",
+              "title":"[국외도서] 딕테",
+              "type":"overseas",
+              "category":"자기개발"
+            },
+            { 
+              "img":"https://image.aladin.co.kr/product/35335/59/cover200/k272035582_1.jpg",
+              "title":"[국내도서] 한강 스페셜 에디션",
+              "type":"domestic",
+              "category":"자기개발"
+            },
+            { 
+              "img":"https://image.aladin.co.kr/product/35232/2/cover200/k952934744_1.jpg",
+              "title":"[국외도서] 일론 머스크 플랜3",
+              "type":"overseas",
+              "category":"에세이"
+            },
+            { 
+              "img":"https://image.aladin.co.kr/product/4086/97/cover200/8936434128_2.jpg",
+              "title":"[국외도서] 소년이 온다",
+              "type":"overseas",
+              "category":"소설"
+            },
+            { 
+              "img":"https://image.aladin.co.kr/product/35345/99/cover200/8937464527_1.jpg",
+              "title":"[국내도서] 헌등사",
+              "type":"domestic",
+              "category":"소설"
+            }
+          ]
+}

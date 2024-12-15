@@ -1,0 +1,102 @@
+/*
+*  title : login form style
+*  author : dahee
+*  final date : 2024/10/28
+*/ 
+
+@import './commons.css';
+
+.login-form form {
+  /* border: 2px solid green; */
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-login-font);
+}
+
+.login-form ul {
+  border: 2px solid green;
+  list-style-type: none;
+  width: 430px;
+  padding: 0 10px;
+}
+
+.login-form li p {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.login-form ul li{
+  /* border: 2px solid green; */
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.login-input {
+  border: 3px solid var(--color-silver);
+  width: 280px;
+  height: 45px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.login-input i{
+  padding: 0 15px 0 10px;
+  border-right: 2px solid var(--color-silver);
+}
+
+.login-form input[type='text'], 
+.login-form input[type='password']{
+  width: 230px;
+  padding: 5px;
+  margin-left: 8px;
+  border: none;
+  /* border-left: 2px solid var(--color-silver); */
+  outline: none;
+}
+
+
+.login-form input[type='text'],
+.login-form input[type='password'] {
+  padding-left: 15px;
+}
+
+.login-btn  {
+  width: 280px;
+  height: 45px;
+  outline-color:  var(--color-button);
+  outline-style: solid;
+  outline-width: 2px;
+}
+
+.join-btn {
+  width: 280px;
+  height: 45px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--color-white);
+  background-color: var(--color-green);
+  border: none;
+} 
+
+.login-form ul > li:nth-child(5) {
+  font-size: 11pt;
+  margin: 5px 0;
+}
+
+.login-form li:nth-child(5) div:last-child > :first-child {
+  padding-left: 10px;
+}
+
+.login-form li:nth-child(5) div:last-child > a {
+  color: var(--color-login-font);
+  font-weight: 700;
+}
+
+#error-msg-id, #error-msg-pwd{
+  font-size: 12px;
+  font-weight: bold;
+}
