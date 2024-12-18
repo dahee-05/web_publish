@@ -4,7 +4,7 @@
 *  final date : 2024/10/28
 */ 
 
-/* @import './commons.css'; */
+/* @import url(/cgv/css/commons.css); */
 
 .login-form form {
   /* border: 2px solid green; */
@@ -16,13 +16,10 @@
 }
 
 .login-form ul {
+  border: 2px solid green;
   list-style-type: none;
   width: 430px;
-  display: flex;
-  flex-direction:column;
-  justify-content: flex-start;
-  border: 2px solid green;
-  /* padding: 0 10px; */
+  padding: 0 10px;
 }
 
 .login-form li p {
@@ -37,13 +34,13 @@
   justify-content: center;
 }
 
-
-.login-form-input /* icon, input */ {
-    border: 2px solid silver;
-    width: 270px;
-    padding: 7px;
-    display: flex;
-    align-items: center;
+.login-input {
+  border: 3px solid var(--color-silver);
+  width: 280px;
+  height: 45px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
 }
 
 .login-input i{
@@ -51,10 +48,8 @@
   border-right: 2px solid var(--color-silver);
 }
 
-/* .login-form input[type='text'],  */
-/* .login-form input[type='password'] */
-
-.login-form input:not(input[type="checkbox"]) {
+.login-form input[type='text'], 
+.login-form input[type='password']{
   width: 230px;
   padding: 5px;
   margin-left: 8px;
@@ -104,4 +99,5 @@
 #error-msg-id, #error-msg-pwd{
   font-size: 12px;
   font-weight: bold;
+  color: red;
 }

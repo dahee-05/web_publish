@@ -1,0 +1,26 @@
+/* .container{
+  border: 1px solid red;
+} */
+
+.login-content{
+  border: 1px solid blue;
+  width: 1000px;
+  margin: auto;
+}
+
+
+
+.phone-content input,
+.birth-content input {
+  /* border: 1px solid red; */
+  width: 50px;
+}
+
+.introduce-content {
+  margin: 10px 0;
+}
+
+.button-content {
+  display: flex;
+  gap: 10px;
+}

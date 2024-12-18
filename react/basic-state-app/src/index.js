@@ -6,18 +6,18 @@ import './index.css';
 // import AppAirbnb from './component/airbnb/AppAirbnb.jsx';
 // import AppAvatar from './component/avatar/AppAvatar.jsx';
 // import AppCounter from './component/counter/AppCounter.jsx';
-// import AppBestSeller from './component/yes24/AppBestSeller.jsx';
+import AppBestSeller from './component/yes24/AppBestSeller.jsx';
 // import AppOlive from './component/olive/AppOlive.jsx';
 // import AppOlive from './component/olive/AppOlive.jsx';
 // import AppAladin from './component/aladin/AppAladin.jsx';
 // import AppAladin from './component/aladin2/AppAladin2.jsx';
-import AppForm from './component/form/AppForm.jsx';
+// import AppForm from './component/form/AppForm.jsx';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppForm />
+    <AppBestSeller />
   </React.StrictMode>
 );
 

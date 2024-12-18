@@ -1,0 +1,150 @@
+/*
+*  title : join form style
+*  author : dahee
+*  final date : 2024/10/29
+*/ 
+
+/* @import url(/cgv/css/commons.css); */
+
+
+.join-form form {
+  /* border: 2px solid green; */
+  width: 500px; /*전체 여백*/
+  margin: 0 auto;
+}
+
+.join-form ul {
+  list-style-type: none;
+}
+
+.join-form ul li {
+  /* border: 1px solid red; */
+  padding-top: 10px;
+}
+
+.join-form ul li div:not(.join-form ul li:nth-child(6) div) {
+  border: 1px solid var(--color-silver);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.join-form ul li:nth-child(6) input,
+.join-form ul li:nth-child(6) select {
+  border: 1px solid var(--color-silver);
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.join-form ul li:nth-child(6) select{
+  width: 40%;
+}
+
+.join-form ul li:nth-child(6) span {
+  margin: 0 20px;
+}
+
+.join-form ul li:first-child > div,
+.join-form ul li:nth-child(6) > div {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /*@정렬*/
+}  
+
+.join-title-font {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.join-form ul li label {
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 700;
+  text-indent: 10px;
+  margin: 15px 0 10px; /*block이라 가능*/
+}
+
+.join-form ul li label + span{
+  font-size: 0.7em;
+  font-weight: bold;
+  color: red;
+  padding-left: 10px;
+}
+
+.join-form ul li:first-child input{
+  border: 1px solid white; 
+  width: 80%;
+  padding-left: 10px;
+}
+
+.join-form ul li input {
+  border: 1px solid white; 
+  width: 100%;
+  padding: 10px 0;
+}
+
+.join-form ul li input:focus {
+  outline: none; 
+}
+
+/* 버튼 */
+.id-confirm-btn,
+.join-btn, 
+.join-cancle-btn {
+  width: 110px;
+  padding: 10px 15px;
+  background-color: var(--color-button);
+  color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.join-form ul li:last-child button{
+  width: 150px;
+  padding: 15px 0;
+}
+
+.join-form ul li:last-child {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.join-cancle-btn {
+  background-color: var(--color-gray-222);
+}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

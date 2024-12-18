@@ -12,7 +12,7 @@ export default function BestBookButton({click}) {
   };
 
   return (
-    <ul>
+    <ul className='container-btn-content'>
       <li>
         <input type='checkbox'></input>
         <button type='button' onClick={()=>{handleClick('-')}}>-</button>
