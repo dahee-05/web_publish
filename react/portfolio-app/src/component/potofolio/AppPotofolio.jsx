@@ -5,6 +5,7 @@ import Body from './Body.jsx';
 import Footer from './Footer.jsx';
 import AppHeader from './header/AppHeader.jsx';
 import AppBody from './body/AppBody.jsx';
+import AppFooter from './footer/AppFooter.jsx';
 
 export default function AppPotofolio() {
   return (
@@ -15,8 +16,10 @@ export default function AppPotofolio() {
       <Body>
         <AppBody/>
       </Body>
-      <Footer></Footer>
- </>
+      <Footer>
+        <AppFooter />
+      </Footer>
+  </>
   );
 }
 

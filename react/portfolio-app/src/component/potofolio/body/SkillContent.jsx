@@ -2,17 +2,19 @@ import React, { useState, useEffect } from 'react';
 import SkillCoding from './SkillCoding.jsx';
 
 export default function SkillContent() {
-  const [ aboutList, setAboutList ] = useState([]);
-  const [ codingSkill, setCodingSkill ] = useState([]);
   const [ skillIntro, setSkillIntro ] = useState('');
+  const [ codingSkill, setCodingSkill ] = useState([]);
+  const [ toolList, setToolList ] = useState([]);
+  const [ etcList, setEtcList ] = useState([]);
     
   useEffect(()=> {
     fetch('/data/json/body.json')
       .then((data)=> data.json())
       .then((jsonData)=>{
-        setAboutList(jsonData.aboutList)
-        setCodingSkill(jsonData.codingSkill)
         setSkillIntro(jsonData.skillIntro)
+        setCodingSkill(jsonData.codingSkill)
+        setToolList(jsonData.toolList)
+        setEtcList(jsonData.etcList)
       })
       .catch((error)=>console.log(error))
   },[]);
@@ -36,24 +38,21 @@ export default function SkillContent() {
         <article className="skills__tools">
           <h3 className="skill__title">Tools</h3>
           <ul>
-            <li>Visual Studio Code</li>
-            <li>IntelliJ</li>
-            <li>Android Studio Code</li>
-            <li>iOS development tools</li>
-            <li>Eclipse</li>
+            {toolList.map(item =>
+              <li>{item.tool}</li>
+            )}
           </ul>
         </article>
         <article className="skills__etc">
           <h3 className="skill__title">Etc</h3>
           <ul>
-            <li>Git</li>
-            <li>Scrum Master</li>
-            <li>SVN</li>
+            {etcList.map( item => 
+              <li>{item.etc}</li>
+            )}
           </ul>
         </article>
       </div> 
     </section>
-    
   );
 }
 

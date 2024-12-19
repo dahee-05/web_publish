@@ -13,11 +13,11 @@ export default function HomeContent() {
   return (
     <section id={homeData.id}>
       <img className="home__avatar" src={homeData.img} alt="portfolio" />
-      <h2 className="home__title">{homeData.text1}<br/>{homeData.text2} 
-      <strong className="home__title--strong">{homeData.text3}</strong>{homeData.text4}
+      <h2 className="home__title">Hello<br/>I'm
+      <strong className="home__title--strong">Dream Coder</strong>, Judy
       </h2>
-      <p className="home__description">{homeData.text5}</p>
-      <a className = "home__contact" href="#contact">{homeData.text6}</a>
+      <p className="home__description">{homeData.text}</p>
+      <a className = "home__contact" href="#contact">Contact Me</a>
     </section>
   );
 }

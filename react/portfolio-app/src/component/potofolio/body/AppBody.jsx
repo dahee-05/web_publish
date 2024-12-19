@@ -1,6 +1,5 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faArrowUp} from '@fortawesome/free-solid-svg-icons';
-// import React, { useEffect, useState } from 'react';
 import HomeContent from './HomeContent.jsx';
 import WorkContent from './WorkContent.jsx';
 import AboutMe from './AboutMe.jsx';

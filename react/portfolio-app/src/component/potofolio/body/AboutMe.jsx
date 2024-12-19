@@ -4,17 +4,17 @@ import AboutContent from './AboutContent.jsx';
 import AboutCareer from './AboutCareer.jsx';
 
 export default function AboutMe() {
-    const [ aboutList, setAboutList ] = useState([]);
-    const [ career, setCareer ] = useState([]);
-    const [ aboutIntro, setAboutIntro ] = useState('');
+  const [ aboutIntro, setAboutIntro ] = useState('');
+  const [ aboutList, setAboutList ] = useState([]);
+  const [ career, setCareer ] = useState([]);
   
     useEffect(()=> {
       fetch('/data/json/body.json')
         .then((data)=> data.json())
         .then((jsonData)=>{
+          setAboutIntro(jsonData.aboutIntro)
           setAboutList(jsonData.aboutList)
           setCareer(jsonData.career)
-          setAboutIntro(jsonData.aboutIntro)
         })
         .catch((error)=>console.log(error))
     },[]);

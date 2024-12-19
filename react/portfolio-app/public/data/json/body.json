@@ -2,12 +2,7 @@
   "homeData" :{ 
           "id":"home",
           "img":"/data/images/favicon.ico", 
-          "text1":"Hello",
-          "text2":"I'm",
-          "text3":"Dream Coder",
-          "text4":", Judy",
-          "text5":" A software engineer currently residing in Seoul, South Korea",
-          "text6":"Contact Me"
+          "text":" A software engineer currently residing in Seoul, South Korea"
         },
   "aboutIntro"
         :"Lorem ipsum dolor sit amet consectetur adipisicing elit.Iurenatus, temporibus perspiciatis repudiandae nostrum modidoloremque expedita non eius ipsum! Beatae porro adipisci omnis architecto dignissimos. Iusto ipsa inventore adipisci.",      
@@ -44,29 +39,128 @@
   "skillIntro"
         :"Skills Lorem ipsum dolor sit amet consectetur adipisicing elit.Iurenatus, temporibus perspiciatis repudiandae nostrum modidoloremque expedita non eius ipsum! Beatae porro adipisci omnis architecto dignissimos. Iusto ipsa inventore adipisci.", 
   "codingSkill": [
+                  {
+                    "type":"HTML",
+                    "percent":"98%"
+                  },
+                  {
+                    "type":"CSS",
+                    "percent":"90%"
+                  },
+                  {
+                    "type":"JavaScript",
+                    "percent":"90%"
+                  },
+                  {
+                    "type":"TypeScript",
+                    "percent":"80%"
+                  },
+                  {
+                    "type":"React",
+                    "percent":"79%"
+                  },
+                  {
+                    "type":"NodeJS",
+                    "percent":"68%"
+                  }
+                ],
+  "toolList": [
+      {"tool":"Visual Studio Code"},
+      {"tool":"IntelliJ"},
+      {"tool":"Android Studio Code"},
+      {"tool":"iOS development tools"},
+      {"tool":"Eclipse"}
+  ],
+  "etcList":[
+                {"etc":"Git"},
+                {"etc":"Scrum Master"},
+                {"etc":"SVN"}
+            ],
+  "projectMenu" : [
+                    {"menu":"All"},
+                    {"menu":"Front-end"},
+                    {"menu":"Back-end"},
+                    {"menu":"Mobile"}
+                  ],          
+  "projectList": [
     {
-      "type":"HTML",
-      "percent":"98%"
+      "img":"/data/images/projects/project1.webp",
+      "alt":"project1", 
+      "num":"Project #1", 
+      "text":"Clone Coding with HTML, CSS",
+      "type":"Backend"
     },
     {
-      "type":"CSS",
-      "percent":"90%"
+      "img":"/data/images/projects/project2.webp",
+      "alt":"project2", 
+      "num":"Project #2", 
+      "text":"Clone Coding with HTML, CSS",
+      "type":"Front-end"
     },
     {
-      "type":"JavaScript",
-      "percent":"90%"
+      "img":"/data/images/projects/project3.webp",
+      "alt":"project3", 
+      "num":"Project #3", 
+      "text":"Clone Coding with HTML, CSS",
+      "type":"Front-end"
     },
     {
-      "type":"TypeScript",
-      "percent":"80%"
+      "img":"/data/images/projects/project4.webp",
+      "alt":"project4", 
+      "num":"Project #4", 
+      "text":"Clone Coding with HTML, CSS",
+      "type":"Mobile"
     },
     {
-      "type":"React",
-      "percent":"79%"
+      "img":"/data/images/projects/project5.webp",
+      "alt":"project5", 
+      "num":"Project #5", 
+      "text":"Clone Coding with HTML, CSS",
+      "type":"Front-end"
     },
     {
-      "type":"NodeJS",
-      "percent":"68%"
+      "img":"/data/images/projects/project6.webp",
+      "alt":"project6", 
+      "num":"Project #6", 
+      "text":"Clone Coding with HTML, CSS",
+      "type":"Front-end"
+    },
+    {
+      "img":"/data/images/projects/project7.webp",
+      "alt":"project7", 
+      "num":"Project #7", 
+      "text":"Clone Coding with HTML, CSS",
+      "type":"Back-end"
+    },
+    {
+      "img":"/data/images/projects/project8.webp",
+      "alt":"project8", 
+      "num":"Project #8", 
+      "text":"Clone Coding with HTML, CSS",
+      "type":"Mobile"
     }
-  ]           
+  ],
+  "testimonialList" : [
+    {
+      "img":"/data/images/testimonials/people1.webp",
+      "alt":"people1",
+      "text":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis similique, unde nam totam quam, nisi odio error amet provident iste modi eos dicta, eum suscipit rem illum inventore sapiente blanditiis?",
+      "name":"James Kim",
+      "company":"Google"
+    },
+    {
+      "img":"/data/images/testimonials/people1.webp",
+      "alt":"people2",
+      "text":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis similique, unde nam totam quam, nisi odio error amet provident iste modi eos dicta, eum suscipit rem illum inventore sapiente blanditiis?",
+      "name":"Smith Park",
+      "company":"Samsung"
+    },
+    {
+      "img":"/data/images/testimonials/people2.webp",
+      "alt":"people3",
+      "text":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis similique, unde nam totam quam, nisi odio error amet provident iste modi eos dicta, eum suscipit rem illum inventore sapiente blanditiis?",
+      "name":"Anna Jin",
+      "company":"Samsung"
+    }
+  ]
 }
