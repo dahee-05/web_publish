@@ -1,0 +1,72 @@
+{
+  "homeData" :{ 
+          "id":"home",
+          "img":"/data/images/favicon.ico", 
+          "text1":"Hello",
+          "text2":"I'm",
+          "text3":"Dream Coder",
+          "text4":", Judy",
+          "text5":" A software engineer currently residing in Seoul, South Korea",
+          "text6":"Contact Me"
+        },
+  "aboutIntro"
+        :"Lorem ipsum dolor sit amet consectetur adipisicing elit.Iurenatus, temporibus perspiciatis repudiandae nostrum modidoloremque expedita non eius ipsum! Beatae porro adipisci omnis architecto dignissimos. Iusto ipsa inventore adipisci.",      
+  "aboutList" :[
+          {
+            "icon":"faCss3Alt", 
+            "type":"Front-end", 
+            "text":"HTML, CSS, JavaScript, TypeScript, React, WebAPIs" },
+          {
+            "icon":"faMobile", 
+            "type":"Mobile", 
+            "text":"Android Studio, React Native, iOS, Swift, Java, Kotlin" 
+          },
+          {
+            "icon":"faServer", 
+            "type":"Back-end", 
+            "text":"Java, JavaScript, Go, Kotlin, Spring, Spring Boot" 
+          }
+        ],
+  "career" : [
+                {
+                  "img":"/data/images/jobs/google.png", 
+                  "alt":"google",
+                  "career":"Google as Junior Software Engineer", 
+                  "date":"2019 Oct - Until now"
+                },
+                {
+                  "img":"/data/images/jobs/samsung.png", 
+                  "alt":"Samsung",
+                  "career":"Samsung as Junior Software Engineer", 
+                  "date":"2010 Oct - 2019 Oct"
+                }
+            ],
+  "skillIntro"
+        :"Skills Lorem ipsum dolor sit amet consectetur adipisicing elit.Iurenatus, temporibus perspiciatis repudiandae nostrum modidoloremque expedita non eius ipsum! Beatae porro adipisci omnis architecto dignissimos. Iusto ipsa inventore adipisci.", 
+  "codingSkill": [
+    {
+      "type":"HTML",
+      "percent":"98%"
+    },
+    {
+      "type":"CSS",
+      "percent":"90%"
+    },
+    {
+      "type":"JavaScript",
+      "percent":"90%"
+    },
+    {
+      "type":"TypeScript",
+      "percent":"80%"
+    },
+    {
+      "type":"React",
+      "percent":"79%"
+    },
+    {
+      "type":"NodeJS",
+      "percent":"68%"
+    }
+  ]           
+}

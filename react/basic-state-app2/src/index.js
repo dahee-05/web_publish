@@ -4,7 +4,8 @@ import './index.css';
 // import App from './App';
 // import reportWebVitals from './reportWebVitals';
 // import AppCounter from './components/counter/AppCounter.jsx';
-import AppBestSeller from './components/yes24/AppBestSeller.jsx';
+// import AppBestSeller from './components/yes24/AppBestSeller.jsx';
+import AppBestSeller2 from './components/yes24_2/AppBestSeller.jsx';
 // import AppAirbnb from './components/airbnb/AppAirbnb.jsx';
 // import AppOlive from './components/olive/AppOlive.jsx';
 // import AppAladin from './components/aladin/AppAladin.jsx';
@@ -13,6 +14,6 @@ import AppBestSeller from './components/yes24/AppBestSeller.jsx';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppBestSeller />
+    <AppBestSeller2 />
   </React.StrictMode>
 );

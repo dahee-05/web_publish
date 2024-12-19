@@ -128,18 +128,26 @@ export const validateFormSignup2 = (refs) =>{
   // const refValues = Object.values(refs);  // .jsx의 객체 값 태그값을 가져옴
   // const refKey = Object.keys(refs);       // key값만 가져옴 
   const refEntries = Object.entries(refs);   // ['idRef', {…}], 키와 벨류값을 같이 가지고 있음,2차원 배열형태 [[],[]]
-  const msg = {'idRef':'아이디를', 'pwdRef':'패스워드를', 'nameRef':'이름을을', 'phone1Ref':'전화번호를', 'phone2Ref':'전화번호를', 'phone3Ref':'전화번호를', 'addressRef':'주소를', 'birth1Ref':'생일을', 'birth2Ref':'생일을', 'birth3Ref':'생일을', 'jobRef':'직업을'};
+  const msg = {'idRef':'아이디', 'pwdRef':'패스워드', 'nameRef':'이름', 'phone1Ref':'전화번호', 'phone2Ref':'전화번호', 'phone3Ref':'전화번호', 'addressRef':'주소', 'birth1Ref':'생일', 'birth2Ref':'생일', 'birth3Ref':'생일', 'jobRef':'직업', "genderRef":"성별", "emailRef":"이메일", "introRef":"자기소개" };
 
   // 배열.map() or 배열.forEach()는 배열 객체를 순회하는 것이 목적이므로 if 체크 후 focus가 적용되지 않음
   // 처음부터 끝까지 순회하는 것이 목적이라 포커스가 먹지 않음
   for(const item of refEntries){
     const name = item[0];
     const ref = item[1];        //value
-    
-    if(ref && ref.current.value === ''){
-      alert(`${msg[name]} 입력해주세요`)
-      ref.current.focus();
-      return false;
+
+    if(name !== 'jobRef'){
+      if(ref && ref.current.value === ''){
+        alert(`${msg[name]}를 입력해주세요`)
+        ref.current.focus();
+        return false;
+      }
+    }else{
+      if(ref && ref.current.value === 'default'){
+        alert(`${msg[name]}를 선택해주세요`)
+        ref.current.focus();
+        return false;
+      }
     }
   };
 
