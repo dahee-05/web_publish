@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import SkillCoding from './SkillCoding.jsx';
+import SkiilContentList from './SkiilContentList.jsx';
 
 export default function SkillContent() {
   const [ skillIntro, setSkillIntro ] = useState('');
   const [ codingSkill, setCodingSkill ] = useState([]);
-  const [ toolList, setToolList ] = useState([]);
-  const [ etcList, setEtcList ] = useState([]);
+  const [ toolList, setToolList ] = useState({});
+  const [ etcList, setEtcList ] = useState({});
     
   useEffect(()=> {
     fetch('/data/json/body.json')
@@ -19,6 +20,7 @@ export default function SkillContent() {
       .catch((error)=>console.log(error))
   },[]);
 
+  
   return (
     <section id="skill" className="section max-container">
       <h2 className="title">My Skills</h2>
@@ -36,20 +38,10 @@ export default function SkillContent() {
           </ul>
         </article>
         <article className="skills__tools">
-          <h3 className="skill__title">Tools</h3>
-          <ul>
-            {toolList.map(item =>
-              <li>{item.tool}</li>
-            )}
-          </ul>
+          <SkiilContentList list={toolList}/>
         </article>
         <article className="skills__etc">
-          <h3 className="skill__title">Etc</h3>
-          <ul>
-            {etcList.map( item => 
-              <li>{item.etc}</li>
-            )}
-          </ul>
+          <SkiilContentList list={etcList}/>
         </article>
       </div> 
     </section>

@@ -64,18 +64,24 @@
                     "percent":"68%"
                   }
                 ],
-  "toolList": [
-      {"tool":"Visual Studio Code"},
-      {"tool":"IntelliJ"},
-      {"tool":"Android Studio Code"},
-      {"tool":"iOS development tools"},
-      {"tool":"Eclipse"}
-  ],
-  "etcList":[
-                {"etc":"Git"},
-                {"etc":"Scrum Master"},
-                {"etc":"SVN"}
-            ],
+  "toolList": {
+      "name" : "Tools",
+      "tlist": [
+                {"text":"Visual Studio Code"},
+                {"text":"IntelliJ"},
+                {"text":"Android Studio Code"},
+                {"text":"iOS development tools"},
+                {"text":"Eclipse"}
+              ]  
+            },
+  "etcList":{
+      "name" : "Etc",
+      "tlist" : [
+                  {"text":"Git"},
+                  {"text":"Scrum Master"},
+                  {"text":"SVN"}
+                ]
+            },
   "projectMenu" : [
                     {"menu":"All"},
                     {"menu":"Front-end"},
@@ -88,7 +94,7 @@
       "alt":"project1", 
       "num":"Project #1", 
       "text":"Clone Coding with HTML, CSS",
-      "type":"Backend"
+      "type":"Back-end"
     },
     {
       "img":"/data/images/projects/project2.webp",

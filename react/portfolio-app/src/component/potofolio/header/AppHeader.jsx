@@ -11,7 +11,7 @@ export default function AppHeader() {
     fetch('/data/json/header.json')
       .then((data)=>data.json())
       .then((jsonData)=> setMenuList(jsonData.list))
-      .then((error)=>console.log(error))
+      .catch((error)=>console.log(error))
   },[]);
 
   return (
