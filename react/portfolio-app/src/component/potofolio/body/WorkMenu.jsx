@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function WorkMenu({menu, pcnt, click, click2, isHovered }) {
+export default function WorkMenu({menu, pcnt, click, hover, isHovered }) {
   const handleClickMenu = () => {
     click(menu);
   };
   
   const handleMouseEnter = () => {
-    click2(menu);
+    hover(menu);
   };
   
   return (

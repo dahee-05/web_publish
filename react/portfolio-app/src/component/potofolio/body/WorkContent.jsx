@@ -41,7 +41,7 @@ export default function WorkContent() {
     <ul className="categories">
       {projectMenu && projectMenu.map((item, index) => 
         <li>
-          <WorkMenu menu={item.menu} pcnt={pcnt} click={handleClick} click2={handleHover} isHovered={hoveredIndex === index}/>
+          <WorkMenu menu={item.menu} pcnt={pcnt} click={handleClick} hover={handleHover} isHovered={hoveredIndex === index}/>
         </li>
       )}
     </ul>
@@ -56,6 +56,4 @@ export default function WorkContent() {
   );
 }
 
-// 리스트를 불러와 인덱스를 클릭시 인덱스 함수를 만들어 넣고 클래스 네임에 (,i)를 통해 맵을 돌려 삼항연산자로 클래스 네임 체크
-// 값을 물고 있기 
 
