@@ -4,6 +4,7 @@ import Content from './component/Content.jsx';
 import Footer from './component/Footer.jsx';
 import Logo from './component/header/Logo.jsx';
 import MenuList from './component/header/MenuList.jsx';
+import ToggleButton from './component/header/ToggleButton.jsx';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
     <Header>
       <Logo/>
       <MenuList/>
+      <ToggleButton/>
     </Header>
     <Content>
       <h1>Content</h1>
