@@ -4,7 +4,7 @@
 
 
   "toolsList" : {
-                "title" :"Tools",
+                "type" :"Tools",
                 "list" :  [
                               {"text":"Visual Studio Code"},
                               {"text":"IntelliJ"},
@@ -14,7 +14,7 @@
                             ] 
                   },
   "etcList" : {
-                "title" :"Etc",
+                "type" :"Etc",
                 "list" :  [
                               {"text":"Git"},
                               {"text":"Scrum Master"},

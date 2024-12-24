@@ -5,7 +5,7 @@ export default function Projects() {
  const [ projectList, setProjectList ] = useState([]);
 
  useEffect(()=>{
-  fetch('/data/content.json')
+  fetch('data/content.json')
     .then((data)=>data.json())
     .then((jsonData)=>setProjectList(jsonData.projectList))
     .catch((error)=>console.log(error))

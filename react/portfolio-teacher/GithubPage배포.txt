@@ -1,6 +1,8 @@
+** 리엑트의 이미지 주소는 상대경로 호출 
+
 1. Github 레파지토리 생성 - public
    Repository name : react-sample-1
-
+Tools
 2. 로컬의 Git Remote 경로를 (1)에서 생성한 경로로 변환
    Git Remote가 web-publish로 되어있을텐데 (1) 경로로 변환
    remote 주소 확인 : git remote -v  

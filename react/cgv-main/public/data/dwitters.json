@@ -1,0 +1,22 @@
+[
+    {
+      "img":"/images/people1.webp",
+      "name":"Smith Kim",
+      "id":"@smith",
+      "date":"2024.10.02",
+      "content":"감기 조심하시게~!!"
+    },
+    {
+      "img":"/images/people2.webp",
+      "name":"James Lee",
+      "id":"@james",
+      "date":"2024.12.25",
+      "content":"크리스마스"},
+    {
+      "img":"/images/people3.webp",
+      "name":"Kelly Park",
+      "id":"@kelly",
+      "date":"2024.12.04",
+      "content":"오늘 조퇴 각"
+    }
+  ]

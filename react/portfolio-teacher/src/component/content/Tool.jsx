@@ -4,11 +4,16 @@ export default function Tool({list}) {
   
   return (
     <>
-      <h3 class="skill__title">{list.title}</h3>
+      <h3 class="skill__title">{list.type}</h3>
       <ul>
-        {list.list && list.list.map( item => 
-          <li>{item.text}</li>
-        )} 
+        {type === 'Tools' ? 
+                  data.tools.map(item =>
+                      <li>{item}</li>
+                  )
+                  : data.etc.map(item => 
+                      <li>{item}</li>
+                  )
+              }        
       </ul>  
     </>
   );

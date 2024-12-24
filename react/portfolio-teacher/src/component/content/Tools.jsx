@@ -22,9 +22,7 @@ export default function Tools() {
       <article class="skills__tools">
         <Tool list={tlist}/>
       </article>
-      <article class="skills__etc">
-        <Tool list={elist}/>
-      </article>
+     
     </>
   );
 }
