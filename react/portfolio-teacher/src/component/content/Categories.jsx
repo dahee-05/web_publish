@@ -24,7 +24,6 @@ export default function Categories() {
   ];
 
   const handleClick = (name) => {
-    console.log(name);
     setSelected(name);
   };
 
