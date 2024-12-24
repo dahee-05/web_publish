@@ -6,6 +6,8 @@ import HeaderLogo from './HeaderLogo.jsx';
 
 export default function AppHeader() {
   const [ menuList, setMenuList ] = useState([]);
+  const [isActive, setIsActive ] = useState(0);
+  const [ activeIndex, setActiveIndex] = useState(0); 
 
   useEffect(() => {
     fetch('/data/json/header.json')
@@ -13,6 +15,22 @@ export default function AppHeader() {
       .then((jsonData)=> setMenuList(jsonData.list))
       .catch((error)=>console.log(error))
   },[]);
+ 
+  const handleOnClick = (idx) => {
+    setActiveIndex(idx)
+  };
+
+  const handleOnClick1 = (idx) => {
+    console.log('11', idx)
+    // setActiveIndex(idx)
+  };
+
+  const handleOnClick2 = (idx) => {
+    console.log('22', idx)
+    setActiveIndex(idx)
+  };
+  // console.log(activeIndex);
+  
 
   return (
     <div className='header'>
@@ -20,8 +38,12 @@ export default function AppHeader() {
         <HeaderLogo img="/data/images/favicon.ico" name='Judy' alt="logo"/>
         <nav>
           <ul className="header__menu">
-            {menuList.map( menu => 
-              <MenuList {...menu}/>
+            {menuList.map((menu, idx) => 
+              <MenuList {...menu} 
+              idx={idx} 
+              isActive = {activeIndex === idx}
+              onClick = {()=>handleOnClick(idx)}
+              />
             )}
           </ul>
         </nav>

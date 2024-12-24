@@ -1,0 +1,109 @@
+{
+
+
+
+
+  "toolsList" : {
+                "title" :"Tools",
+                "list" :  [
+                              {"text":"Visual Studio Code"},
+                              {"text":"IntelliJ"},
+                              {"text":"Android Studio Code"},
+                              {"text":"iOS development tools"},
+                              {"text":"Eclipse"}
+                            ] 
+                  },
+  "etcList" : {
+                "title" :"Etc",
+                "list" :  [
+                              {"text":"Git"},
+                              {"text":"Scrum Master"},
+                              {"text":"SVN"}
+                            ] 
+                  },
+  "projectList" : [
+                    {
+                      "img":"images/projects/project1.webp",
+                      "alt":"project1",
+                      "title":">Project #1",
+                      "desc":"Clone Coding with HTML, CSS"
+                    },
+                    {
+                      "img":"images/projects/project2.webp",
+                      "alt":"project2",
+                      "title":">Project #2",
+                      "desc":"Clone Coding with HTML, CSS"
+                    },
+                    {
+                      "img":"images/projects/project3.webp",
+                      "alt":"project3",
+                      "title":">Project #3",
+                      "desc":"Clone Coding with HTML, CSS"
+                    },
+                    {
+                      "img":"images/projects/project4.webp",
+                      "alt":"project4",
+                      "title":">Project #4",
+                      "desc":"Clone Coding with HTML, CSS"
+                    },
+                    {
+                      "img":"images/projects/project5.webp",
+                      "alt":"project5",
+                      "title":">Project #5",
+                      "desc":"Clone Coding with HTML, CSS"
+                    },
+                    {
+                      "img":"images/projects/project6.webp",
+                      "alt":"project6",
+                      "title":">Project #6",
+                      "desc":"Clone Coding with HTML, CSS"
+                    },
+                    {
+                      "img":"images/projects/project7.webp",
+                      "alt":"project7",
+                      "title":">Project #7",
+                      "desc":"Clone Coding with HTML, CSS"
+                    },
+                    {
+                      "img":"images/projects/project8.webp",
+                      "alt":"project8",
+                      "title":">Project #8",
+                      "desc":"Clone Coding with HTML, CSS"
+                    }
+                  ],
+  "testimonialList" : [
+                  {
+                    "img":"images/testimonials/people1.webp",
+                    "alt":"people1",
+                    "desc":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis similique, unde nam totam quam, nisi odio error amet provident iste modi eos dicta, eum suscipit rem illum inventore sapiente blanditiis?",
+                    "name":"James Kim",
+                    "company":"Google"
+                  },
+                  {
+                    "img":"images/testimonials/people2.webp",
+                    "alt":"people2",
+                    "desc":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis similique, unde nam totam quam, nisi odio error amet provident iste modi eos dicta, eum suscipit rem illum inventore sapiente blanditiis?",
+                    "name":"Smith Park",
+                    "company":"Samsung"
+                  },
+                  {
+                    "img":"images/testimonials/people3.webp",
+                    "alt":"people3",
+                    "desc":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis similique, unde nam totam quam, nisi odio error amet provident iste modi eos dicta, eum suscipit rem illum inventore sapiente blanditiis?",
+                    "name":"Anna Jin",
+                    "company":"Samsung"
+                  }
+                ],
+    "contactList" : [
+                      {
+                        "href":"http://github.com",
+                        "type":"github"
+                      },
+                      {
+                        "href":"http://linkedin.com",
+                        "type":"linkedin"
+                      }
+                    ]             
+                
+
+}

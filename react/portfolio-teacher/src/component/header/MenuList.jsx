@@ -1,15 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Menu from './Menu.jsx';
 
 export default function MenuList() {
+  const [ selected, setSelected] = useState('Home');
+
+  // useEffect(()=>{
+  //   fetch('/data/')
+  //     .then((data)=>data.json())
+  //     .then((jsonData)=>setSelected(jsonData))
+  //     .catch((error)=> console.log(error))
+  // },[]);
+
+  const list =[
+    {"href":"#home", "name":"Home"},
+    {"href":"#about", "name":"About"},
+    {"href":"#skill", "name":"Skills"},
+    {"href":"#work", "name":"My work"},
+    {"href":"#testimonial", "name":"Testimonial"},
+    {"href":"#contact", "name":"Contact"}
+  ];
+
+  const handleClick = (menuName) => {
+    console.log('--->', menuName);
+    setSelected(menuName);
+  };
+
   return (
     <nav>
-      <ul class="header__menu">
-        <li><a class="header__menu__item active" href="#home">Home</a></li>
-        <li><a class="header__menu__item" href="#about">About</a></li>
-        <li><a class="header__menu__item" href="#skill">Skills</a></li>
-        <li><a class="header__menu__item" href="#work">My work</a></li>
-        <li><a class="header__menu__item" href="#testimonial">Testimonial</a></li>
-        <li><a class="header__menu__item" href="#contact">Contact</a></li>
+      <ul className="header__menu">
+        {list && list.map((menu) =>
+          <li>
+            <Menu href={menu.href} 
+                  menuName={menu.name} 
+                  click={handleClick} 
+                  style={menu.name === selected ? 'header__menu__item active'
+                                                : 'header__menu__item'}/>
+          </li>
+        )}
       </ul>
     </nav>
   );

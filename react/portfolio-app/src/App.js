@@ -1,26 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import './component/potofolio/css/style.css';
+import Header from './component/potofolio/Header.jsx';
+import Body from './component/potofolio/Body.jsx';
+import Footer from './component/potofolio/Footer.jsx';
+import AppHeader from './component/potofolio/header/AppHeader.jsx';
+import AppBody from './component/potofolio/body/AppBody.jsx';
+import AppFooter from './component/potofolio/footer/AppFooter.jsx';
 
 function App() {
   return (
-    <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
-  </div>
-
+     <>
+        <Header>
+          <AppHeader/>
+        </Header>
+        <Body>
+          <AppBody/>
+        </Body>
+        <Footer>
+          <AppFooter />
+        </Footer>
+    </>
   );
 }
 

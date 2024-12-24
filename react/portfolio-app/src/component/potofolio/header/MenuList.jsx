@@ -1,12 +1,21 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState } from 'react';
 
 export default function MenuList(props) {
+
+
+//  console.log(`isActive---->${props.isActive}`);
+ 
+  // const handle = () => {
+  //   click()
+  // }
   return (
     <li>
-      <li>
-        <a className={props.cname} href={props.href}>{props.name}</a>
-      </li>
+      <a className={`header__menu__item ${props.isActive ? 'active' : ''}`}
+         href={props.href}
+         onClick={props.onClick}
+         >{props.name}
+      </a>
     </li>
   );
 }
+

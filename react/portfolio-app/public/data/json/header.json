@@ -1,10 +1,10 @@
 {
   "list" : [
-    {"cname":"header__menu__item active", "href":"#home", "name":"Home"},    
-    {"cname":"header__menu__item", "href":"#about", "name":"About"},    
-    {"cname":"header__menu__item", "href":"#skill", "name":"Skills"},    
-    {"cname":"header__menu__item", "href":"#work", "name":"My work"},    
-    {"cname":"header__menu__item", "href":"#testimonial", "name":"Testimonial"},    
+    {"href":"#home", "name":"Home"},    
+    {"href":"#about", "name":"About"},    
+    {"href":"#skill", "name":"Skills"},    
+    {"href":"#work", "name":"My work"},    
+    {"href":"#testimonial", "name":"Testimonial"},    
     {"cname":"header__menu__item", "href":"#contact", "name":"Contact"}    
   ]
 }
