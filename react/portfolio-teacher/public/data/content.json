@@ -1,25 +1,17 @@
 {
-
-
-
-
   "toolsList" : {
-                "type" :"Tools",
-                "list" :  [
-                              {"text":"Visual Studio Code"},
-                              {"text":"IntelliJ"},
-                              {"text":"Android Studio Code"},
-                              {"text":"iOS development tools"},
-                              {"text":"Eclipse"}
-                            ] 
-                  },
-  "etcList" : {
-                "type" :"Etc",
-                "list" :  [
-                              {"text":"Git"},
-                              {"text":"Scrum Master"},
-                              {"text":"SVN"}
-                            ] 
+        "tools": [
+                    "Visual Studio Code",
+                    "IntelliJ",
+                    "Android Studio Code",
+                    "iOS development tools",
+                    "Eclipse"
+                ],
+        "etc": [
+              "Git",
+              "Scrum Master",
+              "SVN"
+          ]
                   },
   "projectList" : [
                     {

@@ -1,26 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import Tool from './Tool.jsx';
 
-export default function Tools() {
-  const [ tlist, setTList] = useState([]);
-  const [ elist, setEList] = useState([]);
+export default function Tools({type}) {
+  const [ list, setList] = useState({ tools:[], etc:[] });
 
   useEffect(()=>{
-    fetch('/data/content.json')
+    fetch('data/content.json')
       .then((data)=> data.json())
-      .then((jsonData)=> {
-        setTList(jsonData.toolsList)
-        setEList(jsonData.etcList)
-      })
+      .then((jsonData)=> setList(jsonData.toolsList))
       .catch((error)=>console.log(error))
   },[]);
-
-  console.log(tlist);
+  // console.log(JSON.stringify(list))
   
   return (
     <>
       <article class="skills__tools">
-        <Tool list={tlist}/>
+        <Tool list={list} type={type}/>
       </article>
      
     </>

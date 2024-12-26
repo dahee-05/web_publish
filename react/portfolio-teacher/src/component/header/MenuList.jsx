@@ -34,7 +34,7 @@ export default function MenuList() {
                   menuName={menu.name} 
                   click={handleClick} 
                   style={menu.name === selected ? 'header__menu__item active'
-                                                : 'header__menu__item'}/>
+                    : 'header__menu__item'}/>
           </li>
         )}
       </ul>
