@@ -1,25 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Major from './Major.jsx';
 
 export default function Majors() {
+  const [ majorList, setMajorList ] = useState([]);
 
-  const majorList = [
-    {
-      "title":"Front-end", 
-      "icon":"faCss3Alt",
-      "subject":"HTML, CSS, JavaScript, TypeScript, React, WebAPIs"
-    },
-    {
-      "title":"Mobile", 
-      "icon":"faMobile",
-      "subject":"Android Studio, React Native, iOS, Swift, Java, Kotlin"
-    },
-    {
-      "title":"Back-end", 
-      "icon":"faServer",
-      "subject":"Java, JavaScript, Go, Kotlin, Spring, Spring Boot"
-    }
-  ];
+  useEffect(()=> {
+    fetch('data/content.json')
+      .then((data)=>data.json())
+      .then((jsonData)=> setMajorList(jsonData.majorList))
+      .catch((error)=>console.log(error))
+  },[]);
 
   return (
     <ul className="majors">

@@ -13,54 +13,97 @@
               "SVN"
           ]
                   },
+  "categoryList": [
+                    {
+                      "name":"All",
+                      "count":"8"
+                    },
+                    {
+                      "name":"Front-end",
+                      "count":"4"
+                    },
+                    {
+                      "name":"Back-end",
+                      "count":"2"
+                    },
+                    {
+                      "name":"Mobile",
+                      "count":"2"
+                    }
+                  ],
+  "majorList" : [
+                  {
+                    "title":"Front-end", 
+                    "icon":"faCss3Alt",
+                    "subject":"HTML, CSS, JavaScript, TypeScript, React, WebAPIs"
+                  },
+                  {
+                    "title":"Mobile", 
+                    "icon":"faMobile",
+                    "subject":"Android Studio, React Native, iOS, Swift, Java, Kotlin"
+                  },
+                  {
+                    "title":"Back-end", 
+                    "icon":"faServer",
+                    "subject":"Java, JavaScript, Go, Kotlin, Spring, Spring Boot"
+                  }
+                ],
   "projectList" : [
                     {
                       "img":"images/projects/project1.webp",
                       "alt":"project1",
                       "title":">Project #1",
-                      "desc":"Clone Coding with HTML, CSS"
+                      "desc":"Clone Coding with HTML, CSS",
+                      "category":"Front-end"
                     },
                     {
                       "img":"images/projects/project2.webp",
                       "alt":"project2",
                       "title":">Project #2",
-                      "desc":"Clone Coding with HTML, CSS"
+                      "desc":"Clone Coding with HTML, CSS",
+                      "category":"Front-end"
                     },
                     {
                       "img":"images/projects/project3.webp",
                       "alt":"project3",
                       "title":">Project #3",
-                      "desc":"Clone Coding with HTML, CSS"
+                      "desc":"Clone Coding with HTML, CSS",
+                      "category":"Back-end"
                     },
                     {
                       "img":"images/projects/project4.webp",
                       "alt":"project4",
                       "title":">Project #4",
-                      "desc":"Clone Coding with HTML, CSS"
+                      "desc":"Clone Coding with HTML, CSS",
+                      "category":"Back-end"
                     },
                     {
                       "img":"images/projects/project5.webp",
                       "alt":"project5",
                       "title":">Project #5",
-                      "desc":"Clone Coding with HTML, CSS"
+                      "desc":"Clone Coding with HTML, CSS",
+                      "category":"Mobile"
                     },
                     {
                       "img":"images/projects/project6.webp",
                       "alt":"project6",
                       "title":">Project #6",
-                      "desc":"Clone Coding with HTML, CSS"
+                      "desc":"Clone Coding with HTML, CSS",
+                      "category":"Mobile"
                     },
                     {
                       "img":"images/projects/project7.webp",
                       "alt":"project7",
                       "title":">Project #7",
-                      "desc":"Clone Coding with HTML, CSS"
+                      "desc":"Clone Coding with HTML, CSS",
+                      "category":"Mobile"
                     },
                     {
                       "img":"images/projects/project8.webp",
                       "alt":"project8",
                       "title":">Project #8",
-                      "desc":"Clone Coding with HTML, CSS"
+                      "desc":"Clone Coding with HTML, CSS",
+                      "category":"Front-end"
                     }
                   ],
   "testimonialList" : [

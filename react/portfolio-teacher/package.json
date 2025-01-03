@@ -2,7 +2,6 @@
   "name": "portfolio-teacher",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://dahee-05.github.io/react-sample-1",
   "dependencies": {
     "cra-template": "1.2.0",
     "react": "^19.0.0",

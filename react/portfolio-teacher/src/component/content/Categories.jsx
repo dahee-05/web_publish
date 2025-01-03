@@ -1,27 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Category from './Category.jsx';
 
 export default function Categories() {
+  const [ categoryList, setCategoryList ] = useState([]);
+  const [ projectList, setProjectList ] = useState([]);
   const [ selected, setSelected ] = useState('All');
-
-  const categoryList = [
-    {
-      "name":"All",
-      "count":"8"
-    },
-    {
-      "name":"Front-end",
-      "count":"4"
-    },
-    {
-      "name":"Back-end",
-      "count":"2"
-    },
-    {
-      "name":"Mobile",
-      "count":"2"
-    }
-  ];
+  
+  useEffect(()=> {
+    fetch('data/content.json')
+      .then((data)=> data.json())
+      .then((jsonData)=> {
+        setCategoryList(jsonData.categoryList)
+        setProjectList(jsonData.projectList)
+      })
+      .catch((error)=>console.log(error))
+  },[]);
 
   const handleClick = (name) => {
     setSelected(name);
