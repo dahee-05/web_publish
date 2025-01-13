@@ -1,0 +1,14 @@
+:root {
+  --color-line-silver : #b3b3b3;
+  --color-header-top-l-menu : #333333;
+  --color-header-top-r-menu : #767676;
+}
+
+.page{
+  width: 100%;
+}
+.header-content{
+  border: solid 1px red;
+  margin: auto;
+  width: 1000px;
+}
