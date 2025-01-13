@@ -1,0 +1,4 @@
+1. 서버 역할 폴더 생성 : mkdir express-server2
+2. 서버 폴더로 이동  : cd express-server2
+3. express 라이브러리 설치 : npm install express
+4. nodemon 라이브러리 설치 : npm nodemon --save-dev

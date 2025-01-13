@@ -24,7 +24,13 @@ server.get('/test',(req, res)=>{
   console.log('/test 전송 완료!!');
 });
 
-
+// path : /param/홍길동  --> name 변수에 저장
+server.get('/param/:name',(req, res)=>{
+  // console.log('req->', req);
+  console.log('name->', req.params.name); 
+  res.send(`<h1>[${req.params.name}] 전송 완료!!</h1>`);
+  // 결과를 주지 않으면 무한루프 돔
+});
 
 
 // 실행할 값을 콜백 함수에 넣어준다
