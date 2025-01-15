@@ -1,0 +1,29 @@
+1. web_publish\shoppy 프로젝트(폴더) 생성
+  mkdir shoppy -> cd shoppy
+
+2. react 프로젝트 생성 : client
+  npx create-react-app client 
+  cd client
+
+3. package.json 내용 확인 
+    cat package.json
+    react /react-dom 설치되었는지 확인
+
+4. 필요한 기본 패키지 설치
+  4-1.리엑트 라우터 돔 패키지 설치
+      npm install react-router-dom  
+
+  4-2. axios 패키지 설치
+       npm install axios
+
+  4-3. 리엑트 제공 아이콘 패키지 설치
+      npm install react-icons
+
+  4-4. 설치가 되었는지 확인 
+        cat package.json   
+
+************************************        
+cmder 터미널 하나에 또 다른 포트를 띄울 수 없음
+react와 node 각각 띄워서 실행
+npm start - 프로젝트 시작
+************************************
