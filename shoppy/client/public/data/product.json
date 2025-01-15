@@ -4,29 +4,29 @@
     "image" : "/images/1.webp",
     "name" : "후드티",
     "price": 15000,
-    "info":"검정 후드티"
+    "info":"분홍 후드티"
   },
   {
     "pid" : "2",
     "image" : "/images/2.webp",
-    "name" : "원피스",
+    "name" : "후드티",
     "price": 25000,
-    "info": "원피스"
+    "info": "검정정 후드티"
     
   },
   {
     "pid" : "3",
     "image" : "/images/3.webp",
-    "name" : "후드티",
+    "name" : "원피스",
     "price": 35000,
-    "info": "후드티"
+    "info": "원피스"
   },
   {
     "pid" : "4",
     "image" : "/images/4.webp",
-    "name" : "티셔츠",
+    "name" : "팬츠",
     "price": 12000,
-    "info":"티셔츠"
+    "info":"팬츠"
   },
   {
     "pid" : "5",

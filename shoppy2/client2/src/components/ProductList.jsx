@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ProductAvata from './ProductAvata.jsx';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default function ProductList() {
   const [ list, setList ] = useState([]);
@@ -23,7 +24,9 @@ export default function ProductList() {
         rows.map((row)=> 
           <div className='product-list'>
             {row.map((product) =>
+              <Link key={product.pid} to={`/products/${product.pid}`}>
                 <ProductAvata img={product.image}/>
+              </Link>  
               )}
           </div>  
       )}
