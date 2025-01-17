@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <div className='content'>
       <div className='banner'>
-        <h1>Shop with US</h1>
-        <h3>Best Products, High Quality</h3>
+        <h3>Shop with US</h3>
+        <p>Best Products, High Quality</p>
       </div>
       <ProductList />
     </div>  

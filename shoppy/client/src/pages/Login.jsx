@@ -20,10 +20,14 @@ export default function Login() {
     e.preventDefault(); //브라우저가 작동하지 않도록 방지, http://localhost:3000/login?id=&pwd=(브라우저 처리시)
     
     // 리엑트 --> 노드서버(express)전송
-    if(validateLogin(refs)) {
+    if(validateLogin(refs,msgRefs)) {
       console.log('send data -->', formData);
     }  
   };  
+
+  const msgRefs = {
+    "msgRef": useRef(null)
+  }
 
   return (
       <div className="content">
@@ -56,6 +60,11 @@ export default function Login() {
                         placeholder="패스워드를 입력해주세요" />
               </div>
               <p id="error-msg-pwd"></p>
+            </li>
+            <li>
+              <span style={{fontSize: '0.7em', color:'white'}} ref={msgRefs.msgRef}>
+                아이디 또는 패스워드를 입력해주세요
+              </span>
             </li>
             <li>
                 <button type="submit" className="login-button">로그인</button>
