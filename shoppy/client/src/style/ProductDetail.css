@@ -1,0 +1,122 @@
+/*******************************************
+*************  PRODUCT DETAIL **************
+*********************************************/
+
+.detail .product_detail_content .product_notice,
+.detail .product_detail_content .product_images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 60px;
+}
+
+.detail .product_detail_content .product_images img{
+  margin-bottom: 60px;
+  width: 940px;
+  height: 1440px;
+}
+
+.detail .product_detail_content .product_description{
+  /* border: 1px solid blue; */
+  width: 940px;
+  height: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto; 
+  width: 80%;
+}
+
+.detail .product_description_list,
+.detail .product_information_disclosure h4{
+  text-align: left;
+  width: 100%;
+}
+.detail .product_description_list li {
+  list-style-type: none;
+  margin: 25px 0;
+}
+
+.detail .product_description_list p{
+  margin: 0;
+  line-height: 2;
+  font-family: verdana;
+  font-size: 12px;
+}
+
+.detail .product_description_list .product_description_title{
+  font-weight: 500;
+}
+
+/***********************************/
+
+.detail .product_information_disclosure h4{
+  margin: 10px 0;
+}
+
+.detail .product_information_disclosure table{
+  margin: 0; 
+  padding: 0; 
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.detail .noti_prod_info {
+  margin: 0; 
+  padding: 0; 
+}
+
+.detail .noti_prod_info table tbody th,
+.detail .noti_prod_info table tbody td{
+  padding-left: 43px;
+  height: 48px;
+  font-size: 12px;
+  text-align: left;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.detail .product_information_disclosure table tr:first-child th,
+.detail .product_information_disclosure table tr:first-child td {
+  border-top: 2px solid black;
+}
+
+.detail .product_information_disclosure table tr:last-child th,
+.detail .product_information_disclosure table tr:last-child td {
+  border-bottom: 2px solid black; /* 아래쪽 굵은 테두리 */
+}
+
+.detail .prod_info{
+  margin: 10px 0 0; 
+  color: #777;
+}
+
+.detail .prod_info_more{
+  text-align: center;
+  margin: 35px auto 0;
+}
+
+.detail .btn_prod_info{
+  margin: 0 auto;
+  font-size: 15px;
+  padding: 15px 100px 15px 85px;
+  color: #777;
+  background-color: #fff;
+  position: relative;
+  cursor: pointer;
+  align-items: center;
+  border-color: #777;
+}
+
+.detail .btn_prod_info::after{
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  color: #777;
+  background: url(//static.wconcept.co.kr/web/images/product/svg/ico_arrow_dn.svg) 0 0 no-repeat ;
+  position: absolute;
+  right: 18;
+  top: 50%;
+  margin-top: -11px;
+}

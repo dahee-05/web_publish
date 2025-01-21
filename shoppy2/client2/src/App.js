@@ -18,8 +18,8 @@ export default function App() {
     setCartList([...cartList, cartItem])
     setCartCount(cartCount + 1);  
   };
-  console.log('cartList--->', cartList);
-  console.log('cartCount--->', cartCount);
+  // console.log('cartList--->', cartList);
+  // console.log('cartCount--->', cartCount);
   
   return (
     <div className="App">
