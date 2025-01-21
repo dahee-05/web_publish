@@ -52,9 +52,7 @@ export default function Signup() {
 // );
   const{names, placeholers, labels, initFormData} = initSignup();
   const {refs, msgRefs} = useInitSignupRefs(names);
-  // console.log('init-->',initFormData);
   console.log('refs-->',refs);
-  // console.log('msgRefs-->',msgRefs);
   
   const [ formData, setFormData ] = useState(initFormData);
   const [ idCheckResult, setIdCheckResult ] = useState('default'); 
@@ -172,7 +170,8 @@ export default function Signup() {
                               placeholder={placeholers[name]} />
                               {(name === 'id' &&
                                 <>
-                                  <button type="button" onClick={()=>{handleDuplecateIdCheck(refs.current['idRef']
+                                  <button type="button" 
+                                        onClick={()=>{handleDuplecateIdCheck(refs.current['idRef']
                                                           ,msgRefs.current['idMsgRef']
                                                           ,refs.current['pwdRef']
                                                           ,setIdCheckResult

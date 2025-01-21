@@ -8,6 +8,7 @@ export default function Login() {
   // const pwdRef = useRef(null);
 
   const refs = {'idRef':useRef(null), 'pwdRef':useRef(null)};
+  const msgRefs = {'msgRef':useRef(null)};
   const [ formdata, setFormdata ] = useState({'id':'', 'pwd':''});
 
   const handleChange = (e) => {
@@ -17,7 +18,7 @@ export default function Login() {
 
   const handleSubmit = (e) =>{
     e.preventDefault();
-    if(validateLogin(refs)) console.log(formdata);
+    if(validateLogin(refs, msgRefs)) console.log(formdata);
   };
 
   return (
@@ -51,6 +52,11 @@ export default function Login() {
                       placeholder="패스워드를 입력해주세요" />
             </div>
             <p id="error-msg-pwd"></p>
+          </li>
+          <li>
+            <span style={{fontSize:'0.7em', color:'white'}} ref={msgRefs.msgRef}>
+              아이디 또는 패스워드를 입력해주세요
+            </span>
           </li>
           <li>
             <button type="submit" className="login-button">로그인</button>

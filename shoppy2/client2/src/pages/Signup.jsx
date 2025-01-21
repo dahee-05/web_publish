@@ -1,73 +1,39 @@
 import React, { useRef, useState } from 'react';
 import '../style/signup.css';
-import { validateSignup } from '../utils/funcValidate.js';
+import { validateSignup, handleDuplecateIdCheck, handlePwdCheck } from '../utils/funcValidate.js';
+import { initSignup, useInitSignupRefs } from '../utils/funcinitialize.js';
 
 export default function Signup() {
   // 값이 없을 경우 확인해줄 ref 값이 필요 
   // 값이 없다는게 확인되었을 경우 띄어줄 msgRef값이 필요 
-  const names = ['id','pwd','cpwd','name','phone','emailname'];  // 왜 배열로 만들어줬지???
-  const nameStr = ['아이디','패스워드','패스워드 확인','이름','전화번호','이메일'];
-  const placeholderStr = [
-        '아이디를 입력해주세요',
-        '비밀번호 입력(문자,숫자,특수문자 포함 6~12자)',
-        '비밀번호 확인을 입력해주세요',
-        '이름을 입력해주세요',
-        "휴대폰번호를 입력해주세요('-' 포함)",
-        '이메일 주소'
-  ];
-
-  const labels = names.reduce((acc, name, idx)=>{
-    acc[name] = nameStr[idx];
-    return acc;
-  },{});
-  
-  const placeholders = names.reduce((acc, name, idx)=>{
-    acc[name] = placeholderStr[idx];
-    return acc;
-  },{});
-
-  let initFormData = {};
-  names.forEach((name) => {
-    initFormData = { ...initFormData, [name]: '' };
-  }); // {'id':'', 'pwd':''..}
- 
-  
-  const refs = useRef(
-    names.reduce((acc,name)=>{
-      acc[name.concat('Ref')] = React.createRef();
-      return acc;
-    },{})
-  ); // {'id':{current:null}, 'pwd':{current:null}}..}
-  refs.current['emaildomainRef'] = React.createRef(); 
-  // console.log('refs*******',refs);
-  
-  const msgRefs = useRef(
-    names.reduce((acc, name)=>{
-      acc[name.concat('MsgRef')] = React.createRef();
-      return acc;     
-    },{})
-  );
-
+  const { names, initFormData, labels, placeholders } = initSignup();
+  const { refs, msgRefs }= useInitSignupRefs(names);
   const [ formData, setFormData ] = useState(initFormData);
-
+  const [ idCheckResult, setIdCheckResult ] = useState('default');
 
   // handelChange 이벤트 
   const handelChangeForm = (e) => {
     const { name , value } = e.target;
     setFormData({...formData, [name]:value });
-    // console.log(formData);
   };
 
   // Submit 보내기
-  const handleFormData = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if(validateSignup(refs, msgRefs)) console.log('formData-->',formData);
+    if(validateSignup(refs, msgRefs)) {
+      if(idCheckResult === 'default'){
+        alert('중복체크를 진행해주세요');
+        return false;  
+      }else{
+        console.log('formData--->',formData);
+      } 
+    } 
   };
 
   return (
       <div className="content">
         <h1 className="center-title">SIGINUP</h1>
-        <form className="signup-form" onSubmit={handleFormData}>
+        <form className="signup-form" onSubmit={handleSubmit}>
           <ul>
             {names && names.map((name)=> (
               <li>
@@ -97,11 +63,23 @@ export default function Signup() {
                             name={name}
                             ref={refs.current[name.concat('Ref')]}
                             onChange={handelChangeForm}
+                            onBlur={(name === 'cpwd')
+                                        ?()=>{handlePwdCheck(refs.current['pwdRef']
+                                                            , refs.current['cpwdRef']
+                                                            , msgRefs.current['pwdMsgRef']
+                                                            , msgRefs.current['cpwdMsgRef']
+                                                            , refs.current['nameRef'])}
+                                        :null}
                             placeholder = {placeholders[name]} />
                     {(name === 'id')? (
                       <>    
-                        <button type="button" >중복확인</button>
-                        <input type="hidden" id="idCheckResult" value="default" />
+                        <button type="button" 
+                                onClick={()=>{handleDuplecateIdCheck(refs.current['idRef']
+                                                    , msgRefs.current['idMsgRef']
+                                                    , refs.current['pwdRef']
+                                                    ,setIdCheckResult)}}>중복확인
+                        </button>
+                        <input type="hidden" value={idCheckResult} />
                       </>) : null}    
                    </>)}
                 </div>
