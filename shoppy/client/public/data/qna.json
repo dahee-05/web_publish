@@ -1,0 +1,32 @@
+{
+    "qnaList" : [
+    {
+        "id":"change@kkao.kr",
+        "qna_result":"접수완료",
+        "qna_icon":"qna_yet",
+        "title":"교환문의",
+        "date":"2025-03-07"
+    },
+    {
+        "id":"baegofa123@gmail.com",
+        "qna_result":"답변완료",
+        "qna_icon":"qna_done",
+        "title":"사이즈문의",
+        "date":"2025-03-01"
+    },
+    {
+        "id":"banaff@naver.com",
+        "qna_result":"답변완료",
+        "qna_icon":"qna_done",
+        "title":"계절감 문의",
+        "date":"2025-01-03"
+    },
+    {   
+        "id":"mecof@ald.kr",
+        "qna_result":"답변완료",
+        "qna_icon":"qna_done",
+        "title":"길이",
+        "date":"2025-01-01"
+    }
+    ]
+}

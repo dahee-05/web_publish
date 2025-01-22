@@ -8,7 +8,7 @@ export default function ProductList() {
 
   useEffect(()=>{
     axios.get('data/product.json')
-         .then((res)=> setList(res.data))
+         .then((res)=> setList(res.data.products))
          .catch((error)=> console.log(error));
   },[]);
 

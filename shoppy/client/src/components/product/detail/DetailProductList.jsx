@@ -23,7 +23,7 @@ export default function DetailProductList() {
   
   
   return (
-    <div className='product_detail_content'>
+    <div className='product_detail_content' id='detail'>
       <div className='product_notice'>
         <img src='/images/product_detail1.jpg'></img>
       </div>
@@ -47,7 +47,7 @@ export default function DetailProductList() {
               <col />
             </colgroup>
             <tbody> 
-              {productInfo && (isMoreView? productInfo : productInfo.slice(0,3)).map((proInfo, idx)=>(
+              {productInfo && (isMoreView? productInfo : productInfo.slice(0,4)).map((proInfo, idx)=>(
                   <DetailProductInfo key={idx} {...proInfo} idx={idx} isMoreView={isMoreView} />
               ))}
             </tbody>

@@ -1,7 +1,9 @@
 /*******************************************
 *************  PRODUCT DETAIL **************
 *********************************************/
-
+.detail .product_detail_content{
+  margin-bottom: 150px;
+}
 .detail .product_detail_content .product_notice,
 .detail .product_detail_content .product_images {
   display: flex;

@@ -2,7 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { PiGiftThin } from "react-icons/pi";
 import axios from "axios";
-import DetailProductList from '../components/product/productDetail/DetailProductList.jsx';
+import ProductMenuList from '../components/product/detail/ProductMenuList.jsx';
+import ProductMenu from '../components/product/detail/ProductMenu.jsx';
+import DetailProductList from '../components/product/detail/DetailProductList.jsx';
+import Detail from '../components/product/detail/Detail.jsx';
+import Qna from '../components/product/detail/Qna.jsx';
+import ReturnDelivery from '../components/product/detail/ReturnDelivery.jsx';
+
 
 export default function DetailProduct({ addCart }) {
   const { pid } = useParams();
@@ -14,7 +20,7 @@ export default function DetailProduct({ addCart }) {
     axios
       .get("/data/product.json") // http://localhost:3000/data/products.json
       .then((res) => {
-        res.data.filter((product) => {
+        res.data.products.filter((product) => {
           if (product.pid === pid) setProduct(product);
         });
       })
@@ -100,21 +106,24 @@ export default function DetailProduct({ addCart }) {
 
       {/* DETAIL / REVIEW / Q&A / RETURN & DELIVERY  */}
       <div className="product-detail-tab">
-        <div className="tab_nav">
-          <ul>
-              <li className="on">DETAIL</li>
-              <li>REVIEW</li>
-              <li>Q&A</li>
-              <li>RETURN & DELIVERY</li>
-          </ul>
-        </div>{/* start cont */}
         <div className="tab_content_area">
-          <div className="box detail"><DetailProductList/></div>
-          <div className="box review"> review</div>
-          <div className="box qna">qna</div>
-          <div className="box delivery">delivery</div>
+          <div className="box detail">
+            <ProductMenuList Listidx={0}/>
+            <DetailProductList/>
+          </div>
+          <div className="box review">
+            <ProductMenuList Listidx={1}/>
+            <Detail/>
+          </div>
+          <div className="box qna">
+            <ProductMenuList Listidx={2}/>
+            <Qna/>
+          </div>
+          <div className="box delivery">
+            <ProductMenuList Listidx={3}/>
+            <ReturnDelivery/>
+          </div>
         </div> {/* end cont */}
-        
       </div>
     </div>
   );

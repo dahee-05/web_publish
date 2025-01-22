@@ -1,0 +1,366 @@
+/*******************************
+ .tab_content_area .review{
+********************************/
+.tab_content_area .review .review_sort_tab{
+  display:flex;
+  justify-content: start;
+  margin-top:50px;
+}
+.tab_content_area .review .review_sort_tab ul{
+  display:flex;
+  justify-content: center;
+}
+.tab_content_area .review .review_sort_tab li{
+  position:relative;
+  font-size: 14px;
+  line-height: 20px;
+  color: #808080;
+  padding: 0 13px;
+  cursor: pointer;
+}
+.tab_content_area .review .review_sort_tab li.on{
+  color: #333;
+}
+.tab_content_area .review .review_sort_tab li:before{
+  content: "";
+  display: block;
+  height: 12px;
+  width: 1px;
+  background-color: #d9d9d9;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: 3;
+}
+.tab_content_area .review .review_sort_tab li:first-child{
+  padding-left:0;
+}
+.tab_content_area .review .review_sort_tab li:first-child:before{
+  display:none;
+  padding-left:0;
+}
+.tab_content_area .review .review_sort_tab  button{
+  cursor: pointer;
+  color: #5d5c5c;
+  font-size:18px;
+}
+.tab_content_area .review .review_list_box{
+  margin-top:20px;
+  border-top: 2px solid #171717;
+  border-bottom: 1px solid #171717;
+}
+.tab_content_area .review .review_list_box .wrap{
+  display:flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  margin-top:20px;
+  border-top: 1px solid #d9d9d9;
+}
+.tab_content_area .review .review_list_box .wrap:first-child{
+border-top:0;
+}
+.tab_content_area .review .review_list_box .star_grade{
+  width:160px;
+  flex-shrink: 0;
+  padding:30px;
+  text-align:center;
+}
+.tab_content_area .review .review_list_box .star_grade span{
+  display:inline-block;
+  width:100px;
+  height:16px;
+  background: url(https://static.wconcept.co.kr/web/images/common/svg/ico_evaluate_fill_16.svg) no-repeat 0 0;
+}
+.tab_content_area .review .review_list_box .detail_info{
+  position:relative;
+  width:1000px;
+  padding:30px 0;
+}
+.tab_content_area .review .review_list_box .detail_info .top_infomation{
+  font-family: "ProximaNova-Regular", "Noto Sans KR";
+  font-size: 14px;
+  line-height: 22px;
+  vertical-align: top;
+  color: #777;
+}
+.tab_content_area .review .review_list_box .detail_info .top_infomation .review_evaluation{
+  margin-top: 12px;
+}
+.tab_content_area .review .review_list_box .detail_info .top_infomation .review_evaluation > div{
+  display:inline-block;
+  line-height: 28px;
+  border: 1px solid #f1f1f1;
+  border-radius: 20px;
+  padding: 0 9px;
+  color:#777
+}
+.tab_content_area .review .review_list_box .detail_info .top_infomation .review_evaluation > div span:first-child{
+  color:#aaa
+}
+.tab_content_area .review .review_list_box .detail_info .top_infomation .user_info{
+  position:absolute;
+  top:30px;
+  right:0;
+  font-family: "ProximaNova-Regular", "Noto Sans KR";
+  font-size: 14px;
+  line-height: 22px;
+  vertical-align: top;
+  color: #777;
+}
+.tab_content_area .review .review_list_box .detail_info .top_infomation .user_info span:first-child{
+  margin-right: 20px;
+}
+.tab_content_area .review .review_list_box .detail_info .photo{
+  display:flex;
+  justify-content: start;
+  margin-top: 16px;
+}
+.tab_content_area .review .review_list_box .detail_info .photo li{
+  width:100px;height:100px;
+  overflow: hidden;
+  margin-top: 16px;
+  cursor: pointer;
+}
+.tab_content_area .review .review_list_box .detail_info .photo li img{
+  width:100%;
+}
+.tab_content_area .review .review_list_box .review_txt{
+    display: block;
+    font-size: 14px;
+    line-height: 22px;
+    color: #333;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    margin-top:16px;
+}
+.tab_content_area .review .review_list_box .btns{
+    margin-top:16px;
+}
+.tab_content_area .review .review_list_box .btns button{
+  color: #aaa;
+  font-size: 14px;
+  position: relative;
+  padding: 0 8px;
+  cursor: pointer;
+}
+.tab_content_area .review .review_list_box .btns button:first-child{
+  padding-left:0;
+}
+.tab_content_area .review .review_list_box .btns button:first-child:after{
+  content:'';
+  position:absolute;
+  top:50%;
+  right:0;
+  transform:translateY(-50%);
+  width: 1px;
+  height: 16px;
+  background: #e6e6e6;
+}
+.tab_content_area .review .review_avg .tit{
+  font-size: 18px;
+  line-height: 26px;
+  margin: 0 0 8px 0;
+  padding-bottom: 0;
+}
+.tab_content_area .review .review_avg .detail{
+  display:flex;
+  justify-content: space-between;
+}
+.tab_content_area .review .review_avg .detail .star_grade_box{
+  width:354px;
+  margin-top:38px;
+  font-family: "ProximaNova-Semibold";
+}
+.tab_content_area .review .review_avg .detail .star_grade{
+  display:inline-block;
+  width:182px;
+  height:30px;
+  text-align:center;
+}
+.tab_content_area .review .review_avg .detail .star_grade + div{
+  display:inline-block;
+  margin-left: 20px;
+  font-size: 36px;
+    line-height: 30px;
+    letter-spacing: 1.44px;
+    color: #a4a4a4;
+}
+.tab_content_area .review .review_avg .detail .star_grade + div strong{
+  color:#000
+}
+.tab_content_area .review .review_avg .detail .star_grade span{
+  display:inline-block;
+  height:30px;
+  background: url(https://static.wconcept.co.kr/web/images/common/svg/ico_evaluate_fIll_30.svg) no-repeat 0 0;
+}
+.tab_content_area .review .review_avg .detail .right_graph{
+  width:828px;
+}
+.tab_content_area .review .review_avg .detail .right_graph .gauge_box{
+  margin-left: 30px;
+    text-align: left;
+    float: left;
+}
+.tab_content_area .review .review_avg .detail .right_graph .gauge_box .tit{
+  font-size: 14px;
+  line-height: 19px;
+  color: #808080;
+}
+.tab_content_area .review .review_avg .detail .right_graph .gauge_box li{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding:6px 0;
+}
+.tab_content_area .review .review_avg .detail .right_graph .gauge_box div:first-child{
+  width:54px;
+  text-align:left
+}
+.tab_content_area .review .review_avg .detail .right_graph .gauge_box div:last-child{
+  width:49px;
+  text-align:right;
+}
+.tab_content_area .review .review_avg .detail .right_graph .gauge_box .bar_area{
+  position:relative;
+    width: 140px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #e6e6e6;
+    overflow:hidden;
+}
+.tab_content_area .review .review_avg .detail .right_graph .gauge_box .bar_area span{
+  position:absolute;
+  top:0;
+  left:0;
+  height: 4px;
+  background-color: #000;
+}
+.tab_content_area .review .review_avg .photo{
+  display:flex;
+  justify-content: start;
+  margin-top:50px;
+}
+.tab_content_area .review .review_avg .photo li{
+  width:148px;
+  height:148px;
+  margin-right:8px;
+  overflow:hidden;
+}
+.tab_content_area .review .review_avg .photo li img{
+  width:100%;
+}
+/* paging */
+.tab_content_area .review .paging{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:60px;
+}
+.tab_content_area .review .paging span{
+  width:33px;
+  height:33px;
+  line-height:33px;
+  font-size: 14px;
+  color: #666;
+  text-align:center;
+  cursor: pointer;
+}
+.tab_content_area .review .paging span.active{
+  color:#333;
+  font-weight: bold;
+}
+.tab_content_area .review .paging button{
+  position:relative;
+  top:2px;
+  width:33px;
+  height:33px;
+  line-height:33px;
+  font-size: 20px;
+  color: #666;
+  cursor: pointer;
+}
+/* qna */
+.qna_bottom{
+  display: flex;
+  list-style: none;
+}
+  .button_box{
+  text-align: right;
+  cursor: pointer;
+}
+.qna_button{
+  /* border: 1px solid red; */
+  width: 150px;
+  height: 60px;
+  background-color: #000;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.qna_table {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  border-collapse: collapse; 
+}
+.qna_table td{
+  padding: 10px;
+} 
+.qna_content{
+  border-bottom: 1px solid lightgray;
+  line-height: 3rem;
+}
+.qna_content:last-child {
+  border-bottom: none;
+}
+.qna_check {
+  width: 100px;
+  font-size: 0.6rem;
+}
+.qna_done {
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
+  padding: 3px;
+  /* border: 1px solid salmon; */
+}
+.qna_yet {
+  
+  border: 1px solid #000;
+  background-color: white;
+  color: #000;
+  padding: 3px;
+  /* border: 1px solid salmon; */
+}
+.qna_title{
+  /* border: 1px solid red; */
+  width: 800px;
+  font-size: large;
+  cursor: pointer;
+} 
+.qna_id{
+  /* border: 1px solid red; */
+  width: 200px;
+}
+.qna_date{
+  /* border: 1px solid red; */
+  width: 150px;
+  text-align: center;
+}
+.qna_bottom{
+  display: flex;
+  justify-content: center;
+}
+.qna_bottom li{
+  font-size: 14px;
+  display: block;
+  color: #333;
+  margin: 10px;
+  text-align: center;
+}

@@ -1,4 +1,7 @@
 @import url('./ProductDetail.css');
+@import url('./productReview.css');
+@import url('./shoppyQna.css');
+@import url('./productDelivery.css');
 
 /**
   Global
@@ -37,7 +40,7 @@ p {
 .content {
   width: 1400px;
   margin: auto;
-  border: 1px solid tomato;
+  /* border: 1px solid tomato; */
 }
 
 /**
@@ -117,7 +120,7 @@ p {
 }
 
 .product-detail-top {
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
   width: 1200px;
   height: 800px;
   display: flex;
@@ -133,6 +136,7 @@ p {
 */
 .footer-outer {
   width: 100%;
+  margin-top: 100px;
   background-color: #777;
 }
 .footer {
@@ -281,7 +285,7 @@ p {
 *********************************************/
 .product-detail-tab *{
   padding:0;
-  margin:0;
+  margin: 0;
   }
   
 .product-detail-tab .tab_nav ul{
@@ -291,6 +295,7 @@ p {
   border-left: 1px solid #b5b5b5;
   border-bottom: 2px solid #000;
   height:62px;
+  margin: 120px 0 50px; 
 }
 
 .product-detail-tab .tab_nav ul li{
@@ -314,7 +319,10 @@ p {
   border-bottom: none;
 }  
 
-
+.product-detail-tab .tab_nav ul li a{
+  text-decoration: none;
+  color: #000;
+} 
 
 
 

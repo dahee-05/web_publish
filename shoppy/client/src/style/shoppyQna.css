@@ -1,0 +1,84 @@
+/********************************************
+    Q&A 작성자 : 황수현 
+********************************************/
+
+.qna_bottom{
+    display: flex;
+    list-style: none;
+}
+.button_box{
+    text-align: right;
+    cursor: pointer;
+}
+.qna_button{
+    /* border: 1px solid red; */
+    width: 150px;
+    height: 60px;
+    background-color: #000;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.qna_table {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    border-collapse: collapse; 
+}
+.qna_table td{
+    padding: 10px;
+} 
+.qna_content{
+    border-bottom: 1px solid lightgray;
+    line-height: 3rem;
+}
+.qna_content:last-child {
+    border-bottom: none;
+}
+.qna_check {
+    width: 100px;
+    font-size: 0.6rem;
+}
+.qna_done {
+    border: 1px solid #000;
+    background-color: #000;
+    color: #fff;
+    padding: 3px;
+    /* border: 1px solid salmon; */
+}
+.qna_yet {
+    
+    border: 1px solid #000;
+    background-color: white;
+    color: #000;
+    padding: 3px;
+    /* border: 1px solid salmon; */
+}
+.qna_title{
+    /* border: 1px solid red; */
+    width: 800px;
+    font-size: large;
+    cursor: pointer;
+} 
+.qna_id{
+    /* border: 1px solid red; */
+    width: 200px;
+}
+.qna_date{
+    /* border: 1px solid red; */
+    width: 150px;
+    text-align: center;
+}
+.qna_bottom{
+    display: flex;
+    justify-content: center;
+}
+.qna_bottom li{
+    font-size: 14px;
+    display: block;
+    color: #333;
+    margin: 10px;
+    text-align: center;
+}
+
