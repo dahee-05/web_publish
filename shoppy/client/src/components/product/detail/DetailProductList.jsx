@@ -54,13 +54,18 @@ export default function DetailProductList() {
           </table>
         </div>
         <p className='prod_info'>본 상품 정보 및 거래 조건의 내용은 판매자가 직접 등록한 것으로서 등록된 정보에 대한 책임은 판매자에게 있습니다.</p>
-        {isMoreView === false &&
+         <p className='prod_info_more'>
+            <button type='button' className='btn_prod_info' onClick={handleMoreView}>
+            <span>{isMoreView ? '접기':'상품 정보 고시 더보기'} </span>
+            </button>
+          </p>
+        {/* {isMoreView === false &&
           <p className='prod_info_more'>
             <button type='button' className='btn_prod_info' onClick={handleMoreView}> 
               <span>상품 정보 고시 더보기 </span>
             </button>
           </p>
-        }
+        } */}
       </div>
     </div>
   );

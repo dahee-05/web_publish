@@ -1,3 +1,6 @@
+@import url('./review.css');
+@import url('./productDetail.css');
+
 /**
   Global
 */
@@ -115,7 +118,7 @@ p {
 }
 
 .product-detail-top {
-  border: 3px solid blue;
+  /* border: 3px solid green; */
   width: 1200px;
   height: 800px;
   display: flex;
@@ -145,15 +148,17 @@ p {
   margin: 7px 5px;
 }
 
-/********************************************/
+/********************************************
+  product-detail
+********************************************/
 .product-detail-image-top {
   /* border: 1px solid red; */
   width: 550px;
 }
 .product-detail-image-top img {
   /* border: 1px solid green; */
-  width: 550px;
-  height: 600px;
+  /* width: 90%; */
+  width: 520px;
 }
 .product-detail-image-top-list {
   /* border: 1px solid rgb(115, 0, 255); */
@@ -182,8 +187,16 @@ p {
 }
 .product-detail-subtitle {
   border-top: 2px solid lightgray;
-  padding-top: 10px;
+  padding: 10px 0 20px 0;
   font-size: 10pt;
+}
+.product-detail-subtitle-star {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.product-detail-subtitle-star span:last-child {
+  text-decoration: underline;
 }
 .product-detail-box {
   background-color: lightgray;
@@ -213,15 +226,21 @@ p {
   justify-content: space-between;
 }
 .product-detail-button {
-  background-color: var(--color-tomato);
   width: 42%;
   height: 70px;
-  /* padding: 20px; */
   font-size: 15pt;
   font-weight: bold;
   color: var(--color-white);
-  margin-top: 15px 5px 0 5px;
+  margin-top: 20px 5px 0 5px;
+}
+.size {
+  background-color: var(--color-tomato);
+  width: 42%;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: bold;
   border: none;
+  margin-right: 5px;
 }
 .order {
   background-color: var(--color-white);
@@ -241,7 +260,6 @@ p {
   /* font-weight: bold; */
   border: none;
   text-align: center;
-  padding: 10px;
   color: var(--color-white);
 }
 .gift-span {
@@ -264,14 +282,9 @@ p {
 }
 
 .product-detail-tab {
-  border: 3px solid green;
+  /* border: 3px solid blue; */
   width: 1200px;
-  height: 200px;
-  display: flex;
-  gap: 2rem;
+  /* height: 200px; */
   margin: auto;
   margin-top: 40px;
-  /* padding-left: 300px; */
-  justify-content: space-between;
 }
-/********************************************/

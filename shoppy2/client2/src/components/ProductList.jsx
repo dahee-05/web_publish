@@ -8,15 +8,15 @@ export default function ProductList() {
   const rows = [];
   useEffect(()=> {
     axios.get('data/product.json')
-        .then((res)=> setList(res.data))
+        .then((res)=> setList(res.data.products))
         .catch((error)=>console.log(error))
   },[]);     
 
   for(let i=0; i<list.length; i+=3){  //3씩 증가 
-    rows.push(list.slice(i, i+3))
+    rows.push(list.slice(i, i+3));
   };
 
-  console.log('rows-->', rows);
+  // console.log('rows-->', rows);
   
   return (
     <div>

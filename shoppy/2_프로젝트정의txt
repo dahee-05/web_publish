@@ -27,3 +27,13 @@ cmder 터미널 하나에 또 다른 포트를 띄울 수 없음
 react와 node 각각 띄워서 실행
 npm start - 프로젝트 시작
 ************************************
+
+NodeJS Server 생성 
+  shoppy > mkdir server
+
+shoppy/server>npm init --yes : 프로젝트 초기화 -Node 모듈 설치
+shoppy/server>npm i express --save : 익스프레스 서버 라이브러리 설치
+shoppy/server>npm i mysql2 : mysql연동 라이브러리 설치
+shoppy/server>npm i cors   : 리엑트 연동시 특정 도메인 허용
+shoppy/server>npm i nodemon --save-dev : 
+shoppy/server>npm i

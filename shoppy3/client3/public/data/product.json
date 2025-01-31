@@ -4,49 +4,83 @@
     "image" : "/images/1.webp",
     "name" : "후드티",
     "price": 15000,
-    "info":"검정 후드티"
+    "info":"분홍 후드티",
+    "detailImg": [
+                "/images/1.webp",
+                "/images/1.webp",
+                "/images/1.webp"
+                ]
   },
   {
     "pid" : "2",
     "image" : "/images/2.webp",
-    "name" : "원피스",
+    "name" : "후드티",
     "price": 25000,
-    "info": "원피스"
-    
+    "info": "검정정 후드티",
+    "detailImg": [
+                "/images/2.webp",
+                "/images/2.webp",
+                "/images/2.webp"
+                ]
   },
   {
     "pid" : "3",
     "image" : "/images/3.webp",
-    "name" : "후드티",
+    "name" : "원피스",
     "price": 35000,
-    "info": "후드티"
+    "info": "원피스",
+    "detailImg": [
+                "/images/3.webp",
+                "/images/3.webp",
+                "/images/3.webp"
+                ]
   },
   {
     "pid" : "4",
     "image" : "/images/4.webp",
-    "name" : "티셔츠",
+    "name" : "팬츠",
     "price": 12000,
-    "info":"티셔츠"
+    "info":"팬츠",
+    "detailImg": [
+                "/images/4.webp",
+                "/images/4.webp",
+                "/images/4.webp"
+                ]
   },
   {
     "pid" : "5",
     "image" : "/images/5.webp",
     "name" : "티셔츠",
     "price": 20000,
-    "info":"티셔츠"
+    "info":"티셔츠",
+    "detailImg": [
+                "/images/5.webp",
+                "/images/5.webp",
+                "/images/5.webp"
+                ]
   },
   {
     "pid" : "6",
     "image" : "/images/6.webp",
     "name" : "스트레치 비스트 드레스",
     "price": 55000,
-    "info":"스트레치 비스트 드레스"
+    "info":"스트레치 비스트 드레스",
+    "detailImg": [
+                "/images/6.webp",
+                "/images/6.webp",
+                "/images/6.webp"
+                ]
   },
   {
     "pid" : "7",
     "image" : "/images/7.webp",
     "name" : "자켓",
     "price": 115000,
-    "info":"자켓"
+    "info":"자켓",
+    "detailImg": [
+                "/images/7.webp",
+                "/images/7.webp",
+                "/images/7.webp"
+                ]
   }
 ]

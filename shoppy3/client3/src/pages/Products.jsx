@@ -1,9 +1,11 @@
 import React from 'react';
+import ProductList from '../component/ProductList.jsx';
 
 export default function Products() {
   return (
-    <div>
-      <h1>Product!!</h1>
+    <div className='content'>
+      <h3 className='product-title'>All Product</h3>
+      <ProductList/>
     </div>
   );
 }

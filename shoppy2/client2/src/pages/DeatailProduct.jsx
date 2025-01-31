@@ -2,18 +2,25 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { PiGiftThin } from "react-icons/pi";
 import axios from "axios";
+import ProductDetail from "../components/product/ProductDetail.jsx"; 
+import ProducReview from "../components/product/ProducReview.jsx"; 
 
 export default function DetailProduct({ addCart }) {
   const { pid } = useParams();
   const [product, setProduct] = useState({});
+  const [ detailImg, setDetailImg] = useState([]);
   const [size, setSize] = useState("XS");
+  const [ tabName, setTabName ] = useState('review');
 
   useEffect(() => {
     axios
       .get("/data/product.json") // http://localhost:3000/data/products.json
       .then((res) => {
-        res.data.filter((product) => {
-          if (product.pid === pid) setProduct(product);
+        res.data.products.filter((product) => {
+          if (product.pid === pid) {
+            setProduct(product);
+            setDetailImg(product.detailImg);
+          }
         });
       })
       .catch((error) => console.log(error));
@@ -32,6 +39,11 @@ export default function DetailProduct({ addCart }) {
     };
     addCart(cartItem); // App.js의 addCart 함수 호출
   };
+
+  const handleTab = e => {
+    const id = e.target.id;
+    setTabName(id)
+  }
 
   return (
     <div className="content">
@@ -53,9 +65,7 @@ export default function DetailProduct({ addCart }) {
 
         <ul className="product-detail-info-top">
           <li className="product-detail-title">{product.name}</li>
-          <li className="product-detail-title">{`${parseInt(
-            product.price
-          ).toLocaleString()}원`}</li>
+          <li className="product-detail-title">{`${parseInt(product.price).toLocaleString()}원`}</li>
           <li className="product-detail-subtitle">{product.info}</li>
           <li>
             <p className="product-detail-box">신규회원, 무이자 할부 등</p>
@@ -99,7 +109,29 @@ export default function DetailProduct({ addCart }) {
 
       {/* DETAIL / REVIEW / Q&A / RETURN & DELIVERY  */}
       <div className="product-detail-tab">
-        DETAIL / REVIEW / Q&A / RETURN & DELIVERY
+        <ul className="tabs">
+          {['defualt', 'review', 'qna', 'delivery'].map(el => (
+            <li className={(tabName === el)? "active" : ""}>
+              <button type="button" id={el} onClick={handleTab}>{el}</button>
+            </li>
+          ))}
+          {/* <li className={(tabName === 'default')? "active" : ""}>
+            <button type="button" onClick={()=>{setTabName('default')}}>DETAIL</button>
+          </li>
+          <li className={(tabName === 'review')? "active" : ""}>
+            <button type="button" onClick={()=>{setTabName('review')}}>REVIEW</button>
+          </li>
+          <li className={(tabName === 'qna') ? "active":""}>
+            <button type="button" onClick={()=>{setTabName('qna')}}>Q&A</button>
+          </li>
+          <li className={(tabName === 'delivery') ? "active" : ""}>
+            <button type="button" onClick={()=>{setTabName('delivery')}}>RETURN & DELIVERY</button>
+          </li> */}
+        </ul>
+      </div>
+      <div className="tabs_contents">
+         { tabName === 'default' && <ProductDetail imgList={detailImg}/> }
+         { tabName === 'review' && <ProducReview/> }
       </div>
     </div>
   );

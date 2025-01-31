@@ -8,7 +8,7 @@ export default function Home() {
         <h1>Shop with US</h1>
         <h3>Best Products, High Quality</h3>
       </div>
-      <div className='product-list'>
+      <div>
         <ProductList />
       </div>
     </div>

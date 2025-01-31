@@ -1,0 +1,63 @@
+/********************************************
+  product-detail-tabs
+********************************************/
+.product-detail-tab{
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.tabs{
+  width: 100%;
+  list-style-type: none;
+  border-bottom: 2px solid #000;
+  margin-bottom: 40px;
+}
+
+.tabs:after{
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.tabs li{
+  height: 80px;
+  width: 25%;
+  border: 1px solid #b5b5b5;
+  border-bottom: none;
+  border-left-width: 0;
+  background-color: #fff;
+  float: left;
+}
+.tabs li:first-child {
+  border-left-width: 1px;
+}
+
+.tabs li button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: #333;
+  font-size: 18px;
+  font-family: "Noto Sans KR";
+  outline: none;
+  border: none;
+  background-color: var(--color-white);
+}
+
+.tabs li button:hover {
+  cursor: pointer;
+}
+
+.tabs li.active {
+  border: 2px solid #000;
+  border-bottom: none;
+  height: 82px;
+  margin-bottom: -2px;
+}
+
+.tabs_contents {
+  margin-top: 50px;
+}
