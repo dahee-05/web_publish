@@ -1,7 +1,8 @@
 /*****************************
 ***** tabs - review top *****
 ******************************/
-.product-review-content{
+.product-review-content,
+.product-review-bottom-content{
   /* border: 1px solid red; */
   width: 1200px;
   margin: 0 auto;
@@ -116,6 +117,60 @@
   top: 110px;
   left: 40px;
 }
+
+/*****************************
+*** tabs - review-list-title 
+******************************/
+.review-list-title{
+  list-style-type: none;
+  display: flex;
+  justify-content: left;
+  gap: 20px;
+}
+
+.review-list-title li:after{
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background-color: #e4e4e4;
+  font-size: 5rem;
+  margin-left: 15px;
+}
+
+.review-list-title button{
+  border: none;
+  background-color: #fff;
+  font-size: 1rem;
+  color: #999;
+  cursor: pointer;
+}
+
+.review-list-title .active button{
+  color: #000;
+}
+
+/*****************************
+*** tabs - review-list 
+******************************/
+.review-list-item{
+  margin-top: 20px;
+}
+
+.review-list-info{
+  display: flex;
+  justify-content: space-between;
+}
+
+.product_review_info_left p span{
+  font-size: 11pt;
+}
+
+
+
+
+
+
 
 
 
