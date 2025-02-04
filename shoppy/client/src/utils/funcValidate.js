@@ -1,4 +1,6 @@
 // 컴포넌트가 아니므로 파일의 이름 시작은 소문자로 시작한다 
+import axios from 'axios';
+
 /***************************
  *  로그인 validation 체크  
 ***************************/
@@ -61,26 +63,6 @@ export const validateSignup = (refs, msgRefs) => {
       }
     }
   }
-
-  // const list = [
-  //   {'ref':refs.idRef,    'msg':msgRefs.msgIdRef.current.value}
-  //   , {'ref':refs.pwdRef, 'msg':msgRefs.msgPwdRef}
-  //   , {'ref':refs.cpwdRef,  'msg':msgRefs.msgCpwdRef}
-  //   , {'ref':refs.nameRef,  'msg':msgRefs.msgNameRef}
-  //   , {'ref':refs.phoneRef,  'msg':msgRefs.msgPhoneRef}
-  //   , {'ref':refs.emailnameRef,  'msg':msgRefs.msgEmailnameRef}
-  //   , {'ref':refs.emaildomainRef,  'msg':msgRefs.msgEmaildomainRef}
-  // ];
-
-  // for(const item of list){
-  //   if(item.ref.current.value === '' || item.ref.current.value === 'default'){
-  //     alert(item.msg);
-  //     item.ref.current.focus();
-  //     result = false;
-  //     break;
-  //   }
-  // }
-
   return result;
 };
 
@@ -94,17 +76,23 @@ export const handleDuplecateIdCheck = (idRef, idMsgRef, pwdRef, setIdCheckResult
     idRef.current.focus();
     return false;
   }else {
-    const dId = 'test1';
-    if(idRef.current.value === dId){ 
-      alert('이미 사용중인 아이디입니다.')
-      idRef.current.focus();
-      return false;
-    }else{
-      alert('사용가능한 아이디 입니다.');
-      setIdCheckResult('complete');
-      pwdRef.current.focus();
-      return false;
-    }   
+    axios.post('http://localhost:9000/member/idCheck', {"id":idRef.current.value}) // 이벤트 발생시 post
+         .then((res)=>{
+          console.log('idCheck-->',res.data);
+          if(res.data.result === 1){ 
+            alert('이미 사용중인 아이디입니다.')
+            idRef.current.focus();
+            return false; 
+          }else{  
+            alert('사용가능한 아이디 입니다.');
+            setIdCheckResult('complete');
+            pwdRef.current.focus();
+            return false;
+          }   
+        })
+         .catch((error)=>console.log(error));
+
+    
   }
 };
 
