@@ -16,9 +16,7 @@ server.use(cors()); //다른 포트에서 가져오기 위해, use를 사용해 
 
 // 서버의 요청처리를 위한 미들웨어 정의  
 // res.send('Hello~NodeJS2'); send()는 한번만 인식(보내는 코드를 함쳐서 보내야 함) 
-// server.use('/',mainRouter)
-//       .use('/hello',helloRouter)
-//       .use('/employee', employeeRouter);
+server.use('/employee', employeeRouter);
 server.use('/member', memberRouter);
 
 

@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 /***************************
  *  로그인 validation 체크  
 ***************************/
@@ -63,21 +65,28 @@ export const validateSignup = (refs, msgRefs) => {
  *  Signup 중복 체크  
 ***************************/
 export const handleDuplecateIdCheck = (idRef, idMsgRef, pwdRef, setIdCheckResult) => {
-  const did = 'test1';
+  // const did = 'test1';
   console.log('idRef-->',idRef.current.value);
   if(idRef.current.value === ''){
     idMsgRef.current.style.setProperty('color','red');
     idRef.current.focus();
     return false;
-  }else if(idRef.current.value === did){
-    alert('이미 사용중인 아이디입니다');
-    idRef.current.focus();
-    return false;
   }else{
-    alert('사용가능한 아이디입니다');
-    pwdRef.current.focus();
-    setIdCheckResult('complete');
-    return false;
+    axios.post('http://localhost:9001/member/idCheck',{"id":idRef.current.value})
+         .then((res)=>{
+          console.log('res.data-->',res.data.result);
+          if(res.data.result === 1){
+            alert('이미 사용중인 아이디입니다.');
+            idRef.current.focus();
+            return false;
+          }else{
+            alert('사용가능한 아이디입니다.'); 
+            pwdRef.current.focus();
+            setIdCheckResult('complete');
+            return false;
+          }
+         })
+         .catch((error)=>console.log(error))
   }
 }
 /***************************

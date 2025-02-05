@@ -2,10 +2,13 @@ import React, { useRef, useState } from 'react';
 import '../style/signup.css';
 import { validateSignup, handleDuplecateIdCheck, handlePwdCheck } from '../utils/funcValidate.js';
 import { initSignup, useInitSignupRefs } from '../utils/funcinitialize.js';
+import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 
 export default function Signup() {
   // 값이 없을 경우 확인해줄 ref 값이 필요 
   // 값이 없다는게 확인되었을 경우 띄어줄 msgRef값이 필요 
+  const navigate = useNavigate();
   const { names, initFormData, labels, placeholders } = initSignup();
   const { refs, msgRefs }= useInitSignupRefs(names);
   const [ formData, setFormData ] = useState(initFormData);
@@ -26,6 +29,19 @@ export default function Signup() {
         return false;  
       }else{
         console.log('formData--->',formData);
+        axios.post('http://localhost:9001/member/signup', formData)
+             .then((res)=>{
+               if(res.data.result_rows === 1){
+                alert('회원가입에 성공했습니다.');
+                setTimeout(()=>{navigate('/login')}, 1000); 
+               }else{
+                alert('회원가입에 실패했습니다.');
+               } 
+             })
+             .catch((error)=>{
+              alert('회원가입에 실패했습니다.');
+              console.log(error)
+            });
       } 
     } 
   };
