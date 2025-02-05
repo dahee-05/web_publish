@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import '../style/login.css';
 import { FaUser, FaLock } from "react-icons/fa";
 import { validateLogin } from '../utils/funcValidate.js';
+import axios from 'axios';
 
 export default function Login() {
   // const idRef =  useRef(null); // 객체이므로 주소값은 null  
@@ -21,7 +22,14 @@ export default function Login() {
     
     // 리엑트 --> 노드서버(express)전송
     if(validateLogin(refs,msgRefs)) {
-      console.log('send data -->', formData);
+      // console.log('send data -->', formData);
+
+      // 리엑트 --> 노드서버(express) 데이터 전송
+      axios.post('http://localhost:9000/member/login', formData)
+           .then((res)=> console.log('res.data--->', res.data))
+           .catch((error)=>console.log(error));
+
+
     }  
   };  
 

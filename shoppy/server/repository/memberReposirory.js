@@ -57,3 +57,20 @@ export const getIdCheck = async({id}) =>{
   // console.log('result--->', result); // [{result : 1}] --> 배열-->오브젝트로 보내야함
   return result[0];
 };
+
+
+/***************************
+ * 3. 로그인 checkLogin
+***************************/
+export const checkLogin = async({id, pwd}) => { //{id:'test', pwd:'1'}
+  const sql = `
+    select count(id) as result_rows 
+      from shoppy_member 
+      where id=? 
+      and pwd =?
+  `;
+
+  const [result] = await db.execute(sql, [id,pwd]); // 어째서 [result]가 [{},{}..]이런 형태?
+  
+  return result[0];
+};
