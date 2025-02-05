@@ -10,7 +10,7 @@ export default function Login() {
   // const idRef = useRef(null);
   // const pwdRef = useRef(null);
   const navigate = useNavigate(); // Hook은 함수형 컴포넌트의 최상위에서만 호출 가능/ 조건문, 함수내부 호출 불가능
-  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext); // 하위 컴포넌트에서 사용하여 상위의 값을 가져옴
 
   const refs = {'idRef':useRef(null), 'pwdRef':useRef(null)};
   const msgRefs = {'msgRef':useRef(null)};
