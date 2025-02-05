@@ -9,6 +9,7 @@ import DeatailProduct from './pages/DeatailProduct.jsx';
 import Employees from './pages/Employees.jsx';
 import './style/shoppy.css';
 import { useState } from 'react';
+import {AuthProvider} from './auth/AuthContext.js';
 
 
 export default function App() {
@@ -24,19 +25,21 @@ export default function App() {
   
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Layout cartCount={cartCount} />}>  
-            <Route index element={<Home/>} />
-            <Route path='/all' element={<Products/>} />
-            <Route path='/carts' element={<Carts cartList={cartList}/>} />
-            <Route path='/login' element={<Login/>} />
-            <Route path='/signup' element={<Signup/>} />
-            <Route path='/employee' element={<Employees/>} />
-            <Route path='/products/:pid' element={<DeatailProduct addCart={addCart}/>} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Layout cartCount={cartCount} />}>  
+              <Route index element={<Home/>} />
+              <Route path='/all' element={<Products/>} />
+              <Route path='/carts' element={<Carts cartList={cartList}/>} />
+              <Route path='/login' element={<Login/>} />
+              <Route path='/signup' element={<Signup/>} />
+              <Route path='/employee' element={<Employees/>} />
+              <Route path='/products/:pid' element={<DeatailProduct addCart={addCart}/>} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>  
     </div>
   );
 

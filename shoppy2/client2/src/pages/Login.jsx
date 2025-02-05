@@ -1,11 +1,16 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useContext, createContext } from 'react';
 import '../style/login.css';
 import { FaUser, FaLock } from "react-icons/fa";
 import { validateLogin } from "../utils/funcValidate.js";
+import axios from 'axios';
+import { useNavigate  } from 'react-router-dom';
+import { AuthContext } from '../auth/AuthContext.js';
 
 export default function Login() {
   // const idRef = useRef(null);
   // const pwdRef = useRef(null);
+  const navigate = useNavigate(); // Hook은 함수형 컴포넌트의 최상위에서만 호출 가능/ 조건문, 함수내부 호출 불가능
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
 
   const refs = {'idRef':useRef(null), 'pwdRef':useRef(null)};
   const msgRefs = {'msgRef':useRef(null)};
@@ -18,7 +23,25 @@ export default function Login() {
 
   const handleSubmit = (e) =>{
     e.preventDefault();
-    if(validateLogin(refs, msgRefs)) console.log(formdata);
+    if(validateLogin(refs, msgRefs)) {
+      console.log('formdata-->',formdata);
+      axios.post('http://localhost:9001/member/login', formdata)
+           .then((res)=>{
+            console.log('res.data-->', res.data);
+            if(res.data.result_rows === 1){
+              alert('로그인 성공!!');
+              localStorage.setItem("token",res.data.token);
+              setIsLoggedIn(true);
+              setTimeout(()=>{navigate('/')}, 1000);
+            }else{
+              alert('로그인에 실패!!');
+            }
+           })
+           .catch((error)=>{
+            alert('네트워크 에러로 로그인에 실패했습니다.');
+            console.log(error);
+          })
+    }  
   };
 
   return (

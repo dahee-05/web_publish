@@ -30,6 +30,10 @@ from shoppy_member
 where id='test1' 
 and pwd ='1111';
 
+select count(*) as result_rows
+    from shoppy_member
+    where id ='test'
+    and pwd ='1';
 
 
 

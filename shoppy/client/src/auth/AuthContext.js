@@ -18,6 +18,16 @@ export const AuthProvider = ({children}) =>{
     </AuthContext.Provider>
 )};
 
+/*
+ * createContext() -> 2가지 객체 반환 / 
+ * 1. AuthContext : createContext()가 반환하는 기본 컨텍스트 객체
+ * 2. AuthContext.Provider : 컨텍스트 값을 하위 컴포넌트에 전달
+ * 
+ * AuthContext.Provider 란?
+ * Provider는 AuthContext를 하위 컴포넌트에 공급(Provide)하는 역할
+ * value={{ isLoggedIn, setIsLoggedIn }}를 전역 상태로 공유
+ * 하위 컴포넌트에서 useContext(AuthContext)를 사용하면 value에 접근 가능
+*/
 
 
 /* AuthContext 

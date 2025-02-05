@@ -4,7 +4,7 @@ import { FiShoppingBag } from "react-icons/fi";
 import { AuthContext } from '../auth/AuthContext.js';
 
 export default function Header({cartCount}) {
-  const {isLoggedIn, setIsLoggedIn} = useContext(AuthContext);
+  const {isLoggedIn, setIsLoggedIn} = useContext(AuthContext); // 전역 value 접근 가능
   const navigate = useNavigate();
 
   // console.log('isLoggedIn-->',isLoggedIn);
@@ -12,10 +12,10 @@ export default function Header({cartCount}) {
     if(isLoggedIn){ // 로그아웃 버튼 클릭!!
       const select = window.confirm('정말로 로그아웃 하시겠습니까?');
       if(select){
-      localStorage.removeItem("token");
-      setIsLoggedIn(false);
-      navigate('/');
-      console.log('select-->',select);
+        localStorage.removeItem("token");
+        setIsLoggedIn(false);
+        navigate('/');
+        console.log('select-->',select);
       }
     }else{
       navigate('/login');

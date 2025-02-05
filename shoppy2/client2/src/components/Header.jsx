@@ -1,10 +1,25 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { useContext } from 'react';
+import {Link, useNavigate} from 'react-router-dom';
 import { FiShoppingBag } from "react-icons/fi";
+import { AuthContext } from '../auth/AuthContext';
 
 export default function Header({cartCount}) {
-  // console.log(cartCount);
-    
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext); // 전역 value 접근 가능
+  const navigate = useNavigate();
+   
+  const handleClickButton = () => {
+    if(isLoggedIn){ // 로그인 상태 -> Logout click
+      const result = window.confirm('로그아웃 진행하시겠습니까?');
+      if(result){
+        localStorage.removeItem("token");
+        setIsLoggedIn(false);
+        navigate('/')
+      }
+    }else{
+      navigate('/login')
+    }
+  };
+
   return (
     <div className='header-outer'>
        <div className='header'>
@@ -15,9 +30,9 @@ export default function Header({cartCount}) {
           <nav className='header-right'>
             <Link to='/all'>Products</Link> 
             <Link to='/carts'>MyCart({cartCount})</Link> 
-            <Link to='/login'>
-              <button type='button'>Login</button>
-            </Link> 
+            <button type='button' onClick={handleClickButton}>
+              { isLoggedIn ? 'Logout' : 'Login'}
+            </button>
             <Link to='/signup'>
               <button type='button'>Signup</button>
             </Link> 
