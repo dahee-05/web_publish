@@ -9,6 +9,7 @@ import Signup from './pages/Signup.jsx';
 import DetailProduct from './pages/DetailProduct.jsx'; 
 import Employees from './pages/Employees.jsx'; 
 import './style/shoppy.css';
+import { AuthProvider } from './auth/AuthContext.js';
 
 export default function App() {
   // 장바구니 리스트 : 배열 
@@ -25,19 +26,21 @@ export default function App() {
   
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Layout cartCount={cartCount} />}>
-            <Route index element={<Home/>} />
-            <Route path='/all' element={<Products/>} />
-            <Route path='/cart' element={<Carts cartList={cartList}/>} />
-            <Route path='/login' element={<Login/>} />
-            <Route path='/signup' element={<Signup/>} />
-            <Route path='/employees' element={<Employees/>} />
-            <Route path='/products/:pid' element={<DetailProduct addCart={addCart}/>} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Layout cartCount={cartCount} />}>
+              <Route index element={<Home/>} />
+              <Route path='/all' element={<Products/>} />
+              <Route path='/cart' element={<Carts cartList={cartList}/>} />
+              <Route path='/login' element={<Login/>} />
+              <Route path='/signup' element={<Signup/>} />
+              <Route path='/employees' element={<Employees/>} />
+              <Route path='/products/:pid' element={<DetailProduct addCart={addCart}/>} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

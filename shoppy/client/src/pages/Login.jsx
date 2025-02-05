@@ -1,10 +1,15 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useContext } from 'react';
 import '../style/login.css';
 import { FaUser, FaLock } from "react-icons/fa";
 import { validateLogin } from '../utils/funcValidate.js';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../auth/AuthContext.js';
 
 export default function Login() {
+  const navigate = useNavigate();
+  const {isLoggedIn, setIsLoggedIn} = useContext(AuthContext);
+
   // const idRef =  useRef(null); // 객체이므로 주소값은 null  
   // const pwdRef = useRef(null); // input 태그의 주소를 넣음
   const refs = {'idRef': useRef(null), 
@@ -26,8 +31,21 @@ export default function Login() {
 
       // 리엑트 --> 노드서버(express) 데이터 전송
       axios.post('http://localhost:9000/member/login', formData)
-           .then((res)=> console.log('res.data--->', res.data))
-           .catch((error)=>console.log(error));
+           .then((res)=>{
+              // console.log('res.data--->', res.data);
+              if(res.data.result_rows === 1){
+                 alert('로그인 성공!!');
+                 localStorage.setItem("token", res.data.token); 
+                 setIsLoggedIn(true);
+                 setTimeout(()=>{navigate('/')}, 1000);
+              }else{
+                 alert('로그인 실패!!'); 
+              }
+            })
+           .catch((error)=>{
+              alert('로그인 실패!!');
+              console.log(error)
+           });
 
 
     }  
