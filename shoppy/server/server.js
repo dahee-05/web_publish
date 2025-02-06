@@ -2,7 +2,8 @@ import express from 'express';
 import employeeRouter from './router/employeeRouter.js';
 import cors from'cors';
 import memberRouter from './router/meberRouter.js';
-
+import uploadRouter from './router/uploadRouter.js';
+import path from 'path';
 
 //서버 생성 및 포트 정의
 const server = express();
@@ -12,12 +13,14 @@ const port = 9000;
 server.use(express.json());
 server.use(express.urlencoded());
 server.use(cors()); //다른 포트에서 가져오기 위해, use를 사용해 여러 http방식을 받음
-
+// 업로드 파일 호출 경로 추가 - 이미지 호출, 저장폴더 연결(폴더이름)
+server.use('/upload_files', express.static(path.join('upload_files')));
 
 // 서버의 요청처리를 위한 미들웨어 정의  
 // res.send('Hello~NodeJS2'); send()는 한번만 인식(보내는 코드를 함쳐서 보내야 함) 
-server.use('/employee', employeeRouter);
+// server.use('/employee', employeeRouter);
 server.use('/member', memberRouter);
+server.use('/uploads', uploadRouter); //실제 업로드하는 경로
 
 
 

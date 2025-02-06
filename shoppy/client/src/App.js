@@ -10,6 +10,7 @@ import DetailProduct from './pages/DetailProduct.jsx';
 import Employees from './pages/Employees.jsx'; 
 import './style/shoppy.css';
 import { AuthProvider } from './auth/AuthContext.js';
+import NewProduct from './pages/NewProduct.jsx';
 
 export default function App() {
   // 장바구니 리스트 : 배열 
@@ -37,6 +38,7 @@ export default function App() {
               <Route path='/signup' element={<Signup/>} />
               <Route path='/employees' element={<Employees/>} />
               <Route path='/products/:pid' element={<DetailProduct addCart={addCart}/>} />
+              <Route path='/products/new' element={<NewProduct />}/>
             </Route>
           </Routes>
         </BrowserRouter>
