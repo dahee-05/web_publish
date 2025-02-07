@@ -5,6 +5,7 @@ import { validateLogin } from "../utils/funcValidate.js";
 import axios from 'axios';
 import { useNavigate  } from 'react-router-dom';
 import { AuthContext } from '../auth/AuthContext.js';
+import ImageUpload from '../components/ImageUpload.jsx';
 
 export default function Login() {
   // const idRef = useRef(null);
@@ -49,6 +50,9 @@ export default function Login() {
       <h1 className="center-title">LOGIN</h1>
       <form className="login-form" onSubmit={handleSubmit}>
         <ul>
+          <li>
+            <ImageUpload />
+          </li>
           <li>
             <p className="login-form-message">✔ 아이디와 비밀번호를 입력하신 후, 로그인을 진행해주세요.</p>
           </li>

@@ -27,12 +27,6 @@ export default function ImageUpload({getFileName}) {
   );
 }
 
-
-
-
-
-
-
 /*
  * Form사용이유 : 파일을 통채로 넘기기 위해
  * 이벤트가 발생하면 브라우저가 잠시 해당 값을 가지고 있음 => (e) 
