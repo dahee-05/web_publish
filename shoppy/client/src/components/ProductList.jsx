@@ -7,8 +7,15 @@ export default function ProductList() {
   const [ list, setList ] = useState([]);
 
   useEffect(()=>{
-    axios.get('data/product.json')
-         .then((res)=> setList(res.data.products))
+    // axios.get('data/product.json')
+    //      .then((res)=> setList(res.data.products))
+    //      .catch((error)=> console.log(error));
+
+    axios.get('http://localhost:9000/product/all')
+         .then((res)=> {
+          console.log('res.data--->', res.data);
+          setList(res.data)
+          })
          .catch((error)=> console.log(error));
   },[]);
 
@@ -25,9 +32,9 @@ export default function ProductList() {
       {
         rows.map((rowArray)=>
           <div className='product-list'>
-            {rowArray.map((product) =>
+            {rowArray.map((product) => 
               <Link key={product.pid} to={`/products/${product.pid}`}>
-                <ProductAvata img={product.image} />
+                <ProductAvata img={`${product.image}`} />
               </Link>
             )}
           </div>

@@ -1,23 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Form  from 'react-bootstrap/Form';
 import axios from 'axios';
 
 export default function ImageUpload({getFileName}) {
+  const [ oldFile, setOldFile ] = useState('');
   const formData = new FormData(); // [{}] --> {[]}  
   // console.log('formData-->',formData);
   
   const handleFileUpload = (e) => {
     // console.log('e.target.files ---> ',e.target.files);
-    formData.append('file', e.target.files[0]); // {[e.target.files[0]]}
+    formData.append('file', e.target.files[0]); // {[e.target.files[0]]} 새로운 파일 
+    formData.append('oldFile',oldFile); // 이전 파일
 
     // 서버전송
-    axios.post('http://localhost:9000/uploads', formData)
+    axios.post('http://localhost:9000/uploads', formData, {
+            //파일+문자데이터 추가시, 파일만 넘어갈시 생략가능
+            headers : { 'Content-Type': 'multipart/form-data'}, 
+          })
          .then((res)=>{
-          console.log('res.data--->',res.data);
+          // console.log('res.data--->',res.data);
           getFileName(res.data); // 부모인 NewProduct.jsx로 넘어감
+          setOldFile(res.data.oldFile);
           })   
          .catch((error)=>console.log(error));   
   };
+  // console.log('oldFile-->',oldFile);
+  
 
   return (
     <div>

@@ -3,6 +3,7 @@ import employeeRouter from './router/employeeRouter.js';
 import cors from'cors';
 import memberRouter from './router/meberRouter.js';
 import uploadRouter from './router/uploadRouter.js';
+import productRouter from './router/productRouter.js';
 import path from 'path';
 
 //서버 생성 및 포트 정의
@@ -21,6 +22,7 @@ server.use('/upload_files', express.static(path.join('upload_files')));
 // server.use('/employee', employeeRouter);
 server.use('/member', memberRouter);
 server.use('/uploads', uploadRouter); //실제 업로드하는 경로
+server.use('/product', productRouter);
 
 
 

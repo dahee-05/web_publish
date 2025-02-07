@@ -35,15 +35,41 @@ select count(*) as result_rows
     where id ='test'
     and pwd ='1';
 
+-- SHOPPY PRODUCT 
+select * from information_schema.tables
+where table_name like 'shoppy%'; 
+
+CREATE TABLE shoppy_product(
+	PID    INT          PRIMARY KEY   AUTO_INCREMENT,
+    PNAME  VARCHAR(50)  NOT NULL,
+    PRICE  INT,
+    DESCRIPTION  	VARCHAR(200),
+    UPLOAD_FILE		VARCHAR(100),
+    SOURCE_FILE 	VARCHAR(100),
+    PDATE			DATETIME
+);
+DESC SHOPPY_PRODUCT;
+SELECT * FROM SHOPPY_PRODUCT;
+
+select * from shoppy_product;
+
+drop table shoppy_product;
 
 
+select pid,
+           pname as name,
+           price,
+           description as info,
+           concat('http://localhost:9000/', upload_file) as image,
+           source_file,
+           pdate
+    from shoppy_product;
+    
+update shoppy_product 
+set upload_file = 'http://localhost:9000/upload_files/1738909427837-71511367-4.webp'
+where pid='6';
 
-
-
-
-
-
-
+select * from shoppy_product;
 
 
 
