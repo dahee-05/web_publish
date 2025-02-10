@@ -44,18 +44,19 @@ CREATE TABLE shoppy_product(
     PNAME  VARCHAR(50)  NOT NULL,
     PRICE  INT,
     DESCRIPTION  	VARCHAR(200),
-    UPLOAD_FILE		VARCHAR(100),
-    SOURCE_FILE 	VARCHAR(100),
+    UPLOAD_FILE		json,
+    SOURCE_FILE 	json,
     PDATE			DATETIME
 );
 DESC SHOPPY_PRODUCT;
 SELECT * FROM SHOPPY_PRODUCT;
-
-select * from shoppy_product;
-
+-- #############################################
 drop table shoppy_product;
-
-
+set sql_safe_updates = 0;
+delete from shoppy_product;
+commit;
+select * from shoppy_product;
+-- #############################################
 select pid,
            pname as name,
            price,
@@ -68,14 +69,21 @@ select pid,
 update shoppy_product 
 set upload_file = 'http://localhost:9000/upload_files/1738909427837-71511367-4.webp'
 where pid='6';
-
+-- #############################################
 select * from shoppy_product;
 
+select pid,
+           pname as name,
+           price,
+           description as info,
+           concat('http://localhost:9000/', upload_file->>'$[0]') as image,
+           source_file,
+           pdate
+    from shoppy_product;
 
-
-
-
-
+-- 배열객체
+-- http://localhost:9000/["upload_files\\1739163151529-555526519-1.webp", "upload_files\\1739163151529-386236795-2.webp", "upload_files\\1739163151530-387138553-3.webp", "upload_files\\1739163151531-449222022-4.webp", "upload_files\\1739163151532-935363650-5.webp", "upload_files\\1739163151533-484533534-6.webp", "upload_files\\1739163151534-745671890-7.webp"]
+-- http://localhost:9000\upload_files\\1739163151529-555526519-1.webp
 
 
 

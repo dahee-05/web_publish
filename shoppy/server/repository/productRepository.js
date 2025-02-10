@@ -18,10 +18,10 @@ export const registerProduct = async(formData) => {
 
   const values = [
      formData.productName,
-     formData.price,
-     formData.description,
-     formData.uploadFile,
-     formData.sourceFile
+     formData.price || 0,
+     formData.description || "",
+     formData.uploadFile || null,
+     formData.sourceFile || null
   ];
 
   const [result] = await db.execute(sql, values);
@@ -30,6 +30,7 @@ export const registerProduct = async(formData) => {
 
 /****************************** 
  * 전체 상품 리스트 조회
+ * 데이터 타입이 json 일 경우  upload_file->>'$[0]를  사용                                                                                    
 ******************************/
 export const getList = async() => {
   const sql =`
@@ -37,7 +38,7 @@ export const getList = async() => {
            pname as name,
            price,
            description as info,
-           concat('http://localhost:9000/', upload_file) as image,
+           concat('http://localhost:9000/', upload_file->>'$[0]') as image,
            source_file,
            pdate
     from shoppy_product

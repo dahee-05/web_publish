@@ -1,21 +1,26 @@
 import React, { useRef, useState } from 'react';
-import ImageUpload from '../components/ImageUpload.jsx';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
+import ImageUpload from '../components/ImageUpload.jsx';
+import ImageUploadMultiple from '../components/ImageUploadMultiple.jsx';
 
 // 이벤트 함수로 만들어진 props를 이용해 자식값-> 부모값으로 넘김
 export default function NewProduct() {
   const navigate = useNavigate();
   const productNameRef = useRef(null);
-  const [ fname, setFnames ] = useState({});
+  const [ fname, setFnames ] = useState({}); // {[],[]...}
   const [ preview, setPreview ] = useState('');
   let [ formData, setFormData ] = useState({});
+  const [previewList, setPreviewList] = useState([]);
 
   // 자식의 값을 가져옴
   const getFileName = (filesNames) => {
     console.log('filesNames-->', filesNames);
     setFnames(filesNames);
-    setPreview(`http://localhost:9000/${filesNames.uploadFileName}`);
+    setPreviewList(filesNames.uploadFileName)
+    // setPreview(`http://localhost:9000/${filesNames.uploadFileName}`);
+    // console.log('newProduct fileNames--->', filesNames);
+    
   };
 
   // 폼 입력시 값을 formData로 추가하는 이벤트
@@ -70,6 +75,17 @@ export default function NewProduct() {
             <input type="text" name='description' onChange={handleChange}/>
           </li>
           <li>
+            <label>파일업로드(다중)</label>
+            <ImageUploadMultiple getFileName={getFileName}/>
+            {/* 다중파일 preview */}
+            {
+              previewList && previewList.map((preview)=>(
+                <img src={`http://localhost:9000/${preview}`} 
+                     alt="preview Image" 
+                     style={{'width':'100px', 'height':'100px', 'margin':'5px'}} />
+            ))}
+          </li>
+          {/* <li>
             <label>파일업로드</label>
             <ImageUpload getFileName={getFileName}/>
             { preview &&
@@ -77,7 +93,7 @@ export default function NewProduct() {
                    alt="preview Image" 
                    style={{'width':'100px', 'height':'100px'}} />
             }
-          </li>
+          </li> */}
           <li>
             <input type="hidden" name='upload' value={fname.uploadFileName}/>
             <input type="hidden" name='source' value={fname.sourceFileName} />

@@ -7,13 +7,10 @@ export default function ProductList() {
   const [ list, setList ] = useState([]);
 
   useEffect(()=>{
-    // axios.get('data/product.json')
-    //      .then((res)=> setList(res.data.products))
-    //      .catch((error)=> console.log(error));
 
     axios.get('http://localhost:9000/product/all')
          .then((res)=> {
-          console.log('res.data--->', res.data);
+          console.log('res.data--->', res.data[0].image);
           setList(res.data)
           })
          .catch((error)=> console.log(error));
@@ -25,7 +22,8 @@ export default function ProductList() {
     rows.push(list.slice(i, i+3));      // [{0},{1},{2}] 
   };
 
-  // console.log('rows-->' , rows);
+
+  console.log('rows-->' , rows);
   
   return (
     <div>
