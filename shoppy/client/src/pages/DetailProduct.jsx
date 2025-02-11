@@ -1,31 +1,39 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { PiGiftThin } from "react-icons/pi";
+import Detail from "../components/detail_tabs/Detail.jsx";
+import Review from "../components/detail_tabs/Review.jsx";
+import ImageList from '../components/commons/ImageList.jsx';
+import StarRating from "../components/commons/StarRating.jsx";
 import axios from "axios";
-import ProductMenuList from '../components/product/detail/ProductMenuList.jsx';
-import ProductMenu from '../components/product/detail/ProductMenu.jsx';
-import DetailProductList from '../components/product/detail/DetailProductList.jsx';
-import Detail from '../components/product/detail/Detail.jsx';
-import Qna from '../components/product/detail/Qna.jsx';
-import ReturnDelivery from '../components/product/detail/ReturnDelivery.jsx';
 
 
 export default function DetailProduct({ addCart }) {
   const { pid } = useParams();
   const [product, setProduct] = useState({});
+  const [imgList, setImgList] = useState([]);
+  const [ detailImgList, setDetailImgList ] = useState([]);
   const [size, setSize] = useState("XS");
-  // const {'DETAIL':'상세페이지', 'REVIEW':'리뷰', 'Q&A':'문의',  'RETURN & DELIVERY':'반품','DELIVERY':'배송'};
+  const [tabName, setTabName] = useState('detail');
+  const tabLabels = ['DETAIL', 'REVIEW', 'Q&A', 'RETURN & DELIVERY'];
+  const tabEventNames = ['detail', 'review', 'qna', 'return'];
 
   useEffect(() => {
     axios
-      .get("/data/product.json") // http://localhost:3000/data/products.json
+      .post("http://localhost:9000/product/detail", {pid}) //넘어갈때 {}형태 
       .then((res) => {
-        res.data.products.filter((product) => {
-          if (product.pid === pid) setProduct(product);
-        });
+       console.log('detail porduct res.data -->',res.data);
+       setProduct(res.data);
+       // uploadFile 배열의 3개 이미지를 출력형태로 생성하여 배열에 저장
+        // const imgList = res.data.uploadFile.filter((image, i)=>(i<3) && image);
+        setImgList(res.data.imgList);
+        setDetailImgList(res.data.detailImgList);
       })
       .catch((error) => console.log(error));
   }, []);
+
+  console.log('imgList-->', imgList);
+  
 
   //장바구니 추가 버튼 이벤트
   const addCartItem = () => {
@@ -45,18 +53,9 @@ export default function DetailProduct({ addCart }) {
     <div className="content">
       <div className="product-detail-top">
         <div className="product-detail-image-top">
-          <img src={product.image} />
-          <ul className="product-detail-image-top-list">
-            <li>
-              <img src={product.image} alt="" />
-            </li>
-            <li>
-              <img src={product.image} alt="" />
-            </li>
-            <li>
-              <img src={product.image} alt="" />
-            </li>
-          </ul>
+          <img src={product.image}   />
+          <ImageList className="product-detail-image-top-list"
+                      imgList={imgList}/>
         </div>
 
         <ul className="product-detail-info-top">
@@ -65,11 +64,14 @@ export default function DetailProduct({ addCart }) {
             product.price
           ).toLocaleString()}원`}</li>
           <li className="product-detail-subtitle">{product.info}</li>
+          <li className="product-detail-subtitle-star">
+            <StarRating totalRate={4.2} className="star-coral"/> <span>572개 리뷰 &nbsp;&nbsp; {">"}</span>
+          </li>
           <li>
             <p className="product-detail-box">신규회원, 무이자 할부 등</p>
           </li>
           <li className="flex">
-            <label className="product-detail-label">사이즈 </label>
+            <button className="product-detail-button size">사이즈 </button>
             <select
               className="product-detail-select2"
               onChange={(e) => setSize(e.target.value)}
@@ -88,7 +90,8 @@ export default function DetailProduct({ addCart }) {
             <button
               type="button"
               className="product-detail-button cart"
-              onClick={addCartItem}>
+              onClick={addCartItem}
+            >
               쇼핑백 담기
             </button>
             <div type="button" className="gift">
@@ -106,24 +109,37 @@ export default function DetailProduct({ addCart }) {
 
       {/* DETAIL / REVIEW / Q&A / RETURN & DELIVERY  */}
       <div className="product-detail-tab">
-        <div className="tab_content_area">
-          <div className="box detail">
-            <ProductMenuList Listidx={0}/>
-            <DetailProductList/>
-          </div>
-          <div className="box review">
-            <ProductMenuList Listidx={1}/>
-            <Detail/>
-          </div>
-          <div className="box qna">
-            <ProductMenuList Listidx={2}/>
-            <Qna/>
-          </div>
-          <div className="box delivery">
-            <ProductMenuList Listidx={3}/>
-            <ReturnDelivery/>
-          </div>
-        </div> {/* end cont */}
+
+        {/* DETAIL / REVIEW / Q&A / RETURN & DELIVERY */}
+        <ul className="tabs">
+          {
+            tabLabels.map((label, i) => 
+                <li className={tabName === tabEventNames[i] ? "active": ''}>
+                  <button type="button" onClick={(e)=> setTabName(tabEventNames[i])}>{ label }</button>
+                </li>
+            )
+          }
+        </ul>      
+        
+
+        {/* <ul className="tabs">
+          <li className={tabName==="detail" ? "active": ''}>
+            <button type="button" onClick={(e)=> setTabName("detail")}>DETAIL</button>
+          </li>
+          <li className={tabName==="review" ? "active": ''}>
+            <button type="button" onClick={(e)=> setTabName("review")}>REVIEW</button>
+          </li>
+          <li className={tabName==="qna" ? "active": ''}>
+            <button type="button" onClick={(e)=> setTabName("qna")}>Q&A</button>
+          </li>
+          <li className={tabName==="return" ? "active": ''}>
+            <button type="button" onClick={(e)=> setTabName("return")}>RETURN & DELIVERY</button>
+          </li>
+        </ul> */}
+        <div className="tabs_contents">
+          { tabName === "detail" && <Detail imgList={detailImgList} /> }
+          { tabName === "review" && <Review /> }
+        </div>
       </div>
     </div>
   );

@@ -49,3 +49,37 @@ export const getList = async() => {
 };
 
 
+
+/****************************** 
+ * 상품 상세 페이지 조회
+******************************/
+export const getProduct = async(pid) => {
+  console.log('pid-->', pid);
+
+  const sql =`
+        select pid, 
+               pname,
+               price, 
+               description,
+               upload_file as uploadFile,
+               source_file as sourceFile, 
+               pdate,
+               concat('http://localhost:9000/', upload_file->>'$[0]') as image,
+               json_array(
+               concat('http://localhost:9000/', upload_file->>'$[0]'),
+                      concat('http://localhost:9000/', upload_file->>'$[1]'),
+                      concat('http://localhost:9000/', upload_file->>'$[2]')
+               ) as imgList, 
+               json_arrayagg(
+               concat('http://localhost:9000/', jt.filename)
+               ) as detailImgList
+          from shoppy_product
+               , json_table( shoppy_product.upload_file, '$[*]' columns(filename varchar(100) path '$')) as jt
+          where pid=?
+          group by pid 
+  `;
+
+  const [result] = await db.execute(sql, [pid]); // [ [{pid:4,~~~}], [컬럼명 fileds] ]
+  // console.log('result-->', result);
+  return result[0];
+};
