@@ -10,7 +10,7 @@ export default function ProductList() {
 
     axios.get('http://localhost:9000/product/all')
          .then((res)=> {
-          console.log('res.data--->', res.data[0].image);
+          // console.log('res.data--->', res.data[0].image);
           setList(res.data)
           })
          .catch((error)=> console.log(error));
