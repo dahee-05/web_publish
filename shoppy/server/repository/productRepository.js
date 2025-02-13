@@ -83,3 +83,31 @@ export const getProduct = async(pid) => {
   // console.log('result-->', result);
   return result[0];
 };
+
+
+/****************************** 
+ * 장바구니 상품 정보 조회
+******************************/
+export const getCartItems = async({pids}) =>{
+  const strArray = [];
+  // for(const pid of pids) strArray.push('?');  //-->join으로 문자열로 만듬
+  pids.forEach(pid => strArray.push("?"));
+  // console.log('strArray-->',strArray);
+  
+
+  const sql =`
+    select pid,
+           pname,
+           price,
+           description,
+           upload_file, 
+           concat('http://localhost:9000/', upload_file->>'$[0]') as image
+    from  shoppy_product
+    where pid in (${strArray.join(',')});
+  `;
+
+  // console.log('sql--->', sql);
+  
+  const [result] = await db.execute(sql, pids);
+  return result;
+}

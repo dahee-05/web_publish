@@ -22,7 +22,7 @@ export default function DetailProduct({ addCart }) {
     axios
       .post("http://localhost:9000/product/detail", {pid}) //넘어갈때 {}형태 
       .then((res) => {
-       console.log('detail porduct res.data -->',res.data);
+      //  console.log('detail porduct res.data -->',res.data);
        setProduct(res.data);
        // uploadFile 배열의 3개 이미지를 출력형태로 생성하여 배열에 저장
         // const imgList = res.data.uploadFile.filter((image, i)=>(i<3) && image);
@@ -32,19 +32,17 @@ export default function DetailProduct({ addCart }) {
       .catch((error) => console.log(error));
   }, []);
 
-  console.log('imgList-->', imgList);
+  // console.log('imgList-->', imgList);
   
 
-  //장바구니 추가 버튼 이벤트
   const addCartItem = () => {
-    //장바구니 추가 항목 : { pid, size, count, price }
+    //장바구니 추가 항목 : { pid, size, qty }
     // alert(`${pid} --> 장바구니 추가 완료!`);
     // console.log(product.pid, product.price, size, 1);
     const cartItem = {
       pid: product.pid,
       size: size,
-      qty: 1,
-      price: product.price,
+      qty: 1
     };
     addCart(cartItem); // App.js의 addCart 함수 호출
   };

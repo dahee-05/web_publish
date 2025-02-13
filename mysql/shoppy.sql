@@ -1,6 +1,7 @@
 /*
  * Shoppy 테이블 정의
 */
+show databases;
 use hrdb2019;
 select database();
 show tables;
@@ -117,14 +118,53 @@ group by pid;
 
 update shoppy_product set pid=6 where pid=7;
 
+select pid,
+	   pname,
+	   price,
+       description,
+       upload_file, 
+       concat('http://localhost:9000/', upload_file->>'$[0]') as image, 
+       json_arrayagg(
+			concat('http://localhost:9000/', jt.filename)
+       ) as imageList
+from shoppy_product
+	 , json_table(shoppy_product.upload_file, '$[*]' columns(filename varchar(100) path '$')) as jt
+where pid in(1,3) 
+group by pid;
 
 
+select pid,
+	   pname,
+	   price,
+       description,
+       upload_file, 
+       concat('http://localhost:9000/', upload_file->>'$[0]') as image
+from shoppy_product
+where pid in(?);
 
+/*******************************
+02.13 - 장바구니 테이블 생성
+*******************************/
+select * from shoppy_member;
+select * from shoppy_product;
+desc shoppy_member;
+desc shoppy_product;
+-- 어떤 회원이(pk:id) 어떤 상품을(pk:pid) 장바구니에 넣었는지 명확, 간단!
 
-
-
-
-
+-- shoppy_cart 
+-- 컬럼 리스트 : cid(pk), id(fk: 참조키), pid(fk: 참조키), qty, size, cdate 
+CREATE TABLE SHOPPY_CART(
+	CID 	INT 		PRIMARY KEY  	AUTO_INCREMENT ,
+    QTY 	INT 		NOT NULL,
+    SIZE 	VARCHAR(10) NOT NULL,
+    CDATE 	DATETIME,  
+    ID  	VARCHAR(30) NOT NULL ,
+    PID 	INT 		NOT NULL,
+    CONSTRAINT FK_ID_SHOPPY_MEMBER_ID FOREIGN KEY(ID)
+				REFERENCES SHOPPY_MEMBER(ID),
+	CONSTRAINT FK_PID_SHOPPY_PRODUCT_PID FOREIGN KEY(PID)
+				REFERENCES SHOPPY_PRODUCT(PID)
+);
 
 
 
