@@ -150,13 +150,13 @@ select * from shoppy_product;
 desc shoppy_member;
 desc shoppy_product;
 -- 어떤 회원이(pk:id) 어떤 상품을(pk:pid) 장바구니에 넣었는지 명확, 간단!
-
+drop table SHOPPY_CART;
 -- shoppy_cart 
 -- 컬럼 리스트 : cid(pk), id(fk: 참조키), pid(fk: 참조키), qty, size, cdate 
 CREATE TABLE SHOPPY_CART(
 	CID 	INT 		PRIMARY KEY  	AUTO_INCREMENT ,
-    QTY 	INT 		NOT NULL,
     SIZE 	VARCHAR(10) NOT NULL,
+    QTY 	INT 		NOT NULL,
     CDATE 	DATETIME,  
     ID  	VARCHAR(30) NOT NULL ,
     PID 	INT 		NOT NULL,
@@ -165,6 +165,64 @@ CREATE TABLE SHOPPY_CART(
 	CONSTRAINT FK_PID_SHOPPY_PRODUCT_PID FOREIGN KEY(PID)
 				REFERENCES SHOPPY_PRODUCT(PID)
 );
+SHOW TABLES;
+DESC SHOPPY_CART;
+SELECT * FROM SHOPPY_CART;
+SELECT * FROM SHOPPY_member;
+/*******************************
+02.14 - 장바구니 2
+*******************************/
+truncate table shoppy_cart; -- 기존 데이터 모두 삭제 / 복구 불가능
+SELECT * FROM SHOPPY_CART;
+SELECT * FROM SHOPPY_member;
+insert into shoppy_cart(size, qty,cdate, id, pid)
+values('XS', 2, now(), 'test2',3);
+
+-- shoppy_cart, shoppy_member, shoppy_product 조회
+  select sc.cid,
+		sc.size,
+		sc.qty, 
+        sm.id,
+		sm.zipcode,
+		sm.address,
+		sp.pid,
+		sp.pname,
+		sp.price, 
+		sp.description as info,
+		concat('http://localhost:9000/', sp.upload_file->>'$[0]') as image
+from shoppy_cart sc, shoppy_member sm,  shoppy_product sp
+where sc.id = sm.id 
+and sc.pid = sp.pid
+and sm.id = 'test2';
+/*******************************
+02.17 - 장바구니
+*******************************/
+truncate table shoppy_cart; -- 기존 데이터 모두 삭제 / 복구 불가능
+SELECT * FROM SHOPPY_CART;
+
+select * from shoppy_cart
+where id='test2';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

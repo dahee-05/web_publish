@@ -1,20 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { PiGiftThin } from "react-icons/pi";
 import Detail from "../components/detail_tabs/Detail.jsx";
 import Review from "../components/detail_tabs/Review.jsx";
 import ImageList from '../components/commons/ImageList.jsx';
 import StarRating from "../components/commons/StarRating.jsx";
 import axios from "axios";
+import { AuthContext } from "../auth/AuthContext.js";
+import { CartContext } from "../context/CartContext.js";
 
-
-export default function DetailProduct({ addCart }) {
+export default function DetailProduct() {
+  const navigate = useNavigate();
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+  const { cartList, setCartList, cartCount, setCartCount  } = useContext(CartContext);
   const { pid } = useParams();
-  const [product, setProduct] = useState({});
-  const [imgList, setImgList] = useState([]);
+  const [ product, setProduct ] = useState({});
+  const [ imgList, setImgList ] = useState([]);  
   const [ detailImgList, setDetailImgList ] = useState([]);
-  const [size, setSize] = useState("XS");
-  const [tabName, setTabName] = useState('detail');
+  const [ size, setSize ] = useState("XS");
+  const [ tabName, setTabName ] = useState('detail');
   const tabLabels = ['DETAIL', 'REVIEW', 'Q&A', 'RETURN & DELIVERY'];
   const tabEventNames = ['detail', 'review', 'qna', 'return'];
 
@@ -32,20 +36,65 @@ export default function DetailProduct({ addCart }) {
       .catch((error) => console.log(error));
   }, []);
 
-  // console.log('imgList-->', imgList);
   
-
   const addCartItem = () => {
-    //장바구니 추가 항목 : { pid, size, qty }
-    // alert(`${pid} --> 장바구니 추가 완료!`);
-    // console.log(product.pid, product.price, size, 1);
-    const cartItem = {
-      pid: product.pid,
-      size: size,
-      qty: 1
-    };
-    addCart(cartItem); // App.js의 addCart 함수 호출
-  };
+     if(isLoggedIn){
+       const cartItem = { //장바구니 추가 항목 : { pid, size, qty }
+         pid: product.pid,
+         size: size,
+         qty: 1
+       };
+       // cartItem -> 서버전송 -> shoppy_cart 추가
+       const id = localStorage.getItem('user_id');
+      
+       // cartItem의 pid, size 를 cartList(로그인성공시 준비)의 item과 비교해서 있으면 update(qty+1), 없으면 insert->
+
+      console.log('detail :: cartList --->',cartList);
+       // some -> boolean / find ->
+      const findItem = cartList && cartList.find((item)=> item.pid === product.pid && item.size === size);
+      console.log('detail :: findItem --->',findItem);
+      if(findItem !== undefined){ // qty+1 --> cid(id, pid, size)
+          console.log('update');
+          
+          axios.put('http://localhost:9000/cart/updateQty', {'cid':findItem.cid})
+              .then((res)=>  {
+                if(res.data.result_rows){
+                  alert('장바구니에 추가되었습니다');
+                  // const updateCartList = cartList.map((item)=>
+                    //   (item.cid === findItem.cid) ? {...item, qty: item.qty +1} : item
+                  // );
+                  // setCartList(updateCartList);
+                }})
+              .catch((error)=> console.log(error))
+
+              /* DB 연동 --> cartList 재호출!! */
+      }else{
+          console.log('insert');
+          const formData = {id:id, cartList:[cartItem]};  //  console.log('formData-->',formData);
+
+          axios.post('http://localhost:9000/cart/add', formData)
+                .then((res)=>  {
+                  if(res.data.result_rows){
+                    alert('장바구니에 추가되었습니다');
+                    // setCartCount(cartCount + 1);
+                    // setCartList([...cartList, cartItem]);
+                  }})
+                .catch((error)=> console.log(error))
+
+                /* DB 연동 --> cartList 재호출!! */
+
+                
+      //  }else{
+      //   const select = window.confirm('로그인 서비스가 필요합니다. \n로그인하시겠습니까?');
+      //   if(select){
+      //     navigate('/login');
+      //   }
+      //  }
+      }
+      
+  };}
+  console.log('cartCount--->',cartCount);
+  
 
   return (
     <div className="content">
@@ -58,9 +107,7 @@ export default function DetailProduct({ addCart }) {
 
         <ul className="product-detail-info-top">
           <li className="product-detail-title">{product.name}</li>
-          <li className="product-detail-title">{`${parseInt(
-            product.price
-          ).toLocaleString()}원`}</li>
+          <li className="product-detail-title">{`${parseInt(product.price).toLocaleString()}원`}</li>
           <li className="product-detail-subtitle">{product.info}</li>
           <li className="product-detail-subtitle-star">
             <StarRating totalRate={4.2} className="star-coral"/> <span>572개 리뷰 &nbsp;&nbsp; {">"}</span>

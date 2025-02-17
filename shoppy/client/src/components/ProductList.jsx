@@ -23,7 +23,7 @@ export default function ProductList() {
   };
 
 
-  console.log('rows-->' , rows);
+  // console.log('rows-->' , rows);
   
   return (
     <div>

@@ -1,29 +1,17 @@
 // 인증 관련 작업 - 리엑트에서 처리하도록
 import { createContext, useState, useEffect } from "react";
 
-export const AuthContext = createContext();  // 전역 변수를 선언
+export const CartContext = createContext();  // 전역 변수를 선언
 
-// app.js의 컴포넌트가 실행되기 전 로그인 여부 체크
-export const AuthProvider = ({children}) =>{
-  const [ isLoggedIn, setIsLoggedIn ] = useState(()=>{
-    try {
-        const token =  localStorage.getItem("token");
-        return token ? true : false; // count 값으로 들어가도록 리턴
-      }catch (error) {
-        console.log('로컬 스토리지 json 파싱 오류~', error);
-        return false; // 오류 발생시 빈 배열 반환
-      }
-  });
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token); // !! : boolean으로 변환하는 역할, 존재시 true
-  }, [setIsLoggedIn]);
-
-  return (
-    <AuthContext.Provider value={{isLoggedIn, setIsLoggedIn}}>
+// APP.JS에서 CartProvider를 감싸면 그 안에 있는 사용하는 애들이 이것을 가져다가 씀
+export const CartProvider = ({children}) =>{
+   const [ cartList, setCartList ] = useState([]); 
+   const [ cartCount, setCartCount ] = useState(0); 
+    
+  return ( // <CartContext>로 감싼 모든 하위자식들은 value값을 가짐
+    <CartContext.Provider value={{ cartList, setCartList, cartCount, setCartCount  }}>
       {children}
-    </AuthContext.Provider>
+    </CartContext.Provider>
 )};
 
 /*

@@ -54,7 +54,7 @@ export const getList = async() => {
  * 상품 상세 페이지 조회
 ******************************/
 export const getProduct = async(pid) => {
-  console.log('pid-->', pid);
+  // console.log('pid-->', pid);
 
   const sql =`
         select pid, 
