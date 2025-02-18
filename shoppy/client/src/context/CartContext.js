@@ -30,7 +30,4 @@ export const CartProvider = ({children}) =>{
 
 /* AuthContext 
  * = React의 Context API를 사용하여 인증 관련 상태(Auth)를 전역적으로 관리하기 위해 컨텍스트 생성
- *
- *
- *
 */

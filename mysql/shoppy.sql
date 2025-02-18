@@ -199,6 +199,8 @@ and sm.id = 'test2';
 *******************************/
 truncate table shoppy_cart; -- 기존 데이터 모두 삭제 / 복구 불가능
 SELECT * FROM SHOPPY_CART;
+SELECT * FROM SHOPPY_product;
+show tables;
 
 select * from shoppy_cart
 where id='test2';

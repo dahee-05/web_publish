@@ -30,7 +30,7 @@ export const registerProduct = async(formData) => {
 
 /****************************** 
  * 전체 상품 리스트 조회
- * 데이터 타입이 json 일 경우  upload_file->>'$[0]를  사용                                                                                    
+ * 데이터 타입이 json 일 경우  upload_file->>'$[0]를 사용                                                                                    
 ******************************/
 export const getList = async() => {
   const sql =`

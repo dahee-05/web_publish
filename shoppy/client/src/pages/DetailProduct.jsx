@@ -8,11 +8,9 @@ import StarRating from "../components/commons/StarRating.jsx";
 import axios from "axios";
 import { AuthContext } from "../auth/AuthContext.js";
 import { CartContext } from "../context/CartContext.js";
+import { useCart } from '../hooks/useCart.js'; // 커스텀 훅
 
 export default function DetailProduct() {
-  const navigate = useNavigate();
-  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
-  const { cartList, setCartList, cartCount, setCartCount  } = useContext(CartContext);
   const { pid } = useParams();
   const [ product, setProduct ] = useState({});
   const [ imgList, setImgList ] = useState([]);  
@@ -21,81 +19,46 @@ export default function DetailProduct() {
   const [ tabName, setTabName ] = useState('detail');
   const tabLabels = ['DETAIL', 'REVIEW', 'Q&A', 'RETURN & DELIVERY'];
   const tabEventNames = ['detail', 'review', 'qna', 'return'];
+  const navigate = useNavigate();
+  const { isLoggedIn } = useContext(AuthContext);
+  const { cartList } = useContext(CartContext);
+  const { saveToCartList, updateCartList  } = useCart();
 
   useEffect(() => {
     axios
       .post("http://localhost:9000/product/detail", {pid}) //넘어갈때 {}형태 
       .then((res) => {
-      //  console.log('detail porduct res.data -->',res.data);
-       setProduct(res.data);
-       // uploadFile 배열의 3개 이미지를 출력형태로 생성하여 배열에 저장
-        // const imgList = res.data.uploadFile.filter((image, i)=>(i<3) && image);
-        setImgList(res.data.imgList);
+        setProduct(res.data);
+        setImgList(res.data.imgList); // 상품[0,1,2] 3개의 이미지
         setDetailImgList(res.data.detailImgList);
       })
       .catch((error) => console.log(error));
   }, []);
 
-  
+
+  /* 장바구니 추가 버튼 이벤트 */
   const addCartItem = () => {
      if(isLoggedIn){
-       const cartItem = { //장바구니 추가 항목 : { pid, size, qty }
-         pid: product.pid,
-         size: size,
-         qty: 1
-       };
-       // cartItem -> 서버전송 -> shoppy_cart 추가
-       const id = localStorage.getItem('user_id');
-      
-       // cartItem의 pid, size 를 cartList(로그인성공시 준비)의 item과 비교해서 있으면 update(qty+1), 없으면 insert->
-
-      console.log('detail :: cartList --->',cartList);
-       // some -> boolean / find ->
-      const findItem = cartList && cartList.find((item)=> item.pid === product.pid && item.size === size);
-      console.log('detail :: findItem --->',findItem);
-      if(findItem !== undefined){ // qty+1 --> cid(id, pid, size)
-          console.log('update');
-          
-          axios.put('http://localhost:9000/cart/updateQty', {'cid':findItem.cid})
-              .then((res)=>  {
-                if(res.data.result_rows){
-                  alert('장바구니에 추가되었습니다');
-                  // const updateCartList = cartList.map((item)=>
-                    //   (item.cid === findItem.cid) ? {...item, qty: item.qty +1} : item
-                  // );
-                  // setCartList(updateCartList);
-                }})
-              .catch((error)=> console.log(error))
-
-              /* DB 연동 --> cartList 재호출!! */
-      }else{
-          console.log('insert');
-          const formData = {id:id, cartList:[cartItem]};  //  console.log('formData-->',formData);
-
-          axios.post('http://localhost:9000/cart/add', formData)
-                .then((res)=>  {
-                  if(res.data.result_rows){
-                    alert('장바구니에 추가되었습니다');
-                    // setCartCount(cartCount + 1);
-                    // setCartList([...cartList, cartItem]);
-                  }})
-                .catch((error)=> console.log(error))
-
-                /* DB 연동 --> cartList 재호출!! */
-
-                
-      //  }else{
-      //   const select = window.confirm('로그인 서비스가 필요합니다. \n로그인하시겠습니까?');
-      //   if(select){
-      //     navigate('/login');
-      //   }
-      //  }
+       const cartItem = { pid: product.pid, size: size, qty: 1};
+       const findItem = cartList && cartList.find((item)=> item.pid === product.pid 
+                                                          && item.size === size);
+        if(findItem !== undefined){ // qty+1 업데이트
+            const result = updateCartList(findItem.cid, "increase");
+            result && alert('장바구니에 추가되었습니다.');
+        }else{  // 새로 추가
+            const id = localStorage.getItem('user_id');
+            const formData = {id:id, cartList:[cartItem]}; 
+            const result = saveToCartList(formData);
+            result && alert('장바구니에 추가되었습니다.'); 
+        }
+    }else{
+      const select = window.confirm('로그인 서비스가 필요합니다. \n로그인하시겠습니까?');
+      if(select){
+        navigate('/login');
       }
-      
-  };}
-  console.log('cartCount--->',cartCount);
+    }
+  };
   
-
   return (
     <div className="content">
       <div className="product-detail-top">
@@ -117,10 +80,8 @@ export default function DetailProduct() {
           </li>
           <li className="flex">
             <button className="product-detail-button size">사이즈 </button>
-            <select
-              className="product-detail-select2"
-              onChange={(e) => setSize(e.target.value)}
-            >
+            <select className="product-detail-select2"
+                    onChange={(e) => setSize(e.target.value)}>
               <option value="XS">XS</option>
               <option value="S">S</option>
               <option value="M">M</option>
@@ -130,14 +91,13 @@ export default function DetailProduct() {
           </li>
           <li className="flex">
             <button type="button" className="product-detail-button order">
-              바로 구매
+               바로 구매
             </button>
             <button
               type="button"
               className="product-detail-button cart"
-              onClick={addCartItem}
-            >
-              쇼핑백 담기
+              onClick={addCartItem}>
+                쇼핑백 담기
             </button>
             <div type="button" className="gift">
               <PiGiftThin />
@@ -154,7 +114,6 @@ export default function DetailProduct() {
 
       {/* DETAIL / REVIEW / Q&A / RETURN & DELIVERY  */}
       <div className="product-detail-tab">
-
         {/* DETAIL / REVIEW / Q&A / RETURN & DELIVERY */}
         <ul className="tabs">
           {
@@ -165,8 +124,6 @@ export default function DetailProduct() {
             )
           }
         </ul>      
-        
-
         {/* <ul className="tabs">
           <li className={tabName==="detail" ? "active": ''}>
             <button type="button" onClick={(e)=> setTabName("detail")}>DETAIL</button>
@@ -189,7 +146,5 @@ export default function DetailProduct() {
     </div>
   );
 }
-
-// path를 통해 넘어오는 값은 useParams 를 사용해 값을 가져옴
 // 이벤트를 전역으로 사용할려면 {함수이름}
 // 이벤트를 해당 페이진 내에서만 사용하려면 (()=>{})
