@@ -206,51 +206,64 @@ select * from shoppy_cart
 where id='test2';
 
 
+delete from shoppy_cart where cid = '5';
+
+/*******************************
+02.19 - 결제/ view 테이블 생성
+*******************************/
+select * from shoppy_cart where id='test2';
+desc shoppy_member;
+desc shoppy_product;
+desc shoppy_cart;
+select * from shoppy_member;
+update shoppy_member set phone='010-2911-1192' where id='test';
 
 
+/*******************************
+-- 02.19 - 전체 주문 리스트 뷰 생성, sql을 메모리에 저장 후 재사용, 변경시 삭제후 다시 만들어야 함
+*******************************/
+create view view_order_list
+as 
+select sc.cid,
+	   sc.size,
+	   sc.qty, 
+	   sm.id,
+	   sm.name,
+	   sm.phone,
+	   concat(sm.emailname,'@',sm.emaildomain) as email,
+	   sm.zipcode,
+	   sm.address,
+	   sp.pid,
+	   sp.pname,
+	   sp.price, 
+	   sp.description as info,
+	   concat('http://localhost:9000/', sp.upload_file->>'$[0]') as image
+from  shoppy_cart sc, shoppy_member sm,  shoppy_product sp
+where sc.id = sm.id 
+and   sc.pid = sp.pid;
+    
+select * from view_order_list where id='test2';
 
 
+/*******************************
+-- 02.19 - 결제/ view 테이블 생성
+*******************************/
+create view view_cart_list
+as 
+select sc.cid,
+	   sc.size,
+	   sc.qty, 
+       sm.id,
+	   sm.zipcode,
+	   sm.address,
+	   sp.pid,
+	   sp.pname,
+	   sp.price,
+	   format(sp.price, 0) as sprice, 
+	   sp.description as info,
+	   concat('http://localhost:9000/', sp.upload_file->>'$[0]') as image
+  from shoppy_cart sc, shoppy_member sm,  shoppy_product sp
+  where sc.id = sm.id 
+  and sc.pid = sp.pid;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+select * from view_cart_list where id='test2';

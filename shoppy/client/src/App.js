@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import React, {useEffect, useState} from'react';
+import React from'react';
+import './style/shoppy.css';
 import Layout from './pages/Layout.jsx';
 import Home from './pages/Home.jsx'; 
 import Products from './pages/Products.jsx'; 
@@ -8,73 +9,17 @@ import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx'; 
 import DetailProduct from './pages/DetailProduct.jsx'; 
 import Employees from './pages/Employees.jsx'; 
-import './style/shoppy.css';
+import NewProduct from './pages/NewProduct.jsx';
+import CheckoutInfo from './pages/CheckoutInfo.jsx';
 import { AuthProvider } from './auth/AuthContext.js';
 import { CartProvider } from './context/CartContext.js';
-import NewProduct from './pages/NewProduct.jsx';
-import CartsDB from './pages/CartsDB.jsx';
+import { OrderProvider } from './context/OrderContext.js';
 
 export default function App() {
-  /* 장바구니 아이템 저장 : 배열 */
-  const [cartList, setCartList] = useState(()=>{
-    try {
-      const initCartList =  localStorage.getItem("cartItems");
-      return initCartList ? JSON.parse(initCartList) : [];  // JSON.parse() json을 객체로 변경
-    }catch (error) {
-      console.log('로컬 스토리지 데이터 작업도중 에러 발생~');
-      console.log(error);
-    }
-  }); 
-  // console.log('initCartList-->',initCartList);
-  
-  /* 장바구니 상품 개수 */
-  const [cartCount, setCartCount] = useState(()=>{
-    try {
-      const initCartList =  localStorage.getItem("cartItems");
-      return initCartList ? JSON.parse(initCartList).length : 0; 
-    }catch (error) {
-      console.log('로컬 스토리지 데이터 작업도중 에러 발생~');
-      console.log(error);
-    }
-  }); 
-  
-  /* 로컬스토리지 재호출 ---> cartList, cartCount 업데이트(초기화)*/
-  const refreshStorage = (updateCart, updateCount) => {
-    setCartList(updateCart);
-    setCartCount(updateCount);
-  };
-
-  /* cartCOUNT가 업데이트가 되면 localStorage에 cartList 저장*/
-  // useEffect(()=>{
-  //   localStorage.setItem("cartItems", JSON.stringify(cartList)); // json객체를 문자로 변환하여 저장
-  // },[cartCount]);  
-
-  /* 장바구니 추가 */
-  // map은 새로운 배열->기존에 장바구니item과 동일x 기존item을 다시 넣어줌
-  // 로컬스토리지(checkItem) /  새로추가한Item(cartItem)
-  const addCart =((cartItem)=>{ 
-    const isCheck = cartList.some(checkItem => checkItem.pid === cartItem.pid 
-                                              && checkItem.size === cartItem.size);
-    let updateCartList = [];
-     
-    if(isCheck){  
-      updateCartList = cartList.map(item =>
-        item.pid === cartItem.pid && item.size === cartItem.size ?
-          {...item, qty:item.qty +1}
-        : item  
-      )
-    }else{
-      updateCartList = [...cartList, cartItem];
-      setCartCount(cartCount + 1); 
-    }
-    setCartList(updateCartList);  
-  });
-
-  // console.log(`cartList--->`,cartList);
-  // console.log(`cartCount--->`,cartCount);
-  
+ 
   return (
     <div className="App">
+      <OrderProvider>
       <CartProvider>
       <AuthProvider>
         <BrowserRouter>
@@ -82,18 +27,19 @@ export default function App() {
             <Route path='/' element={<Layout/>}>
               <Route index element={<Home/>} />
               <Route path='/all' element={<Products/>} />
-              <Route path='/cart' element={<Cart refreshStorage={refreshStorage}/>} />
+              <Route path='/cart' element={<Cart/>} />
               <Route path='/login' element={<Login/>} />
               <Route path='/signup' element={<Signup/>} />
               <Route path='/employees' element={<Employees/>} />
-              <Route path='/products/:pid' element={<DetailProduct addCart={addCart}/>} />
+              <Route path='/products/:pid' element={<DetailProduct/>} />
               <Route path='/products/new' element={<NewProduct />}/>
-              <Route path='/cartdb' element={<CartsDB />}/>
+              <Route path='/checkout' element={<CheckoutInfo />}/>
             </Route>
           </Routes>
         </BrowserRouter>
       </AuthProvider>
       </CartProvider>
+      </OrderProvider>
     </div>
   );
 }

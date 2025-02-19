@@ -6,7 +6,7 @@ import axios from "axios";
 /* custom Hook - 비동기식으로 인해 인터프리터 방식이 적용이 안될 때 */
 /* 함수 생성  - 비동기 로직 & useContext가 관리하는 변수는 await/ async를 통해 순서 보장 */
 export function useCart(){  
-  const { cartList, setCartList, cartCount, setCartCount } = useContext(CartContext);
+  const { cartList, setCartList, cartCount, setCartCount, totalPrice, setTotalPrice  } = useContext(CartContext);
 
   /* 1. 장바구니 전체 리스트 조회 함수 [select] */
   const getCartList = async() => {
@@ -14,6 +14,7 @@ export function useCart(){
     const result = await axios.post('http://localhost:9000/cart/items', {'id':id});
     setCartList(result.data);
     setCartCount(result.data.length);
+    calculateTotalPrice(result.data);
   };
 
   /* 2. 장바구니 아이템 저장 --> DB연동 [insert] */
@@ -52,7 +53,18 @@ export function useCart(){
   };
 
 
-  return { saveToCartList, updateCartList, getCartList, getCount, setCount, deleteItem }; // 다른 곳에서 호출해서 사용하기 위해 
+  /* 7. 장바구니 총 주문금액 계산하기  */
+  const calculateTotalPrice = (cartList) => {
+    const totalPrice = cartList.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    setTotalPrice(totalPrice);
+
+} // 컴포넌트 내부에서 호출되면 리턴 x
+
+
+
+
+  return { saveToCartList, updateCartList, getCartList, getCount, 
+    setCount, deleteItem, calculateTotalPrice }; // 다른 곳에서 호출해서 사용하기 위해 
 
 
 
