@@ -6,6 +6,7 @@ import { OrderContext } from '../context/OrderContext.js';
 import { CartContext } from "../context/CartContext.js";
 import { useOrder } from "../hooks/useOrder.js";
 import DaumPostcode from "react-daum-postcode";
+import axios from "axios";
 
 
 export default function CheckoutInfo() {
@@ -57,6 +58,25 @@ export default function CheckoutInfo() {
         }
     };
     //---- DaumPostcode 관련 디자인 및 이벤트 종료 ----//
+
+    /* 결제 함수- 카카오페이 OR 결제 연동 */
+    const handlePayment = async() =>{
+      const id = localStorage.getItem('user_id');
+      try {
+        const res = await axios.post('http://localhost:9000/payment/qr', {
+                                                  'id':id, 
+                                                  'item_name': '테스트 상품',
+                                                  'total_amount': 1000});
+        console.log('res.data--->',res.data);
+        if(res.data.next_redirect_pc_url){
+          window.location.href =  res.data.next_redirect_pc_url;
+          localStorage.setItem('tid', res.data.tid);
+        }
+      }catch (error) {
+        console.log('카카오페이 QR결제시 에러발생',error);
+      }
+    };
+
 
 return (
     <div className="cart-container">
@@ -145,7 +165,7 @@ return (
         <table class="payment-table">
         <tr>
             <td>총상품가격</td>
-            <td class="price">{totalPrice}</td> 
+            <td class="price">{totalPrice.toLocaleString()}원</td> 
         </tr>
         <tr>
             <td>즉시할인</td>
@@ -169,7 +189,7 @@ return (
         </tr>
         <tr class="total">
             <td>총결제금액</td>
-            <td class="total-price">{totalPrice}</td>
+            <td class="total-price">{totalPrice.toLocaleString()}원</td>
         </tr>
         </table>
     </div>
@@ -177,28 +197,16 @@ return (
     <div class="section">
         <h2>결제 수단</h2>
         <div class="payment-method">
-        <label class="radio-label">
-            <input type="radio" name="payment" checked />
-            신용/체크카드
-        </label>
-        <select>
-            <option>네모카드 4 (교통) / 12345******876*</option>
-        </select>
-        <input type="checkbox" checked /> 기본 결제 수단으로 사용
-        <p class="info">
-            할부는 5만원 이상부터 가능합니다.
-            <br />
-            해외발급 카드는 쿠팡 앱, 모바일 웹에서 사용 가능합니다.
-        </p>
-        <a href="#" class="link">
-            카드할인 및 무이자할부 안내
-        </a>
+            <label class="radio-label">
+                <input type="radio" name="payment" checked /> 카카오페이
+                <span class="badge">최대 캐시적립</span>
+            </label>
         </div>
 
         <div class="payment-method">
         <label class="radio-label">
             <input type="radio" name="payment" />
-            쿠페이 머니 <span class="badge">최대 캐시적립</span>
+            쿠페이 머니 
         </label>
         </div>
 
@@ -218,7 +226,7 @@ return (
         <label for="privacy">개인정보 국외 이전 동의</label>
     </div>
 
-    <button className="pay-button">결제하기</button>
+    <button className="pay-button" onClick={handlePayment}>결제하기</button>
     </div>
 );
 }

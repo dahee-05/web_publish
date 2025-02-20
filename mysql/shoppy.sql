@@ -253,7 +253,7 @@ as
 select sc.cid,
 	   sc.size,
 	   sc.qty, 
-       sm.id,
+       sm.id as id,
 	   sm.zipcode,
 	   sm.address,
 	   sp.pid,
@@ -267,3 +267,62 @@ select sc.cid,
   and sc.pid = sp.pid;
 
 select * from view_cart_list where id='test2';
+drop view view_cart_list;
+show tables;
+
+/*******************************
+-- 02.20 - 결제 ORDER 테이블 생성
+*******************************/
+use hrdb2019;
+show tables;
+create table shoppy_order(
+	oid 			INT 			primary key 	auto_increment,
+    size			VARCHAR(10)		not null,
+    QTY				INT 			NOT NULL,
+    TPRICE 			INT				NOT NULL,
+    ODATE			CHAR(3) ,
+    TYPE 			VARCHAR(30)		NOT NULL,
+    TID				VARCHAR(50)     NOT NULL,
+    ID				VARCHAR(30)		NOT NULL,
+    PID				INT				NOT NULL,
+   CONSTRAINT FK_ORDER_ID_SHOPPY_MEMBER_ID FOREIGN KEY(ID)REFERENCES SHOPPY_MEMBER(ID),
+   CONSTRAINT FK_ORDER_PID_SHOPPY_PRODUCT_PID FOREIGN KEY(PID)REFERENCES SHOPPY_PRODUCT(PID)
+);
+desc shoppy_order;
+select * from shoppy_order;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

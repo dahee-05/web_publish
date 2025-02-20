@@ -6,6 +6,7 @@ import uploadRouter from './router/uploadRouter.js';
 import productRouter from './router/productRouter.js';
 import cartRouter from './router/cartRouter.js';
 import orderRouter from './router/orderRouter.js';
+import paymentRouter from'./router/paymentRouter.js';
 import path from 'path';
 
 //서버 생성 및 포트 정의
@@ -26,6 +27,8 @@ server.use('/member', memberRouter);
 server.use('/uploads', uploadRouter); //실제 업로드하는 경로
 server.use('/product', productRouter);
 server.use('/cart', cartRouter);
+server.use('/order', orderRouter);
+server.use('/payment',paymentRouter);
 server.use('/order', orderRouter);
 
 

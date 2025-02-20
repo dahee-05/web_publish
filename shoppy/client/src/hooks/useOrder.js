@@ -16,9 +16,29 @@ export function useOrder() {
     setOrderList(result.data);
     setMember(result.data[0]);
     calculateTotalPrice(result.data);
+    return result.data;
   };
   
+  /* 2. */
+  const saveToOrder = async(orderList, totalPrice, tid, type) =>{
+    console.log('saveToOrder orderList-->',orderList);
+    console.log('saveToOrder totalPrice-->',totalPrice);
+    const id = localStorage.getItem('user_id');
+    const formData = { 'id':id,
+                      'totalPrice':totalPrice,
+                      'orderList': orderList,
+                      'tid': tid,
+                      'type': type
+    };
 
-  return { getOrderList };
+
+    const result = await axios.post('http://localhost:9000/order/add' , formData);
+    console.log('order add : result----->',result.data);
+    // setOrderList(result.data);
+    // setMember(result.data[0]);
+  };
+
+
+  return { getOrderList, saveToOrder };
 }
 
